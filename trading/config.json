@@ -1,0 +1,20 @@
+ {
+  "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20100101 Firefox/87.0",
+  "sleep_interval": 35,
+  "urls": {
+    "url_1": {
+      "url": "https://marketwatch.com/latest-news",
+      "texts": {
+        "title": "#maincontent > div:nth-child(1) > div.region.region--primary > div.component.component--module.more-headlines > div > div.collection__elements.j-scrollElement h3 > a",
+        "timestamp": "#maincontent > div:nth-child(1) > div.region.region--primary > div.component.component--module.more-headlines > div > div.collection__elements.j-scrollElement > div > div > div > span.article__timestamp"
+      }
+    },
+    "url_2": {
+      "url": "https://tradingeconomics.com/stream",
+      "text_data": "te-stream-item"
+    },
+    "url_3": {
+      "url": "https://www.nasdaq.com/press-release/nyse-group-announces-2023-2024-and-2025-holiday-and-early-closings-calendar-2022-12"
+    }
+  }
+}

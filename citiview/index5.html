@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Inquiry</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+  <main class="min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-2xl">
+      <h2 class="text-2xl font-bold text-center mb-6">Event Inquiry Form</h2>
+      <form id="event-form" class="space-y-4">
+        <div class="grid md:grid-cols-2 gap-4">
+          <input type="text" placeholder="Event Name" required id="event-name" class="input" />
+          <select id="event-type" class="input">
+            <option value="">Event Type</option>
+            <option>Corporate</option>
+            <option>Wedding</option>
+            <option>Social</option>
+            <option>Conference</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <input type="date" required id="event-date" class="input" />
+          <input type="number" min="1" placeholder="Attendees" id="attendees" class="input" />
+        </div>
+
+        <input type="text" placeholder="Event Location" required id="event-location" class="input" />
+
+        <textarea rows="3" placeholder="AV Needs" id="event-needs" class="input"></textarea>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <input type="text" placeholder="Your Name" required id="contact-name" class="input" />
+          <input type="email" placeholder="Email" required id="contact-email" class="input" />
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <input type="tel" placeholder="Phone" id="contact-phone" class="input" />
+          <input type="text" placeholder="Company" id="contact-company" class="input" />
+        </div>
+
+        <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded hover:bg-blue-700">
+          Submit
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <script>
+    // Handle form submission
+    document.getElementById('event-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const data = {
+        name: document.getElementById('contact-name').value,
+        email: document.getElementById('contact-email').value,
+        phone: document.getElementById('contact-phone').value,
+        company: document.getElementById('contact-company').value,
+        event: {
+          name: document.getElementById('event-name').value,
+          type: document.getElementById('event-type').value,
+          date: document.getElementById('event-date').value,
+          location: document.getElementById('event-location').value,
+          attendees: document.getElementById('attendees').value,
+          needs: document.getElementById('event-needs').value
+        }
+      };
+
+      console.log('Collected Data:', data);
+      alert('Form submitted. Check console for data.');
+
+      this.reset();
+    });
+  </script>
+
+  <style>
+    .input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 0.375rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .input:focus {
+      border-color: #2563eb;
+    }
+  </style>
+</body>
+</html>

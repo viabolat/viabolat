@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CitiView AV - Event Equipment Wishlist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Goodshuffle Web Components -->
+    <script type="module" src="https://unpkg.com/@goodshuffle/gspro-wc@0.5.7/dist/gspro-wc/gspro-wc.esm.js"></script>
+    <script nomodule="" src="https://unpkg.com/@goodshuffle/gspro-wc@0.5.7/dist/gspro-wc/gspro-wc.js"></script>
+    <gspro-wishlist-config
+            data-url="https://data.goodshuffle.com/vendor/SHpD5AKf8V3BTGua8TUv1lzMtfsfJX"></gspro-wishlist-config>
+
+    <style>
+        /* Custom styles */
+        .section-transition {
+            transition: all 0.3s ease;
+        }
+
+        .hidden-section {
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+            transform: translateY(20px);
+        }
+
+        .visible-section {
+            opacity: 1;
+            height: auto;
+            transform: translateY(0);
+        }
+
+        .progress-step {
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #e5e7eb;
+            color: #6b7280;
+            font-weight: 600;
+        }
+
+        .progress-step.active {
+            background-color: #3b82f6;
+            color: white;
+        }
+
+        .progress-step.completed {
+            background-color: #10b981;
+            color: white;
+        }
+
+        .progress-line {
+            flex: 1;
+            height: 2px;
+            background-color: #e5e7eb;
+        }
+
+        .progress-line.completed {
+            background-color: #10b981;
+        }
+
+        gspro-item-gallery {
+            --gspro-item-card-border-radius: 0.5rem;
+            --gspro-item-card-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --gspro-item-card-hover-box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .floating-wishlist {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            z-index: 100;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        @media (min-width: 1024px) {
+            .floating-wishlist {
+                bottom: 2rem;
+                right: 2rem;
+            }
+        }
+
+        /* Loading spinner */
+        .spinner {
+            width: 24px;
+            height: 24px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 8px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 min-h-screen">
+    <!-- Header/Navigation -->
+    <header class="bg-blue-900 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://citiviewav.com/application/files/2917/0263/6719/CitiView_Logo_White_Text_Transparent.png"
+                     alt="CitiView AV Logo" class="h-12">
+            </div>
+            <div class="flex items-center space-x-4">
+                <span class="text-white font-medium hidden md:block">Event Equipment Wishlist</span>
+                <div id="wishlist-count" class="bg-blue-700 text-white px-3 py-1 rounded-full text-sm font-medium hidden">
+                    <span id="item-count">0</span> items
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Progress Indicator -->
+    <div class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between max-w-3xl mx-auto">
+                <div class="flex items-center">
+                    <div id="step-1-indicator" class="progress-step active">
+                        <span>1</span>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div id="step-2-indicator" class="progress-step">
+                        <span>2</span>
+                    </div>
+                    <div class="progress-line"></div>
+                    <div id="step-3-indicator" class="progress-step">
+                        <span>3</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content - Integrated Wishlist Experience -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Step 1: Event Details -->
+        <section id="step-1" class="section-transition">
+            <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Tell us about your event</h2>
+
+                <form id="event-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="event-name" class="block text-gray-700 mb-2">Event Name *</label>
+                            <input type="text" id="event-name" required
+                                   class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+
+                        <div>
+                            <label for="event-type" class="block text-gray-700 mb-2">Event Type *</label>
+                            <select id="event-type" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">Select event type</option>
+                                <option value="corporate">Corporate Event</option>
+                                <option value="wedding">Wedding</option>
+                                <option value="social">Social Event</option>
+                                <option value="conference">Conference</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="event-date" class="block text-gray-700 mb-2">Event Date *</label>
+                            <input type="date" id="event-date" required
+                                   class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="attendees" class="block text-gray-700 mb-2">Estimated Attendees</label>
+                            <input type="number" id="attendees" min="1"
+                                   class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="event-location" class="block text-gray-700 mb-2">Event Location *</label>
+                        <input type="text" id="event-location" required
+                               class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+
+                    <div>
+                        <label for="event-needs" class="block text-gray-700 mb-2">Additional Requirements</label>
+                        <textarea id="event-needs" rows="3"
+                                  placeholder="Special setup needs, timing requirements, etc."
+                                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                    </div>
+
+                    <div class="pt-6 flex justify-end">
+                        <button type="button" onclick="nextStep(2)"
+                                class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-semibold transition duration-300">
+                            Continue to Equipment Selection
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Step 2: Equipment Selection -->
+        <section id="step-2" class="section-transition hidden-section">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-800">Select your equipment</h2>
+                        <p class="text-gray-600">Based on your event details, we recommend these items</p>
+                    </div>
+                    <div class="mt-4 md:mt-0">
+                        <div id="wishlist-summary" class="bg-blue-100 text-blue-800 px-4 py-2 rounded-md font-medium">
+                            <span id="summary-count">0</span> items selected
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <gspro-search class="w-full"></gspro-search>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                    <gspro-category-filter class="w-full"></gspro-category-filter>
+                    <gspro-sort class="w-full"></gspro-sort>
+                </div>
+
+                <gspro-item-gallery></gspro-item-gallery>
+
+                <div class="pt-6 flex justify-between">
+                    <button type="button" onclick="prevStep(1)"
+                            class="text-gray-600 hover:text-gray-800 px-6 py-3 rounded-md font-semibold transition duration-300 flex items-center">
+                        <i class="fas fa-arrow-left mr-2"></i>
+                        Back to Event Details
+                    </button>
+                    <button type="button" onclick="nextStep(3)"
+                            class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-semibold transition duration-300">
+                        Continue to Contact Information
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 3: Contact Information -->
+        <section id="step-3" class="section-transition hidden-section">
+            <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Your Contact Information</h2>
+
+                <form id="contact-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="contact-name" class="block text-gray-700 mb-2">Your Name *</label>
+                            <input type="text" id="contact-name" required
+                                   class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+
+                        <div>
+                            <label for="contact-email" class="block text-gray-700 mb-2">Email *</label>
+                            <input type="email" id="contact-email" required
+                                   class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="contact-phone" class="block text-gray-700 mb-2">Phone *</label>
+                            <input type="tel" id="contact-phone" required
+                                   class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="contact-company" class="block text-gray-700 mb-2">Company</label>
+                            <input type="text" id="contact-company"
+                                   class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="additional-notes" class="block text-gray-700 mb-2">Additional Notes</label>
+                        <textarea id="additional-notes" rows="3"
+                                  placeholder="Any special requests or questions for our team..."
+                                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                    </div>
+
+                    <div class="pt-6 flex justify-between">
+                        <button type="button" onclick="prevStep(2)"
+                                class="text-gray-600 hover:text-gray-800 px-6 py-3 rounded-md font-semibold transition duration-300 flex items-center">
+                            <i class="fas fa-arrow-left mr-2"></i>
+                            Back to Equipment Selection
+                        </button>
+                        <button type="button" id="submit-btn" onclick="submitWishlist()"
+                                class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-md font-semibold transition duration-300 flex items-center">
+                            Submit Wishlist
+                            <span id="item-count-final" class="ml-2 bg-green-700 px-2 py-1 rounded-full text-xs">0</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Floating Wishlist Summary (Mobile) -->
+    <div id="floating-wishlist" class="floating-wishlist lg:hidden bg-white rounded-lg p-4 hidden">
+        <div class="text-blue-800 font-semibold">
+            <span id="floating-count">0</span> items selected
+        </div>
+    </div>
+
+    <script>
+        // Current step tracking
+        let currentStep = 1;
+        let wishlistItems = [];
+
+        // Navigation functions
+        function nextStep(step) {
+            // Validate current step before proceeding
+            if (currentStep === 1 && !validateEventDetails()) return;
+
+            document.getElementById(`step-${currentStep}`).classList.remove('visible-section');
+            document.getElementById(`step-${currentStep}`).classList.add('hidden-section');
+
+            // Update progress indicators
+            document.getElementById(`step-${currentStep}-indicator`).classList.remove('active');
+            document.getElementById(`step-${currentStep}-indicator`).classList.add('completed');
+
+            // Update next step indicator
+            document.getElementById(`step-${step}-indicator`).classList.add('active');
+
+            currentStep = step;
+            document.getElementById(`step-${currentStep}`).classList.remove('hidden-section');
+            document.getElementById(`step-${currentStep}`).classList.add('visible-section');
+
+            // Update wishlist count in step 3
+            if (currentStep === 3) {
+                updateFinalWishlistCount();
+            }
+
+            // Scroll to top of new section
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        function prevStep(step) {
+            document.getElementById(`step-${currentStep}`).classList.remove('visible-section');
+            document.getElementById(`step-${currentStep}`).classList.add('hidden-section');
+
+            // Update progress indicators
+            document.getElementById(`step-${currentStep}-indicator`).classList.remove('active');
+
+            currentStep = step;
+            document.getElementById(`step-${currentStep}`).classList.remove('hidden-section');
+            document.getElementById(`step-${currentStep}`).classList.add('visible-section');
+
+            // Scroll to top of new section
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        // Form validation
+        function validateEventDetails() {
+            const requiredFields = ['event-name', 'event-type', 'event-date', 'event-location'];
+            let isValid = true;
+
+            requiredFields.forEach(fieldId => {
+                const field = document.getElementById(fieldId);
+                if (!field.value.trim()) {
+                    field.classList.add('border-red-500');
+                    isValid = false;
+                } else {
+                    field.classList.remove('border-red-500');
+                }
+            });
+
+            if (!isValid) {
+                alert('Please fill in all required fields marked with *');
+                return false;
+            }
+
+            return true;
+        }
+
+        function validateContactDetails() {
+            const requiredFields = ['contact-name', 'contact-email', 'contact-phone'];
+            let isValid = true;
+
+            requiredFields.forEach(fieldId => {
+                const field = document.getElementById(fieldId);
+                if (!field.value.trim()) {
+                    field.classList.add('border-red-500');
+                    isValid = false;
+                } else {
+                    field.classList.remove('border-red-500');
+                }
+            });
+
+            if (!isValid) {
+                alert('Please fill in all required fields marked with *');
+                return false;
+            }
+
+            return true;
+        }
+
+        // Remove red border when user starts typing in a required field
+        document.querySelectorAll('input[required], select[required]').forEach(field => {
+            field.addEventListener('input', function() {
+                if (this.value.trim()) {
+                    this.classList.remove('border-red-500');
+                }
+            });
+        });
+
+        // Wishlist item count tracking
+        function updateWishlistCount(count) {
+            document.getElementById('item-count').textContent = count;
+            document.getElementById('summary-count').textContent = count;
+            document.getElementById('floating-count').textContent = count;
+            document.getElementById('item-count-final').textContent = count;
+
+            if (count > 0) {
+                document.getElementById('wishlist-count').classList.remove('hidden');
+                document.getElementById('floating-wishlist').classList.remove('hidden');
+            } else {
+                document.getElementById('wishlist-count').classList.add('hidden');
+                document.getElementById('floating-wishlist').classList.add('hidden');
+            }
+        }
+
+        function updateFinalWishlistCount() {
+            // Get the current count from Goodshuffle's wishlist
+            const wishlist = document.querySelector('gspro-wishlist');
+            if (wishlist) {
+                const shadowRoot = wishlist.shadowRoot;
+                if (shadowRoot) {
+                    const items = shadowRoot.querySelectorAll('.wishlist-item');
+                    updateWishlistCount(items.length);
+
+                    // Store the wishlist items for submission
+                    wishlistItems = Array.from(items).map(item => {
+                        return {
+                            id: item.getAttribute('data-item-id'),
+                            name: item.querySelector('.item-name').textContent,
+                            quantity: parseInt(item.querySelector('.item-quantity').value)
+                        };
+                    });
+                }
+            }
+        }
+
+        // Submit wishlist function
+        async function submitWishlist() {
+            // Validate contact details
+            if (!validateContactDetails()) return;
+
+            // Check if any equipment is selected
+            if (wishlistItems.length === 0) {
+                alert('Please add at least one equipment item to your wishlist');
+                return;
+            }
+
+            // Show loading state
+            const submitBtn = document.getElementById('submit-btn');
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Submitting... <span class="spinner"></span>';
+
+            try {
+                // Collect all form data
+                const eventData = {
+                    eventName: document.getElementById('event-name').value,
+                    eventType: document.getElementById('event-type').value,
+                    eventDate: document.getElementById('event-date').value,
+                    attendees: document.getElementById('attendees').value,
+                    eventLocation: document.getElementById('event-location').value,
+                    eventNeeds: document.getElementById('event-needs').value
+                };
+
+                const contactData = {
+                    contactName: document.getElementById('contact-name').value,
+                    contactEmail: document.getElementById('contact-email').value,
+                    contactPhone: document.getElementById('contact-phone').value,
+                    contactCompany: document.getElementById('contact-company').value,
+                    additionalNotes: document.getElementById('additional-notes').value
+                };
+
+                // In a real implementation, you would submit this data to Goodshuffle's API
+                // This is a mock implementation that simulates an API call
+                console.log('Submitting to Goodshuffle API:', {
+                    event: eventData,
+                    contact: contactData,
+                    items: wishlistItems
+                });
+
+                // Simulate API delay
+                await new Promise(resolve => setTimeout(resolve, 1500));
+
+                // Show success message
+                alert('Thank you for your equipment wishlist submission! Our team will contact you shortly to confirm your selections.');
+
+                // You might want to reset the form or redirect to a thank you page
+                // window.location.href = '/thank-you';
+
+            } catch (error) {
+                console.error('Error submitting wishlist:', error);
+                alert('There was an error submitting your wishlist. Please try again.');
+            } finally {
+                // Reset button state
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Submit Wishlist <span id="item-count-final" class="ml-2 bg-green-700 px-2 py-1 rounded-full text-xs">' + wishlistItems.length + '</span>';
+            }
+        }
+
+        // Initialize the progress indicators and wishlist listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('step-1-indicator').classList.add('active');
+
+            // Listen for changes to the wishlist
+            const wishlistObserver = new MutationObserver(function(mutations) {
+                updateFinalWishlistCount();
+            });
+
+            // Start observing the wishlist element for changes
+            const wishlist = document.querySelector('gspro-wishlist');
+            if (wishlist) {
+                const shadowRoot = wishlist.shadowRoot;
+                if (shadowRoot) {
+                    wishlistObserver.observe(shadowRoot, {
+                        childList: true,
+                        subtree: true,
+                        attributes: true
+                    });
+                }
+            }
+
+            // Set today's date as default for event date
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('event-date').value = today;
+            document.getElementById('event-date').min = today;
+        });
+    </script>
+</body>
+</html>
