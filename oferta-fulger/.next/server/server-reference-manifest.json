@@ -1,0 +1,20 @@
+{
+  "node": {
+    "76fc3226e5c756d4ebd1d8706773f51c3906d3da": {
+      "workers": {
+        "app/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fworkstation%2Fprojects%2Fclones%2Fnew%2Fviabolat%2Foferta-fulger%2Fsrc%2Fapp%2Fauth%2Factions.ts%22%2C%5B%22signOut%22%5D%5D%5D&__client_imported__=true!",
+        "app/login/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fworkstation%2Fprojects%2Fclones%2Fnew%2Fviabolat%2Foferta-fulger%2Fsrc%2Fapp%2Fauth%2Factions.ts%22%2C%5B%22signOut%22%5D%5D%5D&__client_imported__=true!",
+        "app/signup/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fworkstation%2Fprojects%2Fclones%2Fnew%2Fviabolat%2Foferta-fulger%2Fsrc%2Fapp%2Fauth%2Factions.ts%22%2C%5B%22signOut%22%5D%5D%5D&__client_imported__=true!",
+        "app/_not-found/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2Fhome%2Fworkstation%2Fprojects%2Fclones%2Fnew%2Fviabolat%2Foferta-fulger%2Fsrc%2Fapp%2Fauth%2Factions.ts%22%2C%5B%22signOut%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/page": "action-browser",
+        "app/login/page": "action-browser",
+        "app/signup/page": "action-browser",
+        "app/_not-found/page": "action-browser"
+      }
+    }
+  },
+  "edge": {},
+  "encryptionKey": "4aO3mz7CxckiwTWaw8SiNENTxTgav5v/4I3IqQvM27s="
+}

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HaiAcolo - Oferte Locale</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="HaiAcolo promovează ofertele afacerii tale din Cluj direct către clienți locali prin WhatsApp. Gratuit, simplu, eficient.">
+    <meta property="og:title" content="HaiAcolo - Oferte Locale din Cluj">
+    <meta property="og:description"
+        content="Promovează-ți afacerea din Cluj gratuit prin newsletter-ul nostru WhatsApp.">
+    <meta property="og:image" content="https://www.haiacolo.ro/og-image.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.haiacolo.ro">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            200: '#ddd6fe',
+                            300: '#c4b5fd',
+                            400: '#a78bfa',
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            700: '#6d28d9',
+                            800: '#5b21b6',
+                            900: '#4c1d95',
+                        },
+                        secondary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Optional Favicon -->
+    <link rel="icon" href="/logo.svg" type="image/svg+xml">
+
+    <!-- Optional: Semantic scroll behavior -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        /* Base Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7f1 100%);
+            min-height: 100vh;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Logo Styles */
+        .logo-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #8b5cf6 0%, #0ea5e9 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(139, 92, 246, 0.2);
+            border: 2px solid #8b5cf6;
+        }
+
+        /* Text Styles */
+        .gradient-text {
+            background: linear-gradient(135deg, #8b5cf6 0%, #0ea5e9 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900">
+
+    <header class="bg-gradient-to-r from-primary-600 to-secondary-600 shadow-lg sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
+            <div class="flex justify-between items-center py-4">
+                <a href="/main_site/haiacolo.html" title="HaiAcolo Home"
+                    class="hover:opacity-90 transition-opacity flex items-center">
+                    <div class="logo-circle mr-3 floating" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 fill-white">
+                            <path
+                                d="M505 174.8l-39.6-39.6c-9.4-9.4-24.6-9.4-33.9 0L192 374.7 80.6 263.2c-9.4-9.4-24.6-9.4-33.9 0L7 302.9c-9.4 9.4-9.4 24.6 0 34L175 505c9.4 9.4 24.6 9.4 33.9 0l296-296.2c9.4-9.5 9.4-24.7 .1-34zm-324.3 106c6.2 6.3 16.4 6.3 22.6 0l208-208.2c6.2-6.3 6.2-16.4 0-22.6L366.1 4.7c-6.2-6.3-16.4-6.3-22.6 0L192 156.2l-55.4-55.5c-6.2-6.3-16.4-6.3-22.6 0L68.7 146c-6.2 6.3-6.2 16.4 0 22.6l112 112.2z" />
+                        </svg>
+                    </div>
+                    <span class="text-xl font-bold text-white italic">HaiAcolo</span>
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#cum-functioneaza" class="text-white hover:text-primary-200 transition-colors nav-link">Cum
+                        functioneaza</a>
+                    <a href="mailto:contact@haiacolo.ro" class="text-white hover:text-primary-200 nav-link">Contact</a>
+                </div>
+                <button class="md:hidden text-white">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-white py-16 px-6 text-center">
+        <h1 class="text-4xl font-bold mb-4 gradient-text">Atrage clienți noi. Gratuit.</h1>
+        <p class="text-lg mb-6 max-w-2xl mx-auto">
+            HaiAcolo promovează ofertele afacerii tale locale direct către utilizatori reali din Cluj, prin WhatsApp.
+            Fără costuri inițiale.
+        </p>
+        <div class="flex justify-center space-x-4">
+            <a href="https://bit.ly/44SAQde" target="_blank" rel="noopener noreferrer"
+                class="bg-blue-600 text-white px-6 py-3 rounded shadow hover:bg-blue-700 transition">Trimite o
+                ofertă</a>
+            <a href="#cum-functioneaza"
+                class="bg-gray-200 text-gray-800 px-6 py-3 rounded hover:bg-gray-300 transition">Cum funcționează</a>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="cum-functioneaza" class="py-20 px-6 bg-gray-100">
+        <h2 class="text-3xl font-bold text-center mb-12">Cum funcționează?</h2>
+        <div class="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+
+            <div class="bg-white p-6 rounded shadow text-center">
+                <div class="text-blue-600 text-4xl mb-4" aria-label="Formular">📝</div>
+                <h3 class="font-semibold text-xl mb-2">1. Completezi formularul</h3>
+                <p>Ne spui ce ofertă vrei să promovezi și unde e afacerea ta în Cluj.</p>
+            </div>
+
+            <div class="bg-white p-6 rounded shadow text-center">
+                <div class="text-green-600 text-4xl mb-4" aria-label="Verificare">✅</div>
+                <h3 class="font-semibold text-xl mb-2">2. Verificăm oferta</h3>
+                <p>Ne asigurăm că totul e clar și gata de publicare.</p>
+            </div>
+
+            <div class="bg-white p-6 rounded shadow text-center">
+                <div class="text-purple-600 text-4xl mb-4" aria-label="Telefon">📲</div>
+                <h3 class="font-semibold text-xl mb-2">3. Promovăm pe WhatsApp</h3>
+                <p>Ofertele apar în newsletter-ul nostru săptămânal pentru utilizatorii HaiAcolo.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-20 px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">De ce HaiAcolo?</h2>
+
+            <div class="grid md:grid-cols-2 gap-10">
+
+                <div class="bg-gray-50 p-6 rounded shadow">
+                    <h3 class="text-xl font-semibold mb-4 text-blue-600">Pentru Afaceri Locale</h3>
+                    <ul class="space-y-3 list-disc list-inside text-gray-700">
+                        <li>Listare gratuită — nu plătești nimic la început.</li>
+                        <li>Ajungi direct la clienți prin WhatsApp, nu prin reclame scumpe.</li>
+                        <li>Formular rapid, fără cont sau aplicații complicate.</li>
+                        <li>Rapoarte de performanță la cerere (în curând).</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded shadow">
+                    <h3 class="text-xl font-semibold mb-4 text-green-600">Pentru Utilizatori</h3>
+                    <ul class="space-y-3 list-disc list-inside text-gray-700">
+                        <li>Primești oferte reale, verificate, în funcție de zona ta.</li>
+                        <li>Fără spam — doar 1 mesaj pe săptămână.</li>
+                        <li>Acces prioritar la reduceri și locuri limitate.</li>
+                        <li>Poți da feedback sau recomanda afaceri preferate.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action + FAQ -->
+    <section class="py-20 px-6 bg-blue-50">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4">Începe acum — este 100% gratuit</h2>
+            <p class="text-gray-700 mb-8">Trimite o ofertă sau înscrie-te ca utilizator în mai puțin de 1 minut.</p>
+
+            <div class="flex flex-col md:flex-row justify-center gap-6 mb-12">
+                <a href="https://bit.ly/44SAQde" target="_blank" rel="noopener noreferrer"
+                    class="bg-blue-600 text-white px-6 py-3 rounded shadow hover:bg-blue-700 transition">
+                    Sunt o afacere — Vreau să apar
+                </a>
+                <a href="https://bit.ly/4kJOuVY" target="_blank" rel="noopener noreferrer"
+                    class="bg-white border border-blue-600 text-blue-600 px-6 py-3 rounded shadow hover:bg-blue-100 transition">
+                    Sunt client — Trimite-mi oferte
+                </a>
+            </div>
+
+            <div class="text-left">
+                <h3 class="text-2xl font-semibold mb-4">Întrebări frecvente</h3>
+                <div class="space-y-6 text-gray-800">
+                    <div>
+                        <p class="font-medium">🔒 Trebuie să creez cont?</p>
+                        <p class="text-sm">Nu. Totul se face prin formulare rapide și WhatsApp.</p>
+                    </div>
+                    <div>
+                        <p class="font-medium">📍 Este doar pentru Cluj?</p>
+                        <p class="text-sm">Da, momentan testăm doar în Cluj-Napoca și Florești.</p>
+                    </div>
+                    <div>
+                        <p class="font-medium">💬 Cât de des primesc mesaje?</p>
+                        <p class="text-sm">O singură dată pe săptămână — doar oferte relevante.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-primary-800 to-secondary-800 text-white py-10 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="logo-circle mr-3" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 fill-white">
+                                <path
+                                    d="M505 174.8l-39.6-39.6c-9.4-9.4-24.6-9.4-33.9 0L192 374.7 80.6 263.2c-9.4-9.4-24.6-9.4-33.9 0L7 302.9c-9.4 9.4-9.4 24.6 0 34L175 505c9.4 9.4 24.6 9.4 33.9 0l296-296.2c9.4-9.5 9.4-24.7 .1-34zm-324.3 106c6.2 6.3 16.4 6.3 22.6 0l208-208.2c6.2-6.3 6.2-16.4 0-22.6L366.1 4.7c-6.2-6.3-16.4-6.3-22.6 0L192 156.2l-55.4-55.5c-6.2-6.3-16.4-6.3-22.6 0L68.7 146c-6.2 6.3-6.2 16.4 0 22.6l112 112.2z" />
+                            </svg>
+                        </div>
+                        <span class="text-xl font-bold text-white italic">HaiAcolo</span>
+                    </div>
+                    <p class="text-primary-200 mb-4">Oferte locale simplificate</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Navigare</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#cum-functioneaza" class="text-primary-200 hover:text-white transition-colors">Cum
+                                functioneaza</a>
+                        </li>
+                        <li><a href="mailto:contact@haiacolo.ro"
+                                class="text-primary-200 hover:text-white transition-colors">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="haiprivacy.html"
+                                class="text-primary-200 hover:text-white transition-colors">Confidentialitate</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-10 pt-8 border-t border-primary-700 text-center text-sm text-primary-200">
+                <p>&copy; 2025 HaiAcolo. Toate drepturile rezervate.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Minimal Analytics -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('[HaiAcolo] Page loaded');
+
+            const trackLinks = [
+                { selector: 'a[href="https://bit.ly/44SAQde"]', label: 'Submit Offer' },
+                { selector: 'a[href="https://bit.ly/4kJOuVY"]', label: 'User Subscribe' },
+            ];
+
+            trackLinks.forEach(link => {
+                const el = document.querySelector(link.selector);
+                if (el) {
+                    el.addEventListener('click', () => {
+                        console.log(`[HaiAcolo] CTA clicked: ${link.label}`);
+                    });
+                }
+            });
+        });
+    </script>
+
+    <script>
+        // Smooth scroll and auto-close mobile menu
+        document.addEventListener("DOMContentLoaded", () => {
+            const mobileMenuButton = document.querySelector(".md\\:hidden");
+
+            const mobileMenu = document.createElement("div");
+            mobileMenu.id = "mobile-menu";
+            mobileMenu.className = "hidden fixed inset-0 bg-white z-50 flex flex-col items-center justify-center";
+            mobileMenu.innerHTML = `
+      <button id="close-mobile-menu" class="absolute top-4 right-4 text-gray-600">
+        <i class="fas fa-times text-2xl"></i>
+      </button>
+      <div id="mobile-links" class="space-y-8 text-center">
+        <a href="#cum-functioneaza" class="block text-2xl font-medium text-gray-900 hover:text-indigo-600">Cum functioneaza</a>
+        <a href="mailto:contact@haiacolo.ro" class="block text-2xl font-medium text-gray-900 hover:text-indigo-600">Contact</a>
+      </div>
+    `;
+            document.body.appendChild(mobileMenu);
+
+            mobileMenuButton.addEventListener("click", () => {
+                mobileMenu.classList.remove("hidden");
+                document.body.style.overflow = "hidden";
+            });
+
+            document.getElementById("close-mobile-menu").addEventListener("click", () => {
+                mobileMenu.classList.add("hidden");
+                document.body.style.overflow = "";
+            });
+
+            // Close mobile menu on any link click inside mobile
+            document.getElementById("mobile-links").addEventListener("click", (e) => {
+                if (e.target.tagName === "A") {
+                    const href = e.target.getAttribute("href");
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: "smooth" });
+                        mobileMenu.classList.add("hidden");
+                        document.body.style.overflow = "";
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

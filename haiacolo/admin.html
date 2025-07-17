@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HaiAcolo Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-4 font-sans">
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-3xl font-bold mb-6">HaiAcolo - Admin Dashboard</h1>
+
+        <div class="overflow-x-auto bg-white rounded-lg shadow p-4">
+            <table class="min-w-full text-sm text-left" id="offers-table">
+                <thead class="bg-gray-200">
+                    <tr>
+                        <th class="p-2">Business</th>
+                        <th class="p-2">Zone</th>
+                        <th class="p-2">Category</th>
+                        <th class="p-2">Details</th>
+                        <th class="p-2">Expires</th>
+                        <th class="p-2">Code</th>
+                        <th class="p-2">WhatsApp</th>
+                        <th class="p-2">Status</th>
+                        <th class="p-2">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <!-- Dynamic rows -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const SUPABASE_URL = 'https://vhjbwttpqqsxdasvctkd.supabase.co';
+        const SUPABASE_API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZoamJ3dHRwcXFzeGRhc3ZjdGtkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI1MzAxMzksImV4cCI6MjA2ODEwNjEzOX0.Cbnan7XhsU42c1TCzKv7L4z8ystdROiE3vxEAd3F9Rw';
+        const OFFERS_TABLE = 'offers';
+
+        async function fetchOffers() {
+            const res = await fetch(`${SUPABASE_URL}/rest/v1/${OFFERS_TABLE}?select=*`, {
+                headers: {
+                    apikey: SUPABASE_API_KEY,
+                    Authorization: `Bearer ${SUPABASE_API_KEY}`,
+                },
+            });
+            const data = await res.json();
+            const tbody = document.getElementById('table-body');
+            tbody.innerHTML = '';
+            data.forEach(row => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+          <td class="p-2 border">${row.business_name}</td>
+          <td class="p-2 border">${row.zone}</td>
+          <td class="p-2 border">${row.category}</td>
+          <td class="p-2 border">${row.details}</td>
+          <td class="p-2 border">${row.expires_on}</td>
+          <td class="p-2 border">${row.discount_code || ''}</td>
+          <td class="p-2 border">${row.whatsapp_number}</td>
+          <td class="p-2 border">
+            <select class="status-dropdown bg-gray-100 border rounded" data-id="${row.id}">
+              <option value="pending" ${row.status === 'pending' ? 'selected' : ''}>pending</option>
+              <option value="approved" ${row.status === 'approved' ? 'selected' : ''}>approved</option>
+              <option value="rejected" ${row.status === 'rejected' ? 'selected' : ''}>rejected</option>
+            </select>
+          </td>
+          <td class="p-2 border">
+            <button class="bg-blue-500 text-white px-2 py-1 rounded save-btn" data-id="${row.id}">Save</button>
+          </td>
+        `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        document.addEventListener('click', async e => {
+            if (e.target.classList.contains('save-btn')) {
+                const id = e.target.getAttribute('data-id');
+                const dropdown = document.querySelector(`select[data-id='${id}']`);
+                const status = dropdown.value;
+                await fetch(`${SUPABASE_URL}/rest/v1/${OFFERS_TABLE}?id=eq.${id}`, {
+                    method: 'PATCH',
+                    headers: {
+                        apikey: SUPABASE_API_KEY,
+                        Authorization: `Bearer ${SUPABASE_API_KEY}`,
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ status }),
+                });
+                alert('Status updated');
+            }
+        });
+
+        fetchOffers();
+    </script>
+</body>
+
+</html>

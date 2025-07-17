@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParcăUșor - Găsește cele mai bune locuri de parcare</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .parking-spot {
+            transition: all 0.3s ease;
+        }
+
+        .parking-spot:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-container {
+            background: linear-gradient(to right, #3b82f6, #1d4ed8);
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .loading-spinner {
+            border-top-color: #3b82f6;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-car text-blue-600 text-2xl"></i>
+                <h1 class="text-xl font-bold text-blue-600">ParcăUșor</h1>
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#" class="text-gray-700 hover:text-blue-600">Acasă</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600">Despre noi</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600">Oferte</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600">Contact</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <button
+                    class="hidden md:block px-4 py-2 text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50">Autentificare</button>
+                <button
+                    class="hidden md:block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Înregistrare</button>
+                <button id="mobile-menu-button" class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#" class="text-gray-700 hover:text-blue-600 py-2">Acasă</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600 py-2">Despre noi</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600 py-2">Oferte</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600 py-2">Contact</a>
+                <div class="flex space-x-3 pt-2">
+                    <button
+                        class="w-1/2 px-4 py-2 text-blue-600 border border-blue-600 rounded-lg hover:bg-blue-50">Autentificare</button>
+                    <button
+                        class="w-1/2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Înregistrare</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero section -->
+    <section class="hero-section text-white py-16 md:py-24">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-3xl md:text-5xl font-bold mb-4">Găsește parcare rapid și ușor</h1>
+            <p class="text-xl md:text-2xl mb-8">Rezervă locuri de parcare în cele mai bune locații din orașul tău</p>
+
+            <!-- Search form -->
+            <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden">
+                <div class="search-container p-4">
+                    <div class="flex flex-col md:flex-row md:space-x-4">
+                        <div class="flex-1 mb-4 md:mb-0">
+                            <label class="block text-white text-sm font-medium mb-1">Locație</label>
+                            <div class="relative">
+                                <input type="text" id="location-input"
+                                    placeholder="Introdu locația (ex: București, Cluj)"
+                                    class="w-full px-4 py-3 rounded-lg focus:outline-none">
+                                <i class="fas fa-map-marker-alt absolute right-3 top-3 text-gray-400"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1 mb-4 md:mb-0">
+                            <label class="block text-white text-sm font-medium mb-1">Data și ora</label>
+                            <div class="relative">
+                                <input type="datetime-local" id="datetime-input"
+                                    class="w-full px-4 py-3 rounded-lg focus:outline-none">
+                                <i class="fas fa-calendar-alt absolute right-3 top-3 text-gray-400"></i>
+                            </div>
+                        </div>
+                        <div class="flex items-end">
+                            <button id="search-button"
+                                class="w-full md:w-auto px-6 py-3 bg-yellow-400 text-gray-900 font-medium rounded-lg hover:bg-yellow-500 transition">
+                                <i class="fas fa-search mr-2"></i> Caută
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Loading state -->
+        <div id="loading" class="hidden flex justify-center py-12">
+            <div class="loading-spinner h-12 w-12 border-4 border-blue-200 rounded-full"></div>
+        </div>
+
+        <!-- Results section -->
+        <section id="results-section" class="hidden">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800">Rezultatele căutării</h2>
+                <div class="flex items-center space-x-2">
+                    <span class="text-gray-600">Sortează după:</span>
+                    <select class="px-3 py-2 border rounded-lg focus:outline-none">
+                        <option>Preț (crescător)</option>
+                        <option>Preț (descrescător)</option>
+                        <option>Distanță</option>
+                        <option>Rating</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="results-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Results will be inserted here by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Features section -->
+        <section class="py-12">
+            <h2 class="text-3xl font-bold text-center mb-12">De ce să alegi ParcăUșor?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-euro-sign text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Prețuri competitive</h3>
+                    <p class="text-gray-600">Găsește cele mai bune oferte pentru parcare în orașul tău.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-alt text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Siguranță garantată</h3>
+                    <p class="text-gray-600">Parcările noastre sunt monitorizate și securizate.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md text-center">
+                    <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-clock text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Rezervare rapidă</h3>
+                    <p class="text-gray-600">Rezervă un loc de parcare în doar câteva clicuri.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular locations -->
+        <section class="py-12">
+            <h2 class="text-3xl font-bold text-center mb-8">Locații populare</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white p-4 rounded-lg shadow-sm text-center hover:shadow-md transition cursor-pointer">
+                    <i class="fas fa-city text-blue-600 text-3xl mb-2"></i>
+                    <h3 class="font-medium">București</h3>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm text-center hover:shadow-md transition cursor-pointer">
+                    <i class="fas fa-university text-blue-600 text-3xl mb-2"></i>
+                    <h3 class="font-medium">Cluj-Napoca</h3>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm text-center hover:shadow-md transition cursor-pointer">
+                    <i class="fas fa-theater-masks text-blue-600 text-3xl mb-2"></i>
+                    <h3 class="font-medium">Timișoara</h3>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm text-center hover:shadow-md transition cursor-pointer">
+                    <i class="fas fa-umbrella-beach text-blue-600 text-3xl mb-2"></i>
+                    <h3 class="font-medium">Constanța</h3>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-car text-blue-400 text-2xl"></i>
+                        <h3 class="text-xl font-bold">ParcăUșor</h3>
+                    </div>
+                    <p class="text-gray-400">Soluția ta pentru parcare rapidă și convenabilă în toate orașele mari din
+                        România.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Link-uri utile</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Acasă</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Despre noi</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Oferte</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Suport</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Termeni și condiții</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Politica de confidențialitate</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Ajutor</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-phone text-gray-400"></i>
+                            <span class="text-gray-400">+40 123 456 789</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-envelope text-gray-400"></i>
+                            <span class="text-gray-400">contact@parcausor.ro</span>
+                        </li>
+                        <li class="flex items-center space-x-2">
+                            <i class="fas fa-map-marker-alt text-gray-400"></i>
+                            <span class="text-gray-400">București, România</span>
+                        </li>
+                    </ul>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 ParcăUșor. Toate drepturile rezervate.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for parking details -->
+    <div id="parking-modal"
+        class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h3 id="modal-title" class="text-2xl font-bold"></h3>
+                        <div class="flex items-center mt-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-gray-600 ml-2">4.5 (120 recenzii)</span>
+                        </div>
+                    </div>
+                    <button id="close-modal" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <img id="modal-image"
+                            src="https://images.unsplash.com/photo-1579547945413-497e1b99dac0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                            alt="Parking" class="w-full h-48 object-cover rounded-lg">
+                    </div>
+                    <div>
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold mb-2">Detalii rezervare</h4>
+                            <div class="grid grid-cols-2 gap-2">
+                                <div>
+                                    <p class="text-sm text-gray-500">Data</p>
+                                    <p id="modal-date" class="font-medium"></p>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-500">Ora</p>
+                                    <p id="modal-time" class="font-medium"></p>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-500">Durată</p>
+                                    <p class="font-medium">1 zi</p>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-500">Preț</p>
+                                    <p id="modal-price" class="font-medium text-blue-600"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <h4 class="font-semibold mb-2">Facilități</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm flex items-center">
+                            <i class="fas fa-camera mr-1 text-blue-500"></i> Supraveghere
+                        </span>
+                        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm flex items-center">
+                            <i class="fas fa-shield-alt mr-1 text-blue-500"></i> Securizat
+                        </span>
+                        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm flex items-center">
+                            <i class="fas fa-umbrella mr-1 text-blue-500"></i> Acoperit
+                        </span>
+                        <span class="bg-gray-100 px-3 py-1 rounded-full text-sm flex items-center">
+                            <i class="fas fa-bolt mr-1 text-blue-500"></i> Încărcare EV
+                        </span>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <h4 class="font-semibold mb-2">Descriere</h4>
+                    <p id="modal-description" class="text-gray-600"></p>
+                </div>
+
+                <div class="mb-6">
+                    <h4 class="font-semibold mb-2">Locație</h4>
+                    <div class="h-48 bg-gray-200 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-map-marked-alt text-3xl text-gray-400"></i>
+                    </div>
+                    <p id="modal-address" class="mt-2 text-gray-600"></p>
+                </div>
+
+                <div class="flex justify-end">
+                    <button id="reserve-button"
+                        class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium">
+                        Rezervă acum
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function () {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Mock data for parking spots
+        const parkingSpots = [
+            {
+                id: 1,
+                title: "Parcare Centrală",
+                location: "București, Centru",
+                price: "25 RON/zi",
+                distance: "0.3 km",
+                spots: "12 locuri disponibile",
+                image: "https://images.unsplash.com/photo-1579547945413-497e1b99dac0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                description: "Parcare securizată în centrul orașului, cu acces ușor la principalele atracții turistice și zone comerciale.",
+                address: "Strada Lipscani 15, București"
+            },
+            {
+                id: 2,
+                title: "Parcare Mall Afi",
+                location: "București, Cotroceni",
+                price: "20 RON/zi",
+                distance: "1.2 km",
+                spots: "45 locuri disponibile",
+                image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                description: "Parcare mare și modernă lângă Mall Afi Cotroceni, cu supraveghere 24/7 și încărcare pentru mașini electrice.",
+                address: "Bulevardul Vasile Milea 4, București"
+            },
+            {
+                id: 3,
+                title: "Parcare Gara de Nord",
+                location: "București, Gara de Nord",
+                price: "30 RON/zi",
+                distance: "2.5 km",
+                spots: "8 locuri disponibile",
+                image: "https://images.unsplash.com/photo-1580398855865-8580fe579f5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                description: "Parcare convenabilă pentru cei care călătoresc cu trenul. La doar 3 minute de mers pe jos de Gara de Nord.",
+                address: "Piața Gara de Nord 1, București"
+            },
+            {
+                id: 4,
+                title: "Parcare Herăstrău",
+                location: "București, Herăstrău",
+                price: "18 RON/zi",
+                distance: "3.1 km",
+                spots: "22 locuri disponibile",
+                image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                description: "Parcare lângă Parcul Herăstrău, ideal pentru vizite la muzeul Satului sau plimbări pe malul lacului.",
+                address: "Șoseaua Nordului 1, București"
+            },
+            {
+                id: 5,
+                title: "Parcare Unirii",
+                location: "București, Unirii",
+                price: "28 RON/zi",
+                distance: "0.8 km",
+                spots: "5 locuri disponibile",
+                image: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                description: "Parcare subterană în Piața Unirii, cu acces direct la centrul comercial Unirea și fântânile muzicale.",
+                address: "Piața Unirii 1, București"
+            },
+            {
+                id: 6,
+                title: "Parcare Titan",
+                location: "București, Titan",
+                price: "15 RON/zi",
+                distance: "4.2 km",
+                spots: "18 locuri disponibile",
+                image: "https://images.unsplash.com/photo-1558981852-426c6c22a060?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+                description: "Parcare accesibilă în cartierul Titan, aproape de Parcul Titan și complexul comercial.",
+                address: "Bulevardul Liviu Rebreanu 25, București"
+            }
+        ];
+
+        // Search functionality
+        document.getElementById('search-button').addEventListener('click', function () {
+            const locationInput = document.getElementById('location-input').value;
+            const datetimeInput = document.getElementById('datetime-input').value;
+
+            if (!locationInput) {
+                alert('Te rugăm să introduci o locație pentru căutare.');
+                return;
+            }
+
+            // Show loading
+            document.getElementById('loading').classList.remove('hidden');
+            document.getElementById('results-section').classList.add('hidden');
+
+            // Simulate API call with setTimeout
+            setTimeout(function () {
+                // Hide loading
+                document.getElementById('loading').classList.add('hidden');
+
+                // Show results
+                displayResults(parkingSpots);
+                document.getElementById('results-section').classList.remove('hidden');
+
+                // Scroll to results
+                document.getElementById('results-section').scrollIntoView({ behavior: 'smooth' });
+            }, 1500);
+        });
+
+        // Display results
+        function displayResults(results) {
+            const container = document.getElementById('results-container');
+            container.innerHTML = '';
+
+            results.forEach(spot => {
+                const spotElement = document.createElement('div');
+                spotElement.className = 'parking-spot bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg';
+                spotElement.innerHTML = `
+                    <div>
+                        <img src="${spot.image}" alt="${spot.title}" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-1">${spot.title}</h3>
+                            <p class="text-gray-600 mb-2 flex items-center">
+                                <i class="fas fa-map-marker-alt text-blue-500 mr-2"></i>${spot.location}
+                            </p>
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-lg font-bold text-blue-600">${spot.price}</span>
+                                <span class="text-sm bg-green-100 text-green-800 px-2 py-1 rounded">${spot.spots}</span>
+                            </div>
+                            <div class="flex justify-between text-sm text-gray-500 mb-4">
+                                <span><i class="fas fa-walking mr-1"></i> ${spot.distance}</span>
+                                <span><i class="fas fa-star text-yellow-400 mr-1"></i>4.5</span>
+                            </div>
+                            <button class="w-full py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition view-details" data-id="${spot.id}">
+                                Vezi detalii
+                            </button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(spotElement);
+            });
+
+            // Add event listeners to detail buttons
+            document.querySelectorAll('.view-details').forEach(button => {
+                button.addEventListener('click', function () {
+                    const spotId = parseInt(this.getAttribute('data-id'));
+                    const spot = parkingSpots.find(s => s.id === spotId);
+                    if (spot) {
+                        showParkingDetails(spot);
+                    }
+                });
+            });
+        }
+
+        // Show parking details modal
+        function showParkingDetails(spot) {
+            document.getElementById('modal-title').textContent = spot.title;
+            document.getElementById('modal-image').src = spot.image;
+            document.getElementById('modal-price').textContent = spot.price;
+            document.getElementById('modal-description').textContent = spot.description;
+            document.getElementById('modal-address').textContent = spot.address;
+
+            // Set date and time from input or use current
+            const datetimeInput = document.getElementById('datetime-input').value;
+            if (datetimeInput) {
+                const [date, time] = datetimeInput.split('T');
+                document.getElementById('modal-date').textContent = formatDate(date);
+                document.getElementById('modal-time').textContent = time.substring(0, 5);
+            } else {
+                const now = new Date();
+                document.getElementById('modal-date').textContent = formatDate(now.toISOString().split('T')[0]);
+                document.getElementById('modal-time').textContent = now.toTimeString().substring(0, 5);
+            }
+
+            document.getElementById('parking-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Format date as DD.MM.YYYY
+        function formatDate(dateString) {
+            const [year, month, day] = dateString.split('-');
+            return `${day}.${month}.${year}`;
+        }
+
+        // Close modal
+        document.getElementById('close-modal').addEventListener('click', function () {
+            document.getElementById('parking-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Reserve button
+        document.getElementById('reserve-button').addEventListener('click', function () {
+            alert('Rezervarea a fost efectuată cu succes! Veți primi un email cu confirmarea.');
+            document.getElementById('parking-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('parking-modal').addEventListener('click', function (e) {
+            if (e.target === this) {
+                this.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Set default datetime to now
+        document.addEventListener('DOMContentLoaded', function () {
+            const now = new Date();
+            // Format for datetime-local input
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+
+            document.getElementById('datetime-input').value = `${year}-${month}-${day}T${hours}:${minutes}`;
+        });
+    </script>
+</body>
+
+</html>

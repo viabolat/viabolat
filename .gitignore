@@ -52,8 +52,9 @@ dist/
 *.sublime-workspace
 
 # === Project-Specific Files and Folders ===
-GEMINI.md
+
 Zap Parser Linux.zip
+bash_files/
 citiview/
 dashboards/
 db-tester/
