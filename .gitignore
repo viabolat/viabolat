@@ -8,10 +8,11 @@ venv/
 *.pyd
 *.pyo
 *.pyc
-*.pyo
+*.py[cod]
 
 # === Node.js ===
 node_modules/
+dist/
 
 # === VS Code ===
 .vscode/
