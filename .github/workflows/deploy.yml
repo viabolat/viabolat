@@ -3,12 +3,12 @@ name: Deploy to HostGator via FTP
 on:
   push:
     branches:
-      - production
+      - main
   workflow_dispatch:
 
 jobs:
-  ftp-deploy:
-    name: FTP Deploy
+  deploy-main-site:
+    name: Deploy Main Site
     runs-on: ubuntu-latest
 
     steps:
@@ -23,4 +23,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftp
           server-dir: /
-          local-dir: main_site/
+          local-dir: ./
