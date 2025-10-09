@@ -1,0 +1,68 @@
+<footer class="bg-gradient-to-r from-primary-800 to-secondary-800 text-white py-10 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-3 gap-8">
+            <div>
+                <div class="flex items-center mb-4">
+                    <div class="mr-1">
+                        <img src="/assets/images/logo.svg" alt="viabolat logo" class="w-5 h-5 fill-white">
+                    </div>
+                    <span class="text-xl font-bold text-white italic">viabolat</span>
+                </div>
+                <p class="text-primary-200 mb-4">Data automation that just works, so you don’t have to.</p>
+                <div class="flex space-x-4">
+                    <a href="https://github.com/viabolat" class="text-white hover:text-primary-200 transition-colors"
+                        aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/ahmetbolat"
+                        class="text-white hover:text-primary-200 transition-colors" aria-label="LinkedIn"><i
+                            class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Product</h4>
+                <ul class="space-y-2">
+                    <li><a href="/#features" class="text-primary-200 hover:text-white transition-colors">Features</a>
+                    </li>
+                    <li><a href="/#scripts" class="text-primary-200 hover:text-white transition-colors">What's
+                            inside</a>
+                    </li>
+                    <li><a href="/#projects" class="text-primary-200 hover:text-white transition-colors">Projects</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Company</h4>
+                <ul class="space-y-2">
+                    <li><a href="/#contact" class="text-primary-200 hover:text-white transition-colors">Contact</a>
+                    </li>
+                    <li><a href="/about" class="text-primary-200 hover:text-white transition-colors">About</a>
+                    </li>
+                    <li><a href="/privacy" class="text-primary-200 hover:text-white transition-colors">Privacy</a>
+                    </li>
+                    <li><a href="/terms" class="text-primary-200 hover:text-white transition-colors">Terms</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-10 pt-8 border-t border-primary-700 text-center text-sm text-primary-200">
+            <p>&copy; 2025 viabolat. All rights reserved. Built with <i class="fas fa-heart text-red-400"></i> for
+                creators, coders, and curious minds.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Waitlist Modal -->
+<div id="waitlist-modal" class="fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50 hidden">
+    <div class="bg-white p-6 rounded-lg shadow-lg max-w-md w-full text-center">
+        <h2 class="text-xl font-bold mb-4">Join the Pro Kit Waitlist</h2>
+        <p class="text-gray-600 mb-4">Get exclusive access to our upcoming Pro Kit, which will include advanced
+            scripts, tutorials, and direct support.</p>
+        <form id="waitlist-form">
+            <input type="email" id="waitlist-email" placeholder="Your email" required
+                class="w-full px-4 py-2 border rounded mb-3" />
+            <button type="submit" class="bg-purple-600 text-white px-6 py-2 rounded hover:bg-purple-700 w-full">Notify
+                Me</button>
+            <p id="waitlist-status" class="text-sm mt-2"></p>
+        </form>
+        <button onclick="closeModal()" class="mt-4 text-sm text-gray-500 hover:underline">Cancel</button>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+{
+  "name": "viabolat",
+  "version": "1.0.0",
+  "description": "Production-ready automation scripts for SQL, Python, AWS, and DevOps. Used by real data teams to save hours. Get started instantly. ",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/assets/css/input.css -o ./src/assets/css/styles.css --minify",
+    "watch:css": "tailwindcss -i ./src/assets/css/input.css -o ./src/assets/css/styles.css --watch",
+    "build": "npm run build:css && eleventy",
+    "start": "concurrently \"npm:watch:css\" \"eleventy --serve\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^8.2.2",
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.4"
+  }
+}
