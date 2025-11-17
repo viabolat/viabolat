@@ -3,36 +3,36 @@ layout: "base.html"
 title: "viabolat | Home"
 description: "Production-ready automation scripts for SQL, Python, AWS, and DevOps. Used by real data teams to save
 hours. Get started instantly."
+keywords: "SQL, Python, AWS, DevOps, Data Quality, Automation, Scripts"
+image: "/assets/images/debug_logo.png"
 ---
 
 <!-- Hero Section -->
 <section class="bg-gradient-to-br from-blue-50 to-purple-50 py-20">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 class="text-5xl md:text-6xl font-bold mb-6 animate-fade-in-up">
-            Get Your Business Reports & Tasks <br />
-            <span class="gradient-text">Done Automatically</span> — No Tech Skills Needed
+            Stop Debugging. Get a Fixed-Rate Data Health Diagnosis <br />
+            <span class="gradient-text">for Your Production Pipelines</span>
         </h1>
-        <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto animate-fade-in-up animate-delay-100">
-            Stop spending hours on paperwork and spreadsheets. Receive daily sales, invoices, and task summaries
-            <br />
-            delivered straight to your email or WhatsApp — simple, fast, and hassle-free.
+        <p class="text-xl text-gray-600 mb-8 max-w-4xl mx-auto animate-fade-in-up animate-delay-100">
+            We use production-tested SQL and AWS scripts to find critical flaws (nulls, temporal gaps, outliers)
+            in your data—guaranteeing actionable insights in <strong>4 hours or less.</strong>
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animate-delay-200">
             <a href="#contact"
                 class="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
-                Get Your Free Automated Report
+                <strong>Book Your 4-Hour Audit</strong>
             </a>
         </div>
         <p class="text-sm text-gray-500 mt-4 animate-fade-in-up animate-delay-300">
-            <i class="fas fa-check-circle text-green-500 mr-1"></i> Trusted by local businesses for saving time and
-            hassle
+            <i class="fas fa-check-circle text-green-500 mr-1"></i> Specializing in AWS Athena, Glue, and Redshift Data
+            Quality
         </p>
     </div>
 </section>
 
-
 <!-- Logo Cloud -->
-<section class="py-12 bg-white">
+<section class="py-12 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-center">
 
@@ -53,6 +53,56 @@ hours. Get started instantly."
             </div>
             <div class="flex justify-center">
                 <img src="https://cdn.zapier.com/zapier/images/favicon.ico" alt="Zapier Logo" class="h-8 w-8">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Demo Section -->
+<section id="demo" class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl font-bold mb-4">Discover Data Reliability: See the Impact</h2>
+        <p class="text-xl text-gray-600 mb-8">We transform chaos into certainty. Our specialized audit fixes the three
+            core issues: <strong>broken metrics, missing data, and system failure.</strong></p>
+
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
+
+            <div class="aspect-video relative overflow-hidden">
+                <video class="absolute top-0 left-0 w-full h-full object-cover" autoplay loop muted playsinline
+                    poster="/src/assets/images/viabolat_video_placeholder.jpg">
+                    <source src="/assets/images/viabolat_index_vid_logo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+            </div>
+
+            <div class="p-8">
+                <h3 class="text-xl font-semibold mb-4 text-left">What you will see in this audit:</h3>
+                <div class="grid sm:grid-cols-2 gap-4 text-left mb-6">
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span>Flagging Statistical Outliers (Custom Business Bounds)</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span>Detecting Missing Dates/Gaps in Time Series Data</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span>Enforcing Relational Integrity (Orphan Record Check)</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                        <span>Instant Null and Duplicate Row Validation</span>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#contact"
+                        class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors shadow-lg hover:shadow-xl">
+                        Ready to Audit? Book Your Check
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -329,180 +379,78 @@ hours. Get started instantly."
     </div>
 </section>
 
-<!-- Demo Section -->
-<!-- <section id="demo" class="py-20 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl font-bold mb-4">See viabolat in Action</h2>
-            <p class="text-xl text-gray-600 mb-8">Watch how these scripts solve real data engineering problems</p>
-
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
-                <div class="aspect-video bg-gray-900 flex items-center justify-center">
-                    <div class="text-center p-8">
-                        <i class="fas fa-play-circle text-5xl text-white opacity-50 mb-4"></i>
-                        <p class="text-white opacity-70">Demo Video: SQL Data Quality Audit in Action</p>
-                    </div>
-                </div>
-
-                <div class="p-8">
-                    <h3 class="text-xl font-semibold mb-4 text-left">What's covered in the demo:</h3>
-                    <div class="grid sm:grid-cols-2 gap-4 text-left mb-6">
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Running automated data quality checks</span>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Interpreting the audit results</span>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Customizing thresholds for your needs</span>
-                        </div>
-                        <div class="flex items-start">
-                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
-                            <span>Integrating with your existing pipelines</span>
-                        </div>
-                    </div>
-
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="https://viabolat.gumroad.com/l/debugging-kit" target="_blank"
-                            class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors shadow-lg hover:shadow-xl">
-                            Get the Starter kit - $19
-                        </a>
-                        <a href="#pricing"
-                            class="border border-gray-300 hover:border-gray-400 text-gray-700 px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 transition-colors">
-                            View Pricing Options
-                        </a>
-                    </div>
-
-                    <p class="text-sm text-gray-500 mt-4">
-                        <i class="fas fa-lock-open mr-1"></i> Instant download
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
 <!-- Pricing Section -->
-<section id="projects" class="py-20 bg-gray-50">
+<section id="pricing" class="py-20 bg-gray-50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold mb-4">Our Projects</h2>
-            <p class="text-xl text-gray-600">A collection of complimentary tools and resources.</p>
-        </div>
-
-        <div>
-            <!-- FolderOffloader Add-On -->
-            <div class="max-w-6xl mx-auto px-6 lg:px-8 mb-12 border-b border-gray-300 pb-12">
-                <h4 class="text-xl font-semibold text-gray-600 mb-4">Free Tool</h4>
-                <div
-                    class="bg-gray-800 rounded-2xl p-8 shadow-xl flex flex-col md:flex-row items-center justify-between gap-8">
-                    <div class="flex-1">
-                        <h3 class="text-2xl font-semibold text-white mb-2">FolderOffloader Kit for macOS</h3>
-                        <p class="text-gray-300 mb-4">
-                            A lightweight, automation-friendly Bash kit that frees up disk space by moving large
-                            folders
-                            to an external drive — without breaking access. Full access is preserved through
-                            symbolic links.
-                            Perfect for anyone who wants more space without losing track of their files.
-                        </p>
-                        <ul class="text-gray-400 text-sm mb-4 list-disc pl-5">
-                            <li>No installers — just clean shell scripts</li>
-                            <li>Easy to reverse or customize</li>
-                            <li>Completely free — includes lifetime updates</li>
-                        </ul>
-                        <a href="https://viabolat.gumroad.com/l/macos_offloader" target="_blank"
-                            class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-2 px-5 rounded-lg transition"
-                            rel="noopener noreferrer" download>
-                            Download the Kit
-                        </a>
-                    </div>
-                    <div class="flex-shrink-0">
-                        <img src="/assets/images/offloader.png" alt="FolderOffloader Preview"
-                            class="rounded-lg shadow-lg w-full max-w-xs md:max-w-sm">
-                    </div>
-                </div>
-            </div>
-
+            <h2 class="text-4xl font-bold mb-4">Pricing: Service & Licensing</h2>
+            <p class="text-xl text-gray-600">Choose the option that delivers the fastest confidence for your data team.
+            </p>
         </div>
 
         <div class="grid md:grid-cols-2 gap-8">
-            <!-- Starter Plan -->
-            <div class="pricing-card bg-white p-8 rounded-xl shadow-sm border-2 border-gray-300 relative">
-                <h3 class="text-2xl font-bold mb-2">Debugging and Automation Kit
-                </h3>
-                <p class="text-gray-600 mb-6">A curated collection of real-world Python, SQL, and
-                    AWS
-                    Glue
-                    snippets
-                    — no fluff, just solutions.</p>
-                <div class="text-4xl font-bold mb-6">Free</div>
+            <div class="pricing-card bg-white p-8 rounded-xl shadow-xl border-4 border-blue-600 relative">
+                <h3 class="text-3xl font-bold mb-2 text-blue-600">Fixed-Rate Data Audit</h3>
+                <p class="text-gray-600 mb-6">Expert diagnosis performed on your critical production table.</p>
+                <div class="text-5xl font-bold mb-6">$599</div>
                 <ul class="space-y-3 mb-8">
-                    <li><i class="fas fa-check text-green-500 mr-2"></i> Fix bugs faster</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i> Validate and clean data</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i> Automate using proven patterns</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i> SQL metadata + table audit queries</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i> Python: AWS Glue filtering, doc ID deletion
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> <strong>Guaranteed 4-hour turnaround</strong>
+                        on diagnosis
                     </li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i> Lambda triggers for orchestration</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i> Data cleanup & validation recipes</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i> Ideal for: data engineers, automation pros,
-                        and founders solving messy data issues fast.</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i> Includes lifetime updates.</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Report on <strong>10+ Data Quality
+                            Checks</strong> (Nulls,
+                        Duplicates, Outliers)</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Temporal Completeness and Anomaly Detection
+                    </li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> High-level schema and metadata review</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Actionable PDF report of all critical findings
+                    </li>
                 </ul>
-                <div
-                    class="block w-full bg-gray-300 text-gray-500 text-center py-3 rounded-lg font-semibold cursor-not-allowed">
-                    Coming Soon</div>
+                <a href="#contact"
+                    class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-3 rounded-lg font-semibold transition-colors">
+                    Start Your Audit Now
+                </a>
             </div>
 
-            <!-- Zap Error Parser Card -->
             <div class="pricing-card bg-white p-8 rounded-xl shadow-sm border-2 border-gray-300 relative">
-                <h3 class="text-2xl font-bold mb-2">Zap Error Parser
-                </h3>
-                <p class="text-gray-600 mb-6">Stop wasting time deciphering failed Zaps.</p>
-                <div class="text-4xl font-bold mb-6">Free</div>
+                <h3 class="text-2xl font-bold mb-2">Debugging Kit License</h3>
+                <p class="text-gray-600 mb-6">The proven SQL, Python, and AWS scripts used in the professional audit.
+                </p>
+                <div class="text-4xl font-bold mb-6">$399</div>
                 <ul class="space-y-3 mb-8">
-                    <li><i class="fas fa-check text-green-500 mr-2"></i> Upload your Zapier export (CSV or JSON)
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> <strong>Full Access</strong> to 50+
+                        Production-Ready Scripts
                     </li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i> See what broke, where, and how often</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i> Group errors by app, Zap, or error type
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> SQL, Python, AWS Glue/DevOps Utilities</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Run data quality checks internally, forever
                     </li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i> Identify root causes instantly</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i> Export a clean client-friendly report (CSV
-                        or PDF)</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i> 100% local. One-time purchase. Instant
-                        download.</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i> Works on Windows and Linux (MacOS in the
-                        works)</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i> ZIP file includes the full parser app +
-                        simple instructions</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i> No signup. No API keys. No cloud. Just
-                        clarity.</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i> Your Data Never Leaves Your Machine</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Ideal for: Data Engineers and teams needing
+                        continuous self-service debugging</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i> Includes lifetime updates.</li>
                 </ul>
-                <div
-                    class="block w-full bg-gray-300 text-gray-500 text-center py-3 rounded-lg font-semibold cursor-not-allowed">
-                    Coming Soon</div>
+                <a href="#contact"
+                    class="block w-full bg-gray-800 hover:bg-gray-700 text-white text-center py-3 rounded-lg font-semibold transition-colors">
+                    Contact for Licensing
+                </a>
             </div>
         </div>
     </div>
 </section>
 
-
 <!-- Contact Section -->
 <section id="contact" class="py-20 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-4xl font-bold mb-4">Need Custom Automation?</h2>
-        <p class="text-xl text-gray-600 mb-8">Beyond the standard scripts? Let's build something tailored for your
-            data infrastructure.</p>
+        <h2 class="text-4xl font-bold mb-4">Ready to Fix Critical Data Bugs?</h2>
+        <p class="text-xl text-gray-600 mb-8">Book your Audit directly or discuss a custom Data Quality implementation.
+        </p>
 
         <div class="bg-gray-50 rounded-xl shadow-sm p-8 max-w-2xl mx-auto text-center">
-            <a id="contact-link" href="#"
+            <a id="contact-link" href="mailto:contact@viabolat.com"
                 class="inline-block w-full max-w-xs bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-4 rounded-lg font-semibold text-lg transition-transform transform hover:scale-105">
-                <i class="fas fa-envelope mr-2"></i> Contact Us
+                <i class="fas fa-envelope mr-2"></i> Contact
             </a>
-            <p class="mt-6 text-gray-600">Or email us directly at:</p>
-            <p id="contact-email" class="text-indigo-600 font-semibold text-lg mt-1 select-all"></p>
+            <p class="mt-6 text-gray-600">Email us directly:</p>
+            <p id="contact-email" class="text-indigo-600 font-semibold text-lg mt-1 select-all">contact@viabolat.com</p>
         </div>
     </div>
 </section>
