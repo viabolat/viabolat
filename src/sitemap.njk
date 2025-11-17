@@ -2,7 +2,6 @@
 permalink: /sitemap.xml
 eleventyExcludeFromCollections: true
 ---
-{%- set sitemap_content %}
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     {%- for page in collections.all %}
@@ -10,7 +9,8 @@ eleventyExcludeFromCollections: true
     <url>
         <loc>https://viabolat.com{{ page.url | url }}</loc>
         <lastmod>{{ page.date.toISOString() }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>{{ '1.0' if page.url == '/' else '0.8' }}</priority>
     </url>
     {%- endif %}{%- endfor %}
-</urlset>{% endset -%}
-{{ sitemap_content | safe }}
+</urlset>
