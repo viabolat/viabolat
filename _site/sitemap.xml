@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://viabolat.com/about/</loc>
+        <lastmod>2025-10-07T20:14:30.113Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://viabolat.com/</loc>
+        <lastmod>2025-10-07T20:14:30.213Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+</urlset>
