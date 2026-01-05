@@ -3,7 +3,7 @@ name: Deploy to Host Gator
 on:
   push:
     branches:
-      - development
+      - main
   workflow_dispatch:
 
 jobs:
