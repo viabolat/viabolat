@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
         </button>
         <div id="mobile-links" class="space-y-8 text-center">
           <a href="/#features" class="block text-2xl font-medium text-gray-900 hover:text-indigo-600">Features</a>
-          <a href="/#scripts" class="block text-2xl font-medium text-gray-900 hover:text-indigo-600">Our Solutions</a>
           <a href="/#testimonials" class="block text-2xl font-medium text-gray-900 hover:text-indigo-600">Testimonials</a>
           <a href="/#pricing" class="block text-2xl font-medium text-gray-900 hover:text-indigo-600">Pricing</a>
           <a href="/#contact" class="block text-2xl font-medium text-gray-900 hover:text-indigo-600">Contact</a>
