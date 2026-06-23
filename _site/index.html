@@ -43,8 +43,48 @@
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" href="/assets/images/logo.svg" type="image/svg+xml" />
 
-    <link rel="stylesheet" href="/assets/css/styles.css?v=809e419c" />
+    <link rel="stylesheet" href="/assets/css/styles.css?v=11b0b8a9" />
     <script src="/assets/js/script.js?v=d64231ae" defer></script>
+
+    <!-- Structured data (schema.org) — real business + founder only; no ratings/reviews -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://viabolat.com/#business",
+          "name": "viabolat",
+          "url": "https://viabolat.com",
+          "image": "https://viabolat.com/assets/images/logo.svg",
+          "logo": "https://viabolat.com/assets/images/logo.svg",
+          "email": "contact@viabolat.com",
+          "description": "Automation repair and maintenance — diagnosing, fixing, and maintaining broken Zapier, Make, webhook, API, and Python automations, at fixed prices.",
+          "areaServed": "Worldwide",
+          "knowsAbout": ["Zapier", "Make", "Webhooks", "REST APIs", "Python automation", "Data pipelines"],
+          "sameAs": ["https://github.com/viabolat", "https://linkedin.com/in/ahmetbolat"],
+          "founder": { "@id": "https://viabolat.com/#founder" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://viabolat.com/#founder",
+          "name": "Ahmet Bolat",
+          "jobTitle": "Automation Engineer",
+          "url": "https://viabolat.com",
+          "worksFor": { "@id": "https://viabolat.com/#business" },
+          "description": "Automation and data engineer with enterprise experience at Accenture (data engineering, 2023-2025) and production automation at Karma Graphics (2016-2022).",
+          "sameAs": ["https://linkedin.com/in/ahmetbolat", "https://github.com/viabolat"]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://viabolat.com/#website",
+          "url": "https://viabolat.com",
+          "name": "viabolat",
+          "publisher": { "@id": "https://viabolat.com/#business" }
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body class="min-h-screen flex flex-col bg-ink-950 text-gray-900">
@@ -114,8 +154,8 @@
                 <p class="text-sm text-gray-400 mt-1">Typical fix turnaround</p>
             </div>
             <div class="reveal reveal-delay-1">
-                <p class="text-4xl font-bold text-primary-300"><span class="stat-num" data-count-to="14" data-suffix="-day">0</span></p>
-                <p class="text-sm text-gray-400 mt-1">Bug warranty on every fix</p>
+                <p class="text-4xl font-bold text-primary-300"><span class="stat-num" data-count-to="24" data-suffix="-hr">0</span></p>
+                <p class="text-sm text-gray-400 mt-1">Fixed-price quote turnaround</p>
             </div>
             <div class="reveal reveal-delay-2">
                 <p class="text-4xl font-bold text-primary-300"><span class="stat-num" data-count-to="100" data-suffix="%">0</span></p>
@@ -229,7 +269,7 @@
                 <div class="w-14 h-14 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
                 <h3 class="text-xl font-bold mb-2">Fixed. Documented. Maintained.</h3>
                 <p class="text-gray-600">You get a working system, full documentation, and the option for a monthly maintenance plan so it never breaks again.</p>
-                <p class="text-sm text-gray-500 mt-3">Every fix ships with a 14-day bug warranty and a plain-English handoff.</p>
+                <p class="text-sm text-gray-500 mt-3">Every fix ships with full documentation and a plain-English handoff.</p>
             </div>
         </div>
     </div>
@@ -254,7 +294,7 @@
                     <li><i class="fas fa-check text-green-500 mr-2"></i>Root cause diagnosis</li>
                     <li><i class="fas fa-check text-green-500 mr-2"></i>Full fix + rebuild if needed</li>
                     <li><i class="fas fa-check text-green-500 mr-2"></i>Documentation &amp; handoff</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i>14-day bug warranty</li>
+                    <li><i class="fas fa-check text-green-500 mr-2"></i>Clear fixed scope &amp; price</li>
                     <li class="text-gray-400"><i class="fas fa-times text-gray-300 mr-2"></i>No ongoing support</li>
                 </ul>
                 <a href="mailto:contact@viabolat.com?subject=Fix and Walk Away"
@@ -332,6 +372,12 @@
             </div>
         </div>
         <p class="text-center text-primary-300 font-semibold mt-10 reveal">We stick around. Monthly maintenance keeps it from breaking again.</p>
+        <p class="text-center text-sm text-gray-400 mt-4 reveal">
+            Verify it yourself —
+            <a href="https://linkedin.com/in/ahmetbolat" target="_blank" rel="noopener noreferrer" class="text-primary-300 underline hover:text-white">work history on LinkedIn</a>
+            ·
+            <a href="https://github.com/viabolat" target="_blank" rel="noopener noreferrer" class="text-primary-300 underline hover:text-white">code on GitHub</a>
+        </p>
     </div>
 </section>
 
@@ -343,24 +389,49 @@
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
+            <!-- Case study: Upwork extraction -->
             <div class="reveal card bg-gray-50 p-8 rounded-xl border border-gray-200">
-                <p class="text-gray-700 mb-6">"Needed 131 scanned PDFs converted to Excel with crossed-out name detection. Delivered in 10 days with 99.9% accuracy."</p>
-                <p class="font-semibold text-sm">Upwork Client</p>
-                <p class="text-gray-500 text-sm">Document extraction project</p>
+                <p class="text-3xl font-bold gradient-text">99.9%</p>
+                <p class="text-xs text-gray-500 uppercase tracking-wide mb-5">accuracy · delivered in 10 days</p>
+                <div class="space-y-3 text-sm">
+                    <p><span class="font-semibold text-gray-900">Problem</span> <span class="text-gray-600">131 scanned PDFs to convert to Excel, with crossed-out names to detect and exclude.</span></p>
+                    <p><span class="font-semibold text-gray-900">Approach</span> <span class="text-gray-600">An OCR + detection pipeline with automated validation passes.</span></p>
+                    <p><span class="font-semibold text-gray-900">Result</span> <span class="text-gray-600">Delivered at 99.9% accuracy in 10 days.</span></p>
+                </div>
+                <p class="font-semibold text-sm mt-6 pt-4 border-t border-gray-200">Upwork · document extraction</p>
             </div>
 
+            <!-- Case study: Accenture -->
             <div class="reveal reveal-delay-1 card bg-gray-50 p-8 rounded-xl border border-gray-200">
-                <p class="text-gray-700 mb-6">"Built production data pipelines and automation for enterprise clients. Specialized in fixing manual workflows and data quality issues."</p>
-                <p class="font-semibold text-sm">Accenture</p>
-                <p class="text-gray-500 text-sm">Enterprise data engineering, 2023–2025</p>
+                <p class="text-3xl font-bold gradient-text">Enterprise</p>
+                <p class="text-xs text-gray-500 uppercase tracking-wide mb-5">data engineering · 2023–2025</p>
+                <div class="space-y-3 text-sm">
+                    <p><span class="font-semibold text-gray-900">Problem</span> <span class="text-gray-600">Manual workflows and data-quality issues across enterprise clients.</span></p>
+                    <p><span class="font-semibold text-gray-900">Approach</span> <span class="text-gray-600">Built production data pipelines and automation.</span></p>
+                    <p><span class="font-semibold text-gray-900">Result</span> <span class="text-gray-600">Specialized in fixing brittle manual workflows at scale.</span></p>
+                </div>
+                <p class="font-semibold text-sm mt-6 pt-4 border-t border-gray-200">Accenture</p>
             </div>
 
+            <!-- Case study: Karma Graphics -->
             <div class="reveal reveal-delay-2 card bg-gray-50 p-8 rounded-xl border border-gray-200">
-                <p class="text-gray-700 mb-6">"Automated job tracking, file validation, and production reporting. Reduced rework by 40% through Python-based quality checks."</p>
-                <p class="font-semibold text-sm">Karma Graphics</p>
-                <p class="text-gray-500 text-sm">Production automation, 2016–2022</p>
+                <p class="text-3xl font-bold gradient-text">~40%</p>
+                <p class="text-xs text-gray-500 uppercase tracking-wide mb-5">less rework · 2016–2022</p>
+                <div class="space-y-3 text-sm">
+                    <p><span class="font-semibold text-gray-900">Problem</span> <span class="text-gray-600">Manual job tracking, file validation, and production reporting.</span></p>
+                    <p><span class="font-semibold text-gray-900">Approach</span> <span class="text-gray-600">Python-based quality checks and automation.</span></p>
+                    <p><span class="font-semibold text-gray-900">Result</span> <span class="text-gray-600">Cut rework by roughly 40%.</span></p>
+                </div>
+                <p class="font-semibold text-sm mt-6 pt-4 border-t border-gray-200">Karma Graphics · production automation</p>
             </div>
         </div>
+
+        <p class="text-center text-gray-500 text-sm mt-12 reveal">
+            Full work history on
+            <a href="https://linkedin.com/in/ahmetbolat" target="_blank" rel="noopener noreferrer" class="text-primary-600 font-semibold underline">LinkedIn</a>
+            · code on
+            <a href="https://github.com/viabolat" target="_blank" rel="noopener noreferrer" class="text-primary-600 font-semibold underline">GitHub</a>
+        </p>
     </div>
 </section>
 
@@ -399,7 +470,7 @@
                     <i class="faq-icon fas fa-plus text-primary-600 ml-4"></i>
                 </button>
                 <div class="faq-panel" id="faq3">
-                    <div><p class="text-gray-600 pb-4">Every fix ships with a 14-day bug warranty. For ongoing peace of mind, the Fix &amp; Maintain plan adds monthly health checks and priority response so problems get caught before they cost you.</p></div>
+                    <div><p class="text-gray-600 pb-4">Every fix is fully documented, so anything that regresses is quick to trace. For ongoing peace of mind, the Fix &amp; Maintain plan adds monthly health checks and priority response so problems get caught before they cost you.</p></div>
                 </div>
             </div>
 
@@ -460,6 +531,46 @@
         </p>
     </div>
 </section>
+
+<!-- FAQ structured data (mirrors the on-page FAQ; homepage only) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How fast can you fix my automation?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Most fixes turn around in 48-72 hours once scope is agreed. Larger rebuilds are delivered in 7-10 days. You'll always get a fixed-price quote within 24 hours of describing the problem." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the price really fixed?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. You approve a fixed price before any work starts - no hourly meters, no surprise invoices. If the scope genuinely changes, we agree a new fixed price before continuing." }
+    },
+    {
+      "@type": "Question",
+      "name": "What if it breaks again after you fix it?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Every fix is fully documented, so anything that regresses is quick to trace. For ongoing peace of mind, the Fix & Maintain plan adds monthly health checks and priority response so problems get caught before they cost you." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you build new automations, or only fix broken ones?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Both. Most clients come with something broken, but if the original attempt is beyond repair we'll rebuild it properly - documented and maintainable from day one." }
+    },
+    {
+      "@type": "Question",
+      "name": "What tools and platforms do you work with?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Zapier, Make, webhooks, REST APIs, and custom Python scripts - plus the data plumbing behind them (spreadsheets, databases, file pipelines). If it moves data between systems, it's in scope." }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between the $599 diagnostic and a fix?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The diagnostic is a focused analysis that identifies the root cause and gives you fix options with estimates - no implementation bundled. If you proceed with a build, the fee is applied to it. It's non-refundable once delivered." }
+    }
+  ]
+}
+</script>
 
     </main>
     <footer class="bg-ink-950 border-t border-white/10 text-white py-12">
