@@ -9,6 +9,7 @@
     <!-- SEO Meta -->
     <meta name="description" content="{{ description }}">
     <meta name="robots" content="{{ 'noindex, follow' if noindex else 'index, follow' }}">
+    <meta name="theme-color" content="#06060c">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://viabolat.com{{ page.url }}" />
@@ -46,9 +47,9 @@
     <script src="/assets/js/script.js" defer></script>
 </head>
 
-<body class="bg-gray-50 text-gray-900">
+<body class="min-h-screen flex flex-col bg-ink-950 text-gray-900">
     {% include "header.html" %}
-    <main>
+    <main class="flex-grow">
         {{ content | safe }}
     </main>
     {% include "footer.html" %}

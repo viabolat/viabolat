@@ -9,6 +9,7 @@
     <!-- SEO Meta -->
     <meta name="description" content="viabolat — automation repair and maintenance for small businesses. No fluff, no disappearing acts.">
     <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#06060c">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://viabolat.com/about/" />
@@ -46,8 +47,8 @@
     <script src="/assets/js/script.js" defer></script>
 </head>
 
-<body class="bg-gray-50 text-gray-900">
-    <header class="bg-gradient-to-r from-primary-600 to-secondary-600 shadow-lg sticky top-0 z-50">
+<body class="min-h-screen flex flex-col bg-ink-950 text-gray-900">
+    <header class="bg-ink-950/80 backdrop-blur border-b border-white/10 sticky top-0 z-50">
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
         <div class="flex justify-between items-center py-4">
             <a href="/" title="viabolat Home" class="hover:opacity-90 transition-opacity flex items-center">
@@ -56,11 +57,13 @@
                 </div>
                 <span class="text-xl font-bold text-white italic">viabolat</span>
             </a>
-            <div class="hidden md:flex space-x-8">
-                <a href="/#features" class="text-white hover:text-primary-200 transition-colors nav-link">How It Works</a>
-                <a href="/#pricing" class="text-white hover:text-primary-200 transition-colors nav-link">Pricing</a>
-                <a href="/#testimonials" class="text-white hover:text-primary-200 transition-colors nav-link">Results</a>
-                <a href="/#contact" class="text-white hover:text-primary-200 transition-colors nav-link">Contact</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="/#how" class="text-gray-200 hover:text-primary-300 transition-colors nav-link">How It Works</a>
+                <a href="/#fixes" class="text-gray-200 hover:text-primary-300 transition-colors nav-link">What We Fix</a>
+                <a href="/#pricing" class="text-gray-200 hover:text-primary-300 transition-colors nav-link">Pricing</a>
+                <a href="/#testimonials" class="text-gray-200 hover:text-primary-300 transition-colors nav-link">Results</a>
+                <a href="/#faq" class="text-gray-200 hover:text-primary-300 transition-colors nav-link">FAQ</a>
+                <a href="/#contact" class="text-gray-200 hover:text-primary-300 transition-colors nav-link">Contact</a>
             </div>
             <button class="md:hidden text-white" aria-label="Open navigation menu">
                 <i class="fas fa-bars text-xl"></i>
@@ -69,16 +72,16 @@
     </nav>
 </header>
 
-    <main>
+    <main class="flex-grow">
         
 <!-- HERO -->
-<section class="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+<section class="section-dark gradient-mesh grid-overlay py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <h1 class="reveal text-4xl md:text-6xl font-bold mb-6 leading-tight">
             Most automation problems<br />
-            <span class="gradient-text">aren't technical. They're abandonment.</span>
+            <span class="shimmer-text">aren't technical. They're abandonment.</span>
         </h1>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+        <p class="reveal reveal-delay-1 text-xl text-gray-300 max-w-2xl mx-auto">
             Someone built it. It worked. Then it didn't. And the person who built it is gone.
             That's where viabolat comes in.
         </p>
@@ -86,56 +89,56 @@
 </section>
 
 <!-- THE PROBLEM -->
-<section class="py-20 bg-white">
+<section class="section-light py-20">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold mb-8">Here's what usually happens</h2>
+        <h2 class="reveal text-3xl font-bold mb-8">Here's what usually happens</h2>
         <div class="space-y-6 text-lg text-gray-600">
-            <p>A business hires a freelancer or consultant to set up an automation — Zapier, Make, a Python script, an API integration. It works great for a few months.</p>
-            <p>Then something changes. An API updates. A field name shifts. A service gets deprecated. And the automation quietly breaks.</p>
-            <p>Nobody notices until someone on your team is doing it manually again — quietly, without telling anyone, because they don't want to cause a fuss.</p>
-            <p>By the time it surfaces, you've lost weeks of productivity. And the person who built it? Unavailable, expensive to re-engage, or just gone.</p>
-            <p class="text-gray-900 font-semibold text-xl">That's the gap viabolat fills.</p>
+            <p class="reveal">A business hires a freelancer or consultant to set up an automation — Zapier, Make, a Python script, an API integration. It works great for a few months.</p>
+            <p class="reveal">Then something changes. An API updates. A field name shifts. A service gets deprecated. And the automation quietly breaks.</p>
+            <p class="reveal">Nobody notices until someone on your team is doing it manually again — quietly, without telling anyone, because they don't want to cause a fuss.</p>
+            <p class="reveal">By the time it surfaces, you've lost weeks of productivity. And the person who built it? Unavailable, expensive to re-engage, or just gone.</p>
+            <p class="reveal text-gray-900 font-semibold text-xl">That's the gap viabolat fills.</p>
         </div>
     </div>
 </section>
 
 <!-- WHAT'S DIFFERENT -->
-<section class="py-20 bg-gray-50">
+<section class="section-tint py-20">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold mb-12 text-center">What makes this different</h2>
+        <h2 class="reveal text-3xl font-bold mb-12 text-center">What makes this different</h2>
         <div class="grid md:grid-cols-3 gap-8">
 
-            <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
+            <div class="reveal feature-card bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
                 <div class="text-4xl mb-4">🔍</div>
                 <h3 class="text-xl font-bold mb-3">Diagnosis first</h3>
                 <p class="text-gray-600">Before any work starts, viabolat tells you exactly what's broken, why, and what it will cost to fix. No surprises, no scope creep.</p>
             </div>
 
-            <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
+            <div class="reveal reveal-delay-1 feature-card bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
                 <div class="text-4xl mb-4">⚡</div>
                 <h3 class="text-xl font-bold mb-3">Fast turnaround</h3>
                 <p class="text-gray-600">Most fixes are delivered in 48–72 hours. Not weeks of back-and-forth. You describe the problem, viabolat fixes it, you get back to work.</p>
             </div>
 
-            <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
+            <div class="reveal reveal-delay-2 feature-card bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
                 <div class="text-4xl mb-4">🤝</div>
                 <h3 class="text-xl font-bold mb-3">I stick around</h3>
                 <p class="text-gray-600">Most consultants disappear after setup. With a maintenance plan, viabolat monitors, updates, and fixes things before you even notice they're broken.</p>
             </div>
 
-            <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
+            <div class="reveal feature-card bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
                 <div class="text-4xl mb-4">💬</div>
                 <h3 class="text-xl font-bold mb-3">Plain English</h3>
                 <p class="text-gray-600">You don't need to know what an API is. You just need to know what's broken and what you want it to do. viabolat handles the rest.</p>
             </div>
 
-            <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
+            <div class="reveal reveal-delay-1 feature-card bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
                 <div class="text-4xl mb-4">💰</div>
                 <h3 class="text-xl font-bold mb-3">Fixed pricing</h3>
                 <p class="text-gray-600">You know the cost before any work starts. No hourly billing surprises. No "that'll be extra" conversations mid-project.</p>
             </div>
 
-            <div class="bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
+            <div class="reveal reveal-delay-2 feature-card bg-white p-8 rounded-xl border border-gray-200 shadow-sm">
                 <div class="text-4xl mb-4">📄</div>
                 <h3 class="text-xl font-bold mb-3">Everything documented</h3>
                 <p class="text-gray-600">Every fix comes with clear documentation. If you ever need someone else to take over, they'll actually be able to understand what was built.</p>
@@ -146,23 +149,23 @@
 </section>
 
 <!-- WHO THIS IS FOR -->
-<section class="py-20 bg-white">
+<section class="section-light py-20">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold mb-8 text-center">Who this is for</h2>
+        <h2 class="reveal text-3xl font-bold mb-8 text-center">Who this is for</h2>
         <div class="space-y-4">
-            <div class="flex items-start gap-4 p-6 bg-blue-50 rounded-xl">
+            <div class="reveal flex items-start gap-4 p-6 bg-primary-50 rounded-xl">
                 <span class="text-2xl">✅</span>
                 <p class="text-gray-700 text-lg"><strong>Small businesses</strong> whose automation broke and they don't know why</p>
             </div>
-            <div class="flex items-start gap-4 p-6 bg-blue-50 rounded-xl">
+            <div class="reveal flex items-start gap-4 p-6 bg-primary-50 rounded-xl">
                 <span class="text-2xl">✅</span>
                 <p class="text-gray-700 text-lg"><strong>Operations managers</strong> whose team is quietly doing manually what used to be automated</p>
             </div>
-            <div class="flex items-start gap-4 p-6 bg-blue-50 rounded-xl">
+            <div class="reveal flex items-start gap-4 p-6 bg-primary-50 rounded-xl">
                 <span class="text-2xl">✅</span>
                 <p class="text-gray-700 text-lg"><strong>Founders</strong> who inherited automation from a previous developer and can't get support</p>
             </div>
-            <div class="flex items-start gap-4 p-6 bg-blue-50 rounded-xl">
+            <div class="reveal flex items-start gap-4 p-6 bg-primary-50 rounded-xl">
                 <span class="text-2xl">✅</span>
                 <p class="text-gray-700 text-lg"><strong>Anyone</strong> paying for a tool that's supposed to save time but isn't</p>
             </div>
@@ -171,19 +174,19 @@
 </section>
 
 <!-- WHO THIS IS NOT FOR -->
-<section class="py-20 bg-gray-50">
+<section class="section-tint py-20">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold mb-8 text-center">Who this is <em>not</em> for</h2>
+        <h2 class="reveal text-3xl font-bold mb-8 text-center">Who this is <em>not</em> for</h2>
         <div class="space-y-4">
-            <div class="flex items-start gap-4 p-6 bg-gray-100 rounded-xl">
+            <div class="reveal flex items-start gap-4 p-6 bg-gray-100 rounded-xl">
                 <span class="text-2xl">❌</span>
                 <p class="text-gray-600 text-lg">Enterprise companies with internal dev teams (you already have people for this)</p>
             </div>
-            <div class="flex items-start gap-4 p-6 bg-gray-100 rounded-xl">
+            <div class="reveal flex items-start gap-4 p-6 bg-gray-100 rounded-xl">
                 <span class="text-2xl">❌</span>
                 <p class="text-gray-600 text-lg">People looking for the cheapest possible option (fast, good, cheap — pick two)</p>
             </div>
-            <div class="flex items-start gap-4 p-6 bg-gray-100 rounded-xl">
+            <div class="reveal flex items-start gap-4 p-6 bg-gray-100 rounded-xl">
                 <span class="text-2xl">❌</span>
                 <p class="text-gray-600 text-lg">Projects that need a full development team (viabolat is a boutique operation — we are transparent about that)</p>
             </div>
@@ -192,17 +195,17 @@
 </section>
 
 <!-- CTA -->
-<section class="py-20 bg-blue-600">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl font-bold mb-4 text-white">Something broken?</h2>
-        <p class="text-xl text-blue-100 mb-8">Tell us what it is. We'll tell you if we can fix it and what it costs. No obligation.</p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+<section class="section-dark gradient-mesh py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <h2 class="reveal text-3xl md:text-4xl font-bold mb-4 text-white">Something broken?</h2>
+        <p class="reveal reveal-delay-1 text-xl text-gray-300 mb-8">Tell us what it is. We'll tell you if we can fix it and what it costs. No obligation.</p>
+        <div class="reveal reveal-delay-2 flex flex-col sm:flex-row gap-4 justify-center">
             <a href="mailto:contact@viabolat.com?subject=My automation is broken"
-                class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+                class="btn-glow btn-magnetic bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors">
                 🚨 Get It Fixed
             </a>
             <a href="/#pricing"
-                class="bg-transparent text-white border-2 border-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+                class="btn-glow bg-white/10 text-white border border-white/20 px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-colors">
                 View Pricing
             </a>
         </div>
@@ -210,56 +213,56 @@
 </section>
 
     </main>
-    <footer class="bg-gradient-to-r from-primary-800 to-secondary-800 text-white py-10 mt-16">
+    <footer class="bg-ink-950 border-t border-white/10 text-white py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid md:grid-cols-3 gap-8">
             <div>
                 <div class="flex items-center mb-4">
                     <div class="mr-1">
-                        <img src="/assets/images/logo.svg" alt="viabolat logo" class="w-10 h-10 mr-25">
+                        <img src="/assets/images/logo.svg" alt="viabolat logo" class="w-10 h-10 mr-2">
                     </div>
                     <span class="text-xl font-bold text-white italic">viabolat</span>
                 </div>
-                <p class="text-primary-200 mb-4">Automation repair and maintenance for small businesses.</p>
+                <p class="text-gray-400 mb-4">Automation repair and maintenance for small businesses.</p>
                 <div class="flex space-x-4">
-                    <a href="https://github.com/viabolat" class="text-white hover:text-primary-200 transition-colors"
+                    <a href="https://github.com/viabolat" class="text-gray-300 hover:text-primary-300 transition-colors"
                         aria-label="GitHub"><i class="fab fa-github"></i></a>
                     <a href="https://linkedin.com/in/ahmetbolat"
-                        class="text-white hover:text-primary-200 transition-colors" aria-label="LinkedIn"><i
+                        class="text-gray-300 hover:text-primary-300 transition-colors" aria-label="LinkedIn"><i
                             class="fab fa-linkedin"></i></a>
                 </div>
             </div>
             <div>
                 <h4 class="text-white font-semibold mb-4">Services</h4>
                 <ul class="space-y-2">
-                    <li><a href="/#features" class="text-primary-200 hover:text-white transition-colors">How It Works</a>
+                    <li><a href="/#how" class="text-gray-400 hover:text-white transition-colors">How It Works</a>
                     </li>
-                    <!-- <li><a href="/#scripts" class="text-primary-200 hover:text-white transition-colors">What's
-                            inside</a>
-                    </li> -->
-                    <li><a href="/#pricing" class="text-primary-200 hover:text-white transition-colors">Pricing</a>
+                    <li><a href="/#fixes" class="text-gray-400 hover:text-white transition-colors">What We Fix</a>
+                    </li>
+                    <li><a href="/#pricing" class="text-gray-400 hover:text-white transition-colors">Pricing</a>
+                    </li>
+                    <li><a href="/#faq" class="text-gray-400 hover:text-white transition-colors">FAQ</a>
                     </li>
                 </ul>
             </div>
             <div>
                 <h4 class="text-white font-semibold mb-4">Company</h4>
                 <ul class="space-y-2">
-                    <li><a href="/#contact" class="text-primary-200 hover:text-white transition-colors">Contact</a></li>
-                    <li><a href="/about" class="text-primary-200 hover:text-white transition-colors">About</a>
+                    <li><a href="/#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    <li><a href="/about" class="text-gray-400 hover:text-white transition-colors">About</a>
                     </li>
-                    <li><a href="/privacy" class="text-primary-200 hover:text-white transition-colors">Privacy</a>
+                    <li><a href="/privacy" class="text-gray-400 hover:text-white transition-colors">Privacy</a>
                     </li>
-                    <li><a href="/terms" class="text-primary-200 hover:text-white transition-colors">Terms</a>
+                    <li><a href="/terms" class="text-gray-400 hover:text-white transition-colors">Terms</a>
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="mt-10 pt-8 border-t border-primary-700 text-center text-sm text-primary-200">
+        <div class="mt-10 pt-8 border-t border-white/10 text-center text-sm text-gray-500">
             <p>&copy; 2026 viabolat. All rights reserved.</p>
         </div>
     </div>
 </footer>
-</div>
 </body>
 
 </html>

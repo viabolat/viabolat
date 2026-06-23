@@ -3,9 +3,11 @@
 @tailwind utilities;
 
 /* Base Styles */
+/* reason: dark ink base — light sections paint over it; prevents the old light
+   gradient from fighting the new dark cinematic hero/CTA bookends. */
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #f5f7fa 0%, #e4e7f1 100%);
+    background: #06060c;
     min-height: 100vh;
 }
 
@@ -222,4 +224,230 @@ html {
 
 [aria-busy="true"] {
     cursor: progress;
+}
+
+/* ============================================================
+   CINEMATIC THEME + MOTION SYSTEM
+   Pure CSS/GPU effects (transform/opacity/filter only).
+   Hybrid rhythm: dark hero/CTA bookends, light readable body.
+   ============================================================ */
+
+/* ---- Hybrid surface primitives ---- */
+.section-dark {
+    background-color: #06060c;
+    /* ink-950 */
+    color: #e7e7f0;
+    position: relative;
+    overflow: hidden;
+    /* clip the blurred mesh so it can't cause horizontal scroll */
+    isolation: isolate;
+}
+
+/* reason: no blanket `.section-dark p` color — its (0,1,1) specificity would
+   override intentional Tailwind text utilities (text-primary-300, text-white).
+   Every dark-section paragraph sets its own text color in the markup. */
+
+.section-light {
+    background-color: #ffffff;
+    color: #111827;
+}
+
+.section-tint {
+    background-color: #f8fafc;
+    color: #111827;
+}
+
+/* ---- Animated gradient-mesh backdrop (GPU compositor only) ---- */
+.gradient-mesh::before {
+    content: "";
+    position: absolute;
+    inset: -30%;
+    z-index: -1;
+    background:
+        radial-gradient(40% 40% at 20% 20%, rgba(139, 92, 246, 0.35), transparent 70%),
+        radial-gradient(40% 40% at 80% 30%, rgba(14, 165, 233, 0.30), transparent 70%),
+        radial-gradient(45% 45% at 50% 80%, rgba(124, 58, 237, 0.25), transparent 70%);
+    filter: blur(40px);
+    will-change: transform, opacity;
+    animation: meshDrift 18s ease-in-out infinite alternate;
+}
+
+@keyframes meshDrift {
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
+        opacity: 0.9;
+    }
+
+    50% {
+        transform: translate3d(2%, -2%, 0) scale(1.08);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate3d(-2%, 2%, 0) scale(1.04);
+        opacity: 0.85;
+    }
+}
+
+/* Static masked grid overlay for depth on dark sections */
+.grid-overlay::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    -webkit-mask-image: radial-gradient(60% 60% at 50% 40%, #000, transparent 80%);
+    mask-image: radial-gradient(60% 60% at 50% 40%, #000, transparent 80%);
+}
+
+/* ---- Animated gradient-text shimmer (hero/heading brand lines) ---- */
+.shimmer-text {
+    background: linear-gradient(110deg, #a78bfa 0%, #38bdf8 30%, #ffffff 50%, #a78bfa 70%, #38bdf8 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: shimmer 6s linear infinite;
+}
+
+@keyframes shimmer {
+    to {
+        background-position: 200% center;
+    }
+}
+
+/* ---- Scroll-reveal with stagger (driven by IntersectionObserver) ---- */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+.reveal-delay-1.is-visible {
+    transition-delay: 0.08s;
+}
+
+.reveal-delay-2.is-visible {
+    transition-delay: 0.16s;
+}
+
+.reveal-delay-3.is-visible {
+    transition-delay: 0.24s;
+}
+
+.reveal-delay-4.is-visible {
+    transition-delay: 0.32s;
+}
+
+/* ---- Glass card (for dark sections) ---- */
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(167, 139, 250, 0.5);
+    box-shadow: 0 20px 40px -20px rgba(124, 58, 237, 0.5);
+}
+
+/* ---- Glow / magnetic buttons ---- */
+.btn-glow {
+    position: relative;
+    transition: transform 0.15s ease, box-shadow 0.3s ease;
+    will-change: transform;
+}
+
+.btn-glow:hover {
+    box-shadow: 0 0 0 1px rgba(167, 139, 250, 0.6), 0 8px 30px -6px rgba(124, 58, 237, 0.6);
+}
+
+.btn-magnetic {
+    transition: transform 0.12s ease-out;
+}
+
+/* ---- Count-up stat numbers (no width jitter while counting) ---- */
+.stat-num {
+    font-variant-numeric: tabular-nums;
+}
+
+/* ---- FAQ accordion (grid-rows transition, no max-height hack) ---- */
+.faq-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.faq-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.35s ease;
+}
+
+.faq-panel.is-open {
+    grid-template-rows: 1fr;
+}
+
+.faq-panel>div {
+    overflow: hidden;
+}
+
+.faq-icon {
+    transition: transform 0.3s ease;
+}
+
+.faq-item.is-open .faq-icon {
+    transform: rotate(45deg);
+}
+
+/* ---- Keyboard focus visibility on dark surfaces ---- */
+.section-dark a:focus-visible,
+.section-dark button:focus-visible,
+.btn-glow:focus-visible,
+.faq-trigger:focus-visible {
+    outline: 2px solid #a78bfa;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* ============================================================
+   REDUCED-MOTION MASTER SWITCH
+   Honors prefers-reduced-motion: forces final/static state.
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .gradient-mesh::before {
+        animation: none !important;
+    }
+
+    .shimmer-text {
+        background-position: 0 0 !important;
+    }
+
+    .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+    }
 }
