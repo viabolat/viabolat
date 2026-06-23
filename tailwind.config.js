@@ -7,11 +7,8 @@ module.exports = {
         sans: ["Poppins", "system-ui", "sans-serif"],
       },
       colors: {
-        // Cinematic dark surface scale for hero + CTA "bookend" sections.
+        // Cinematic dark surface for hero + CTA "bookend" sections.
         ink: {
-          700: "#26263f",
-          800: "#1a1a2e",
-          900: "#0b0b14",
           950: "#06060c",
         },
         primary: {

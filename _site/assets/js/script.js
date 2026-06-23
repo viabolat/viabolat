@@ -64,22 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // --- Animate on Scroll Logic ---
-  const animateOnScroll = () => {
-    const elements = document.querySelectorAll(
-      ".animate-fade-in-up:not(.animated)"
-    );
-    elements.forEach((element) => {
-      const elementPosition = element.getBoundingClientRect().top;
-      const screenPosition = window.innerHeight / 1.2;
-      if (elementPosition < screenPosition) {
-        element.classList.add("animated");
-      }
-    });
-  };
-  window.addEventListener("scroll", animateOnScroll);
-  animateOnScroll(); // Trigger on initial load
-
   // --- Contact Email Obfuscation ---
   // This prevents basic spam bots from scraping the email address
   // by building it with JavaScript after the page loads.
@@ -97,29 +81,38 @@ document.addEventListener("DOMContentLoaded", function () {
     contactEmailDisplay.textContent = fullEmail;
   }
 
-  // --- Scroll Reveal (new .reveal system, IntersectionObserver) ---
-  const revealEls = document.querySelectorAll(".reveal");
-  if (REDUCED || !("IntersectionObserver" in window)) {
-    revealEls.forEach((el) => el.classList.add("is-visible"));
-  } else {
-    const revealObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      },
-      { rootMargin: "0px 0px -10% 0px", threshold: 0.1 }
-    );
-    revealEls.forEach((el) => revealObserver.observe(el));
-  }
+  // Fire onEnter(el) once when each element first scrolls into view, then stop
+  // observing it. When reduced-motion is requested or IntersectionObserver is
+  // unavailable, apply onFallback(el) immediately (final state, no animation).
+  const observeOnce = (els, options, onEnter, onFallback) => {
+    if (!els.length) return;
+    if (REDUCED || !("IntersectionObserver" in window)) {
+      els.forEach(onFallback);
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          onEnter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+    els.forEach((el) => observer.observe(el));
+  };
+
+  // --- Scroll Reveal (.reveal elements fade/slide in on first view) ---
+  const showReveal = (el) => el.classList.add("is-visible");
+  observeOnce(
+    document.querySelectorAll(".reveal"),
+    { rootMargin: "0px 0px -10% 0px", threshold: 0.1 },
+    showReveal,
+    showReveal
+  );
 
   // --- Count-up Stats ---
   // Markup: <span class="stat-num" data-count-to="48" data-suffix="h">0</span>
   // Stats without data-count-to (e.g. ranges) render as static text.
-  const counters = document.querySelectorAll("[data-count-to]");
   const runCount = (el) => {
     const target = parseFloat(el.dataset.countTo);
     const suffix = el.dataset.suffix || "";
@@ -133,26 +126,14 @@ document.addEventListener("DOMContentLoaded", function () {
     };
     requestAnimationFrame(tick);
   };
-  if (counters.length) {
-    if (REDUCED || !("IntersectionObserver" in window)) {
-      counters.forEach((el) => {
-        el.textContent = el.dataset.countTo + (el.dataset.suffix || "");
-      });
-    } else {
-      const countObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              runCount(entry.target);
-              countObserver.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.5 }
-      );
-      counters.forEach((el) => countObserver.observe(el));
+  observeOnce(
+    document.querySelectorAll("[data-count-to]"),
+    { threshold: 0.5 },
+    runCount,
+    (el) => {
+      el.textContent = el.dataset.countTo + (el.dataset.suffix || "");
     }
-  }
+  );
 
   // --- FAQ Accordion (accessible, multi-open) ---
   document.querySelectorAll(".faq-trigger").forEach((btn) => {
@@ -169,13 +150,21 @@ document.addEventListener("DOMContentLoaded", function () {
   // --- Magnetic Buttons (fine pointers only, skip reduced motion) ---
   if (!REDUCED && window.matchMedia("(pointer: fine)").matches) {
     document.querySelectorAll(".btn-magnetic").forEach((btn) => {
+      // Cache the resting rect on enter: mousemove then avoids forcing a layout
+      // read every event, and the offset is measured from the untranslated
+      // position rather than the live (already-translated) one.
+      let rect = null;
+      btn.addEventListener("mouseenter", () => {
+        rect = btn.getBoundingClientRect();
+      });
       btn.addEventListener("mousemove", (e) => {
-        const r = btn.getBoundingClientRect();
-        const x = (e.clientX - r.left - r.width / 2) / r.width;
-        const y = (e.clientY - r.top - r.height / 2) / r.height;
+        if (!rect) return;
+        const x = (e.clientX - rect.left - rect.width / 2) / rect.width;
+        const y = (e.clientY - rect.top - rect.height / 2) / rect.height;
         btn.style.transform = `translate(${x * 8}px, ${y * 8}px)`;
       });
       btn.addEventListener("mouseleave", () => {
+        rect = null;
         btn.style.transform = "";
       });
     });
