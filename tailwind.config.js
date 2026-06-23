@@ -3,7 +3,17 @@ module.exports = {
   content: ["./src/**/*.{html,js,njk}"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Poppins", "system-ui", "sans-serif"],
+      },
       colors: {
+        // Cinematic dark surface scale for hero + CTA "bookend" sections.
+        ink: {
+          700: "#26263f",
+          800: "#1a1a2e",
+          900: "#0b0b14",
+          950: "#06060c",
+        },
         primary: {
           50: "#f5f3ff",
           100: "#ede9fe",
