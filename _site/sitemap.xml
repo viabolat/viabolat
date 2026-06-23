@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://viabolat.com/</loc>
-        <lastmod>2026-06-23T16:41:21.545Z</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://viabolat.com/about/</loc>
-        <lastmod>2026-06-23T16:41:57.393Z</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
         <loc>https://viabolat.com/terms/</loc>
         <lastmod>2026-06-23T16:42:24.869Z</lastmod>
         <changefreq>monthly</changefreq>
@@ -23,5 +11,17 @@
         <lastmod>2026-06-23T16:42:43.125Z</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://viabolat.com/about/</loc>
+        <lastmod>2026-06-23T18:31:50.609Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://viabolat.com/</loc>
+        <lastmod>2026-06-23T18:33:00.245Z</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
     </url>
 </urlset>

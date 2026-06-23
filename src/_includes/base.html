@@ -45,6 +45,46 @@
 
     <link rel="stylesheet" href="/assets/css/styles.css?v={{ assetVersion.css }}" />
     <script src="/assets/js/script.js?v={{ assetVersion.js }}" defer></script>
+
+    <!-- Structured data (schema.org) — real business + founder only; no ratings/reviews -->
+    {% raw %}<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://viabolat.com/#business",
+          "name": "viabolat",
+          "url": "https://viabolat.com",
+          "image": "https://viabolat.com/assets/images/logo.svg",
+          "logo": "https://viabolat.com/assets/images/logo.svg",
+          "email": "contact@viabolat.com",
+          "description": "Automation repair and maintenance — diagnosing, fixing, and maintaining broken Zapier, Make, webhook, API, and Python automations, at fixed prices.",
+          "areaServed": "Worldwide",
+          "knowsAbout": ["Zapier", "Make", "Webhooks", "REST APIs", "Python automation", "Data pipelines"],
+          "sameAs": ["https://github.com/viabolat", "https://linkedin.com/in/ahmetbolat"],
+          "founder": { "@id": "https://viabolat.com/#founder" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://viabolat.com/#founder",
+          "name": "Ahmet Bolat",
+          "jobTitle": "Automation Engineer",
+          "url": "https://viabolat.com",
+          "worksFor": { "@id": "https://viabolat.com/#business" },
+          "description": "Automation and data engineer with enterprise experience at Accenture (data engineering, 2023-2025) and production automation at Karma Graphics (2016-2022).",
+          "sameAs": ["https://linkedin.com/in/ahmetbolat", "https://github.com/viabolat"]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://viabolat.com/#website",
+          "url": "https://viabolat.com",
+          "name": "viabolat",
+          "publisher": { "@id": "https://viabolat.com/#business" }
+        }
+      ]
+    }
+    </script>{% endraw %}
 </head>
 
 <body class="min-h-screen flex flex-col bg-ink-950 text-gray-900">
