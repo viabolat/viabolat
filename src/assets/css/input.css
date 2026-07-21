@@ -219,14 +219,19 @@ html {
    override intentional Tailwind text utilities (text-primary-300, text-white).
    Every dark-section paragraph sets its own text color in the markup. */
 
+/* reason: light/tint sections stack directly; a hairline top border + a tint
+   that is clearly distinct from pure white keeps adjacent bands from visually
+   merging into one slab. Alternate .section-light / .section-tint down the page. */
 .section-light {
     background-color: #ffffff;
     color: #111827;
+    border-top: 1px solid #e6e8f2;
 }
 
 .section-tint {
-    background-color: #f8fafc;
+    background-color: #eef1f8;
     color: #111827;
+    border-top: 1px solid #e6e8f2;
 }
 
 /* ---- Animated gradient-mesh backdrop (GPU compositor only) ---- */

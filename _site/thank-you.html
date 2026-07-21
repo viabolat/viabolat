@@ -7,16 +7,29 @@
     <title>Thank You | viabolat</title>
 
     <!-- SEO Meta -->
-    <meta name="description" content="Thank you for your message. We will get back to you shortly.">
+    <meta name="description" content="Your message has been sent — viabolat will get back to you shortly.">
     <meta name="robots" content="noindex, follow">
+    <meta name="theme-color" content="#06060c">
 
-    <!-- Open Graph (LinkedIn/Instagram) -->
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://viabolat.com/thank-you.html" />
+
+    <!-- SEO Keywords -->
+    <meta name="keywords" content="viabolat, thank you">
+
+    <!-- Open Graph (social sharing) -->
     <meta property="og:title" content="Thank You | viabolat" />
-    <meta property="og:description" content="Thank you for your message. We will get back to you shortly." />
-    <meta property="og:image" content="/assets/images/logo.svg" />
+    <meta property="og:description" content="Your message has been sent — viabolat will get back to you shortly." />
+    <meta property="og:image" content="https://viabolat.com/assets/images/logo.svg" />
     <meta property="og:url" content="https://viabolat.com/thank-you.html" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="viabolat" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Thank You | viabolat">
+    <meta name="twitter:description" content="Your message has been sent — viabolat will get back to you shortly.">
+    <meta name="twitter:image" content="https://viabolat.com/assets/images/logo.svg">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,28 +43,67 @@
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" href="/assets/images/logo.svg" type="image/svg+xml" />
 
-    <link rel="stylesheet" href="/assets/css/styles.css" />
-    <script src="/assets/js/script.js" defer></script>
+    <link rel="stylesheet" href="/assets/css/styles.css?v=0db0fed9" />
+    <script src="/assets/js/script.js?v=0231ded7" defer></script>
+
+    <!-- Structured data (schema.org) — real business + founder only; no ratings/reviews -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://viabolat.com/#business",
+          "name": "viabolat",
+          "url": "https://viabolat.com",
+          "image": "https://viabolat.com/assets/images/logo.svg",
+          "logo": "https://viabolat.com/assets/images/logo.svg",
+          "email": "contact@viabolat.com",
+          "description": "Automation creation, repair, and maintenance — building, diagnosing, fixing, and maintaining Zapier, Make, webhook, API, and Python automations, at fixed prices.",
+          "areaServed": "Worldwide",
+          "knowsAbout": ["Zapier", "Make", "Webhooks", "REST APIs", "Python automation", "Data pipelines"],
+          "sameAs": ["https://github.com/viabolat", "https://linkedin.com/in/ahmetbolat"],
+          "founder": { "@id": "https://viabolat.com/#founder" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://viabolat.com/#founder",
+          "name": "Ahmet Bolat",
+          "jobTitle": "Automation Engineer",
+          "url": "https://viabolat.com",
+          "worksFor": { "@id": "https://viabolat.com/#business" },
+          "description": "Automation and data engineer with enterprise experience at Accenture (data engineering, 2023-2025) and production automation at Karma Graphics (2016-2022).",
+          "sameAs": ["https://linkedin.com/in/ahmetbolat", "https://github.com/viabolat"]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://viabolat.com/#website",
+          "url": "https://viabolat.com",
+          "name": "viabolat",
+          "publisher": { "@id": "https://viabolat.com/#business" }
+        }
+      ]
+    }
+    </script>
 </head>
 
-<body class="bg-gray-50 text-gray-900">
-    <header class="bg-gradient-to-r from-primary-600 to-secondary-600 shadow-lg sticky top-0 z-50">
+<body class="min-h-screen flex flex-col bg-ink-950 text-gray-900">
+    <header class="bg-ink-950/80 backdrop-blur border-b border-white/10 sticky top-0 z-50">
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
         <div class="flex justify-between items-center py-4">
             <a href="/" title="viabolat Home" class="hover:opacity-90 transition-opacity flex items-center">
                 <div class="mr-1">
-                    <img src="/logo.svg" alt="viabolat logo" class="w-5 h-5 fill-white">
+                    <img src="/assets/images/logo.svg" alt="viabolat logo" class="w-10 h-10 mr-2">
                 </div>
                 <span class="text-xl font-bold text-white italic">viabolat</span>
             </a>
-            <div class="hidden md:flex space-x-8">
-                <a href="/#features" class="text-white hover:text-primary-200 transition-colors nav-link">Features</a>
-                <a href="/#scripts" class="text-white hover:text-primary-200 transition-colors nav-link">Our
-                    Solutions</a>
-                <a href="/#testimonials"
-                    class="text-white hover:text-primary-200 transition-colors nav-link">Testimonials</a>
-                <a href="/#projects" class="text-white hover:text-primary-200 transition-colors nav-link">Projects</a>
-                <a href="/#contact" class="text-white hover:text-primary-200 nav-link">Contact</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="/#how" class="text-gray-200 hover:text-primary-300 transition-colors nav-link">How It Works</a>
+                <a href="/#fixes" class="text-gray-200 hover:text-primary-300 transition-colors nav-link">What viabolat Fixes</a>
+                <a href="/#pricing" class="text-gray-200 hover:text-primary-300 transition-colors nav-link">Pricing</a>
+                <a href="/#testimonials" class="text-gray-200 hover:text-primary-300 transition-colors nav-link">Results</a>
+                <a href="/#faq" class="text-gray-200 hover:text-primary-300 transition-colors nav-link">FAQ</a>
+                <a href="/#contact" class="text-gray-200 hover:text-primary-300 transition-colors nav-link">Contact</a>
             </div>
             <button class="md:hidden text-white" aria-label="Open navigation menu">
                 <i class="fas fa-bars text-xl"></i>
@@ -59,86 +111,74 @@
         </div>
     </nav>
 </header>
-    <main>
-        <!-- Thank You Section -->
-<div class="py-20 min-h-[50vh] flex items-center justify-center">
-    <div class="max-w-2xl mx-auto px-4 text-center">
-        <h1 class="text-4xl font-bold text-primary-600 mb-4">Thank you!</h1>
-        <p class="text-lg text-gray-700 mb-8">Your message has been sent. We'll get back to you shortly.</p>
-        <a href="/" class="inline-block text-indigo-600 hover:text-indigo-800 font-semibold transition">
-            ← Back to Home
+
+    <main class="flex-grow">
+        
+<!-- Thank You -->
+<section class="section-dark gradient-mesh grid-overlay flex-grow flex items-center justify-center text-center px-6 py-24">
+    <div class="relative z-10 max-w-2xl mx-auto">
+        <div class="text-6xl mb-6">✅</div>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">Thank you.</h1>
+        <p class="text-lg text-gray-300 mb-8">
+            Your message has been sent. viabolat will get back to you shortly — usually within 24 hours.
+        </p>
+        <a href="/"
+            class="btn-glow btn-magnetic inline-block bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors">
+            Back to home
         </a>
     </div>
-</div>
+</section>
+
     </main>
-    <footer class="bg-gradient-to-r from-primary-800 to-secondary-800 text-white py-10 mt-16">
+    <footer class="bg-ink-950 border-t border-white/10 text-white py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid md:grid-cols-3 gap-8">
             <div>
                 <div class="flex items-center mb-4">
                     <div class="mr-1">
-                        <img src="/assets/images/logo.svg" alt="viabolat logo" class="w-5 h-5 fill-white">
+                        <img src="/assets/images/logo.svg" alt="viabolat logo" class="w-10 h-10 mr-2">
                     </div>
                     <span class="text-xl font-bold text-white italic">viabolat</span>
                 </div>
-                <p class="text-primary-200 mb-4">Data automation that just works, so you don’t have to.</p>
+                <p class="text-gray-400 mb-4">Automation creation, repair, and maintenance for all.</p>
                 <div class="flex space-x-4">
-                    <a href="https://github.com/viabolat" class="text-white hover:text-primary-200 transition-colors"
+                    <a href="https://github.com/viabolat" class="text-gray-300 hover:text-primary-300 transition-colors"
                         aria-label="GitHub"><i class="fab fa-github"></i></a>
                     <a href="https://linkedin.com/in/ahmetbolat"
-                        class="text-white hover:text-primary-200 transition-colors" aria-label="LinkedIn"><i
+                        class="text-gray-300 hover:text-primary-300 transition-colors" aria-label="LinkedIn"><i
                             class="fab fa-linkedin"></i></a>
                 </div>
             </div>
             <div>
-                <h4 class="text-white font-semibold mb-4">Product</h4>
+                <h4 class="text-white font-semibold mb-4">Services</h4>
                 <ul class="space-y-2">
-                    <li><a href="/#features" class="text-primary-200 hover:text-white transition-colors">Features</a>
+                    <li><a href="/#how" class="text-gray-400 hover:text-white transition-colors">How It Works</a>
                     </li>
-                    <li><a href="/#scripts" class="text-primary-200 hover:text-white transition-colors">What's
-                            inside</a>
+                    <li><a href="/#fixes" class="text-gray-400 hover:text-white transition-colors">What viabolat Fixes</a>
                     </li>
-                    <li><a href="/#projects" class="text-primary-200 hover:text-white transition-colors">Projects</a>
+                    <li><a href="/#pricing" class="text-gray-400 hover:text-white transition-colors">Pricing</a>
                     </li>
                 </ul>
             </div>
             <div>
                 <h4 class="text-white font-semibold mb-4">Company</h4>
                 <ul class="space-y-2">
-                    <li><a href="/#contact" class="text-primary-200 hover:text-white transition-colors">Contact</a>
+                    <li><a href="/#faq" class="text-gray-400 hover:text-white transition-colors">FAQ</a>
                     </li>
-                    <li><a href="/about" class="text-primary-200 hover:text-white transition-colors">About</a>
+                    <li><a href="/about" class="text-gray-400 hover:text-white transition-colors">About</a>
                     </li>
-                    <li><a href="/privacy" class="text-primary-200 hover:text-white transition-colors">Privacy</a>
+                    <li><a href="/privacy" class="text-gray-400 hover:text-white transition-colors">Privacy</a>
                     </li>
-                    <li><a href="/terms" class="text-primary-200 hover:text-white transition-colors">Terms</a>
+                    <li><a href="/terms" class="text-gray-400 hover:text-white transition-colors">Terms</a>
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="mt-10 pt-8 border-t border-primary-700 text-center text-sm text-primary-200">
-            <p>&copy; 2025 viabolat. All rights reserved. Built with <i class="fas fa-heart text-red-400"></i> for
-                creators, coders, and curious minds.</p>
+        <div class="mt-10 pt-8 border-t border-white/10 text-center text-sm text-gray-500">
+            <p>&copy; 2026 viabolat. All rights reserved.</p>
         </div>
     </div>
 </footer>
-
-<!-- Waitlist Modal -->
-<div id="waitlist-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-    <div class="bg-white p-6 rounded-lg shadow-lg max-w-md w-full text-center">
-        <h2 class="text-xl font-bold mb-4">Join the Pro Kit Waitlist</h2>
-        <p class="text-gray-600 mb-4">Get exclusive access to our upcoming Pro Kit, which will include advanced
-            scripts, tutorials, and direct support.</p>
-        <form id="waitlist-form">
-            <input type="email" id="waitlist-email" placeholder="Your email" required
-                class="w-full px-4 py-2 border rounded mb-3" />
-            <button type="submit" class="bg-purple-600 text-white px-6 py-2 rounded hover:bg-purple-700 w-full">Notify
-                Me</button>
-            <p id="waitlist-status" class="text-sm mt-2"></p>
-        </form>
-        <button onclick="closeModal()" class="mt-4 text-sm text-gray-500 hover:underline">Cancel</button>
-    </div>
-</div>
 </body>
 
 </html>

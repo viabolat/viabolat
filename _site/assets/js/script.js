@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </button>
         <div id="mobile-links" class="space-y-7 text-center">
           <a href="/#how" class="block text-2xl font-medium text-gray-100 hover:text-primary-300">How It Works</a>
-          <a href="/#fixes" class="block text-2xl font-medium text-gray-100 hover:text-primary-300">What We Fix</a>
+          <a href="/#fixes" class="block text-2xl font-medium text-gray-100 hover:text-primary-300">What viabolat Fixes</a>
           <a href="/#pricing" class="block text-2xl font-medium text-gray-100 hover:text-primary-300">Pricing</a>
           <a href="/#testimonials" class="block text-2xl font-medium text-gray-100 hover:text-primary-300">Results</a>
           <a href="/#faq" class="block text-2xl font-medium text-gray-100 hover:text-primary-300">FAQ</a>
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Fire onEnter(el) once when each element first scrolls into view, then stop
   // observing it. When reduced-motion is requested or IntersectionObserver is
   // unavailable, apply onFallback(el) immediately (final state, no animation).
-  const observeOnce = (els, options, onEnter, onFallback) => {
+  const observeOnce = (els, options, onEnter, onFallback = onEnter) => {
     if (!els.length) return;
     if (REDUCED || !("IntersectionObserver" in window)) {
       els.forEach(onFallback);
@@ -106,7 +106,6 @@ document.addEventListener("DOMContentLoaded", function () {
   observeOnce(
     document.querySelectorAll(".reveal"),
     { rootMargin: "0px 0px -10% 0px", threshold: 0.1 },
-    showReveal,
     showReveal
   );
 
