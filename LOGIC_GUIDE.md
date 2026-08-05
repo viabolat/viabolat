@@ -13,6 +13,33 @@ Do not defer updates to end-of-session.
 **Alternatives rejected:**
 **Accepted risks:**
 
+### 2026-08-05 — Extended cache-busting from CSS/JS to images and video
+**What:** Added a `| bust` Nunjucks filter in `.eleventy.js` that appends an
+8-char MD5 content hash to any site-absolute `/assets/...` path. Applied to the
+favicon, the header/footer logo, and both video posters / `<source>` / download
+links. CSS and JS keep using the existing `src/_data/assetVersion.js`.
+
+**Why:** `.htaccess` caches everything under `/assets` for 30 days against
+stable filenames while HTML is `no-cache`. That was already solved for CSS/JS,
+but images and the two ~3.5MB videos were not — swapping one in place would
+leave returning visitors on the old file for up to a month with no signal.
+
+**Alternatives rejected:**
+- Extending `assetVersion.js` with one key per image — every new asset would
+  need a data-file edit. A filter takes the path directly and needs no upkeep.
+- Memoizing hashes in a `Map` — the config function runs once per process, not
+  per rebuild, so a cached token goes stale under `npm start`. Re-hashing is a
+  few ms per build even with the videos, so correctness wins.
+- Busting `og:image` / `twitter:image` / JSON-LD `logo` — those are canonical
+  identity URLs for crawlers and social scrapers. A stable URL is worth more
+  there than a fresh token, so they are deliberately left alone.
+
+**Accepted risks:**
+- Query-string busting relies on caches keying on the full URL. True for
+  browsers and for the Apache `max-age` rule; a proxy that strips query strings
+  would still serve stale. Filename hashing would be immune but would mean
+  renaming files that Eleventy only passthrough-copies.
+
 ### 2026-08-05 — Reviews: dropped the "Verified" captions, grid → scroll-snap carousel
 **What:** Removed all five `<figcaption>` attribution lines from the testimonials
 block and replaced the `sm:grid-cols-2` grid with a horizontal carousel:
