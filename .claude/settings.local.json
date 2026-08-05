@@ -1,4 +1,7 @@
 {
+  "env": {
+    "CLAUDE_CODE_DISABLE_1M_CONTEXT": "1"
+  },
   "permissions": {
     "allow": [
       "Bash(git status:*)",
@@ -23,12 +26,13 @@
       "Bash(npm run lint:*)",
       "Bash(npm run test:*)",
       "Bash(npm run build:*)",
-      "Bash(npx:*)"
-    ],
-    "ask": [
-      "Bash(git add:*)",
-      "Bash(git commit:*)",
-      "Bash(git push:*)"
+      "Bash(npx:*)",
+      "Bash(timeout 180 npm install)",
+      "Bash(echo \"exit=$?\")",
+      "Read(//tmp/**)",
+      "Bash(echo \"build exit=$?\")",
+      "Bash(awk '/>Services</,/<\\\\/ul>/' _site/index.html)",
+      "Bash(awk '/>Company</,/<\\\\/ul>/' _site/index.html)"
     ],
     "deny": [
       "Read(**/.env)",
@@ -91,9 +95,11 @@
       "mcp__claude_ai_Google_Drive__*",
       "mcp__claude_ai_Supabase__*",
       "mcp__claude_ai_Zapier__*"
+    ],
+    "ask": [
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ]
-  },
-  "env": {
-    "CLAUDE_CODE_DISABLE_1M_CONTEXT": "1"
   }
 }
