@@ -146,6 +146,127 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // --- Client Reviews Carousel (progressive enhancement) ---
+  // The track is a native scroll-snap container, so swipe / trackpad / arrow
+  // keys already scroll it with this block absent. Everything here only adds
+  // controls, which ship [hidden] so a dead button never renders.
+  document.querySelectorAll("[data-reviews]").forEach((root) => {
+    const track = root.querySelector("[data-reviews-track]");
+    const controls = root.querySelector("[data-reviews-controls]");
+    const dotsWrap = root.querySelector("[data-reviews-dots]");
+    const prevBtn = root.querySelector("[data-reviews-prev]");
+    const nextBtn = root.querySelector("[data-reviews-next]");
+    const slides = Array.from(root.querySelectorAll("[data-reviews-slide]"));
+    if (!track || !controls || !dotsWrap || !prevBtn || !nextBtn) return;
+    if (!slides.length) return;
+
+    const scrollTo = (left) =>
+      track.scrollTo({ left, behavior: REDUCED ? "auto" : "smooth" });
+
+    // Built here rather than in the template so the dot count can never drift
+    // out of sync when a review is added or removed from index.html.
+    const dots = slides.map((slide, i) => {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "reviews-dot";
+      dot.setAttribute("aria-label", `Show review ${i + 1} of ${slides.length}`);
+      // Offsets are measured slide-to-slide, so this holds regardless of which
+      // ancestor happens to be the offsetParent.
+      dot.addEventListener("click", () =>
+        scrollTo(slide.offsetLeft - slides[0].offsetLeft)
+      );
+      dotsWrap.appendChild(dot);
+      return dot;
+    });
+
+    // Which slides are actually on screen is derived from the browser rather
+    // than computed from widths: that stays correct across every breakpoint,
+    // zoom level, and future CSS change with no math to keep in sync.
+    const visible = new Set();
+
+    const syncDots = () => {
+      let leader = -1;
+      dots.forEach((dot, i) => {
+        const isVisible = visible.has(i);
+        dot.classList.toggle("is-active", isVisible);
+        if (isVisible && leader === -1) leader = i;
+      });
+      dots.forEach((dot, i) => {
+        if (i === leader) dot.setAttribute("aria-current", "true");
+        else dot.removeAttribute("aria-current");
+      });
+    };
+
+    const syncArrows = () => {
+      const max = track.scrollWidth - track.clientWidth;
+      // 1px epsilon: fractional layout widths mean scrollLeft rarely lands
+      // exactly on 0 or max, which would leave an arrow stuck enabled.
+      prevBtn.disabled = track.scrollLeft <= 1;
+      nextBtn.disabled = track.scrollLeft >= max - 1;
+    };
+
+    // rAF-throttled: scroll fires at input rate and syncArrows reads layout.
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        ticking = false;
+        syncArrows();
+      });
+    };
+    track.addEventListener("scroll", onScroll, { passive: true });
+
+    // A persistent observer, unlike observeOnce above — visibility here has to
+    // keep updating as the user scrolls, not fire once and unhook.
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const i = slides.indexOf(entry.target);
+            if (i < 0) return;
+            if (entry.isIntersecting) visible.add(i);
+            else visible.delete(i);
+          });
+          syncDots();
+        },
+        { root: track, threshold: 0.6 }
+      );
+      slides.forEach((slide) => io.observe(slide));
+    } else {
+      visible.add(0);
+      syncDots();
+    }
+
+    prevBtn.addEventListener("click", () =>
+      scrollTo(track.scrollLeft - track.clientWidth)
+    );
+    nextBtn.addEventListener("click", () =>
+      scrollTo(track.scrollLeft + track.clientWidth)
+    );
+
+    // When every card already fits (wide viewport, or reviews removed), the
+    // controls are noise and the track is not a scrollable region — so it also
+    // stops being a tab stop rather than trapping a keyboard user on a no-op.
+    const syncOverflow = () => {
+      const overflows = track.scrollWidth > track.clientWidth + 1;
+      controls.hidden = !overflows;
+      if (overflows) {
+        track.setAttribute("tabindex", "0");
+        syncArrows();
+      } else {
+        track.removeAttribute("tabindex");
+      }
+    };
+
+    syncOverflow();
+    if ("ResizeObserver" in window) {
+      new ResizeObserver(syncOverflow).observe(track);
+    } else {
+      window.addEventListener("resize", syncOverflow);
+    }
+  });
+
   // --- Magnetic Buttons (fine pointers only, skip reduced motion) ---
   if (!REDUCED && window.matchMedia("(pointer: fine)").matches) {
     document.querySelectorAll(".btn-magnetic").forEach((btn) => {

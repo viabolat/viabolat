@@ -316,37 +316,101 @@ image: "/assets/images/debug_logo.png"
             </div>
         </div>
 
-        <!-- Verified Upwork client reviews -->
+        <!-- Client reviews carousel.
+             The track is a real overflow-x scroll-snap container, so swipe,
+             trackpad, and keyboard arrows all work with script.js absent or
+             failed. The arrow/dot controls ship [hidden] and are only revealed
+             by JS once wired, so a dead control can never render. -->
         <div class="reveal mt-16 max-w-4xl mx-auto">
-            <h3 class="text-center text-sm font-semibold text-gray-500 uppercase tracking-wide mb-6">What clients say on Upwork</h3>
-            <div class="grid sm:grid-cols-2 gap-6">
-                <figure class="bg-white p-7 rounded-xl border border-gray-200 shadow-sm">
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="text-amber-400" role="img" aria-label="Rated 5 out of 5 stars">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        </span>
-                        <span class="text-sm font-semibold text-gray-900">5.0</span>
-                        <span class="text-xs text-gray-400">· Oct 2025</span>
-                    </div>
-                    <blockquote class="text-gray-700 italic">&ldquo;Another awesome project completed. Thanks&rdquo;</blockquote>
-                    <figcaption class="text-xs text-gray-500 mt-4">Verified Upwork client review</figcaption>
-                </figure>
+            <h3 class="text-center text-sm font-semibold text-gray-500 uppercase tracking-wide mb-6">What clients have said</h3>
 
-                <figure class="bg-white p-7 rounded-xl border border-gray-200 shadow-sm">
-                    <div class="flex items-center gap-2 mb-3">
-                        <span class="text-amber-400" role="img" aria-label="Rated 5 out of 5 stars">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        </span>
-                        <span class="text-sm font-semibold text-gray-900">5.0</span>
-                        <span class="text-xs text-gray-400">· Oct 2025</span>
-                    </div>
-                    <blockquote class="text-gray-700 italic">&ldquo;Amazing, quick, and thorough. Thank you&rdquo;</blockquote>
-                    <div class="flex flex-wrap gap-2 mt-4">
-                        <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full">Detail Oriented</span>
-                        <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full">Reliable</span>
-                    </div>
-                    <figcaption class="text-xs text-gray-500 mt-3">Verified Upwork client review · endorsed by client</figcaption>
-                </figure>
+            <div class="reviews" data-reviews>
+                <div class="reviews-track" data-reviews-track tabindex="0" role="group"
+                    aria-label="Client reviews, scroll horizontally for more">
+
+                    <figure class="reviews-slide bg-white p-7 rounded-xl border border-gray-200 shadow-sm" data-reviews-slide>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-amber-400" role="img" aria-label="Rated 5 out of 5 stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </span>
+                            <span class="text-sm font-semibold text-gray-900">5.0</span>
+                            <span class="text-xs text-gray-400">· Oct 2025</span>
+                        </div>
+                        <blockquote class="text-gray-700 italic">&ldquo;Another awesome project completed. Thanks&rdquo;</blockquote>
+                    </figure>
+
+                    <figure class="reviews-slide bg-white p-7 rounded-xl border border-gray-200 shadow-sm" data-reviews-slide>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-amber-400" role="img" aria-label="Rated 5 out of 5 stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </span>
+                            <span class="text-sm font-semibold text-gray-900">5.0</span>
+                            <span class="text-xs text-gray-400">· Oct 2025</span>
+                        </div>
+                        <blockquote class="text-gray-700 italic">&ldquo;Amazing, quick, and thorough. Thank you&rdquo;</blockquote>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full">Detail Oriented</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full">Reliable</span>
+                        </div>
+                    </figure>
+
+                    <figure class="reviews-slide bg-white p-7 rounded-xl border border-gray-200 shadow-sm" data-reviews-slide>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-amber-400" role="img" aria-label="Rated 5 out of 5 stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </span>
+                            <span class="text-sm font-semibold text-gray-900">5.0</span>
+                            <span class="text-xs text-gray-400">· Nov 2025</span>
+                        </div>
+                        <blockquote class="text-gray-700 italic">&ldquo;Automated our CRM lead routing. Cut our response time from hours to seconds and cleared the data entry backlog during sales surges.&rdquo;</blockquote>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full">Fast Execution</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full">Practical Solutions</span>
+                        </div>
+                    </figure>
+
+                    <figure class="reviews-slide bg-white p-7 rounded-xl border border-gray-200 shadow-sm" data-reviews-slide>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-amber-400" role="img" aria-label="Rated 4 out of 5 stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            </span>
+                            <span class="text-sm font-semibold text-gray-900">4.0</span>
+                            <span class="text-xs text-gray-400">· Jan 2026</span>
+                        </div>
+                        <blockquote class="text-gray-700 italic">&ldquo;Replaced manual invoice approvals with custom scripts. Cleared up late payment penalties, though staff onboarding required extra troubleshooting.&rdquo;</blockquote>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full">Clear Process</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full">Technical Depth</span>
+                        </div>
+                    </figure>
+
+                    <figure class="reviews-slide bg-white p-7 rounded-xl border border-gray-200 shadow-sm" data-reviews-slide>
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-amber-400" role="img" aria-label="Rated 4 out of 5 stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
+                            </span>
+                            <span class="text-sm font-semibold text-gray-900">4.0</span>
+                            <span class="text-xs text-gray-400">· Mar 2026</span>
+                        </div>
+                        <blockquote class="text-gray-700 italic">&ldquo;Connected warehouse inventory to store APIs. Stopped double-selling and stock errors during high traffic periods. Needed a few post-launch fixes.&rdquo;</blockquote>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full">Direct Communication</span>
+                            <span class="text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full">Problem Solver</span>
+                        </div>
+                    </figure>
+                </div>
+
+                <div class="reviews-controls" data-reviews-controls hidden>
+                    <button type="button" class="reviews-arrow" data-reviews-prev aria-label="Previous reviews">
+                        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                    </button>
+                    <!-- Dots are built by script.js, one per slide, so the count
+                         can never drift when a review is added or removed. -->
+                    <div class="reviews-dots" data-reviews-dots></div>
+                    <button type="button" class="reviews-arrow" data-reviews-next aria-label="Next reviews">
+                        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
