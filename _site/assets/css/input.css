@@ -392,6 +392,144 @@ html {
     transform: rotate(45deg);
 }
 
+/* ---- Client reviews carousel ----
+   Native CSS scroll-snap, no library. The track scrolls on its own, so touch
+   swipe, trackpad, and keyboard arrows all work before a single line of JS
+   runs; script.js only adds the arrow/dot controls on top.
+   reason: no will-change on the slides — same rationale as .reveal above. The
+   browser already composites a scroll container; a permanent hint on every card
+   would keep GPU layers alive for the page's lifetime for no gain. */
+.reviews-track {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    /* breathing room so card shadows and the focus ring aren't clipped by the
+       scroll container's own overflow */
+    padding: 4px 4px 12px;
+    scroll-padding: 0 4px;
+    /* Hide the native bar — the arrows and dots carry the affordance instead.
+       All three properties are needed to cover Firefox, old Edge, and WebKit. */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    /* reason: without this, over-swiping the last card on iOS/Android chains to
+       the page and can fire the browser's back-navigation gesture. */
+    overscroll-behavior-x: contain;
+}
+
+.reviews-track::-webkit-scrollbar {
+    display: none;
+}
+
+/* Mobile: one card with the next peeking, which is what tells a touch user the
+   row scrolls at all. 2-up from sm, 3-up from lg — each basis subtracts its
+   share of the 1.5rem gap so exactly N cards fit the track with no overflow. */
+.reviews-slide {
+    flex: 0 0 85%;
+    scroll-snap-align: start;
+    /* equal-height cards regardless of quote length */
+    display: flex;
+    flex-direction: column;
+}
+
+.reviews-slide blockquote {
+    flex: 1 1 auto;
+}
+
+@media (min-width: 640px) {
+    .reviews-slide {
+        flex-basis: calc(50% - 0.75rem);
+    }
+}
+
+@media (min-width: 1024px) {
+    .reviews-slide {
+        flex-basis: calc((100% - 3rem) / 3);
+    }
+}
+
+.reviews-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.25rem;
+}
+
+/* reason: Tailwind preflight's [hidden]{display:none} has the same specificity
+   as .reviews-controls and loses on source order, so the JS `hidden` toggle
+   would silently do nothing without this. */
+.reviews-controls[hidden] {
+    display: none;
+}
+
+.reviews-arrow {
+    width: 2.5rem;
+    height: 2.5rem;
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    color: #4b5563;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    transition: color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.reviews-arrow:hover:not(:disabled) {
+    color: #7c3aed;
+    border-color: #c4b5fd;
+}
+
+.reviews-arrow:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+.reviews-dots {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* reason: the button is 24px square to meet the WCAG 2.5.8 minimum target size
+   on touch, while ::before draws the much smaller visual dot. */
+.reviews-dot {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+.reviews-dot::before {
+    content: "";
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    background: #cbd5e1;
+    transition: background-color 0.2s ease, width 0.2s ease;
+}
+
+/* .is-active marks every slide currently in view (3 dots light up at lg);
+   aria-current marks the leading one, which also widens into a pill. */
+.reviews-dot.is-active::before {
+    background: #a78bfa;
+}
+
+.reviews-dot[aria-current="true"]::before {
+    background: #7c3aed;
+    width: 1.25rem;
+}
+
 /* ---- Keyboard focus visibility on dark surfaces ---- */
 .section-dark a:focus-visible,
 .section-dark button:focus-visible,
@@ -400,6 +538,15 @@ html {
     outline: 2px solid #a78bfa;
     outline-offset: 2px;
     border-radius: 4px;
+}
+
+/* Carousel lives on a light section, so it needs the darker primary for contrast. */
+.reviews-track:focus-visible,
+.reviews-arrow:focus-visible,
+.reviews-dot:focus-visible {
+    outline: 2px solid #7c3aed;
+    outline-offset: 2px;
+    border-radius: 12px;
 }
 
 /* ============================================================
