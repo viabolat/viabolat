@@ -3,9 +3,9 @@
         <div class="flex justify-between items-center py-4">
             <a href="/" title="viabolat Home" class="hover:opacity-90 transition-opacity flex items-center">
                 <div class="mr-1">
-                    <img src="{{ '/assets/images/logo.svg' | bust }}" alt="viabolat logo" class="w-10 h-10 mr-2">
+                    <img src="{{ '/assets/images/logo.svg' | bust }}" alt="viabolat logo" class="w-8 h-8 sm:w-10 sm:h-10 mr-1 sm:mr-2">
                 </div>
-                <span class="text-xl font-bold text-white italic">viabolat</span>
+                <span class="text-lg sm:text-xl font-bold text-white italic">viabolat</span>
             </a>
             <div class="hidden md:flex space-x-6">
                 <a href="/#how" class="text-gray-200 hover:text-primary-300 transition-colors nav-link">How It Works</a>
@@ -15,9 +15,12 @@
                 <a href="/#faq" class="text-gray-200 hover:text-primary-300 transition-colors nav-link">FAQ</a>
                 <a href="/#contact" class="text-gray-200 hover:text-primary-300 transition-colors nav-link">Contact</a>
             </div>
-            <button class="md:hidden text-white" aria-label="Open navigation menu">
-                <i class="fas fa-bars text-xl"></i>
-            </button>
+            <div class="flex items-center gap-2 md:gap-3">
+                <a href="/#contact" class="inline-block md:hidden xl:inline-block whitespace-nowrap bg-primary-600 text-white px-2.5 py-2 md:px-4 rounded-lg text-xs sm:text-sm md:text-base font-semibold hover:bg-primary-700 transition-colors">Black Friday check — $500</a>
+                <button class="md:hidden text-white" aria-label="Open navigation menu">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
         </div>
     </nav>
 </header>
