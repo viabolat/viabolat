@@ -581,3 +581,14 @@ html {
         transform: none !important;
     }
 }
+/* reason: the header is sticky, so in-page anchor jumps (/#pricing etc.) must
+   stop below it. Mobile adds the CTA bar under the nav row (~108px total). */
+html {
+    scroll-padding-top: 7rem;
+}
+
+@media (min-width: 768px) {
+    html {
+        scroll-padding-top: 4.5rem;
+    }
+}
