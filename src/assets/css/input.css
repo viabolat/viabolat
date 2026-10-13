@@ -404,6 +404,10 @@ html {
     gap: 1.5rem;
     overflow-x: auto;
     overflow-y: hidden;
+    /* center a short row (fewer slides than fit) instead of leaving a gap on
+       the right; `safe` falls back to start once slides overflow, so the
+       first card is never pushed out of the scrollable area */
+    justify-content: safe center;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     /* breathing room so card shadows and the focus ring aren't clipped by the
