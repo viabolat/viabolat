@@ -43,8 +43,8 @@
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" href="/assets/images/logo.svg?v=ba064a63" type="image/svg+xml" />
 
-    <link rel="stylesheet" href="/assets/css/styles.css?v=db3b3aba" />
-    <script src="/assets/js/script.js?v=3bb657ca" defer></script>
+    <link rel="stylesheet" href="/assets/css/styles.css?v=cabe5407" />
+    <script src="/assets/js/script.js?v=c30add05" defer></script>
 
     <!-- Structured data (schema.org) — real business + founder only; no ratings/reviews -->
     <script type="application/ld+json">
@@ -97,7 +97,10 @@
                 </div>
                 <span class="text-xl font-bold text-white italic">viabolat</span>
             </a>
-            <div class="hidden md:flex space-x-6">
+            <!-- reason: 7 links at 15-16px wrapped onto 2-3 lines between 768-1023px
+                 and touched the logo; tighter, no-wrap text keeps one line there -->
+            <div class="hidden md:flex items-center gap-x-3 lg:gap-x-6 text-sm lg:text-base whitespace-nowrap">
+                <a href="/services/" class="text-gray-200 hover:text-primary-300 transition-colors nav-link">Services</a>
                 <a href="/#how" class="text-gray-200 hover:text-primary-300 transition-colors nav-link">How It Works</a>
                 <a href="/#fixes" class="text-gray-200 hover:text-primary-300 transition-colors nav-link">What viabolat Fixes</a>
                 <a href="/#pricing" class="text-gray-200 hover:text-primary-300 transition-colors nav-link">Pricing</a>
@@ -284,6 +287,8 @@
             <div>
                 <h4 class="text-white font-semibold mb-4">Services</h4>
                 <ul class="space-y-2">
+                    <li><a href="/services/" class="text-gray-400 hover:text-white transition-colors">All Services</a>
+                    </li>
                     <li><a href="/#how" class="text-gray-400 hover:text-white transition-colors">How It Works</a>
                     </li>
                     <li><a href="/#fixes" class="text-gray-400 hover:text-white transition-colors">What viabolat Fixes</a>
