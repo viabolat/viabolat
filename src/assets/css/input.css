@@ -2,11 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+/* reason: Poppins now loads without blocking first paint, so text first renders
+   in a fallback font. This face is sized to Poppins' metrics so the swap doesn't
+   shift the layout (CLS). Arial/Liberation Sans on desktop, Roboto on Android. */
+@font-face {
+    font-family: 'Poppins Fallback';
+    src: local('Arial'), local('Liberation Sans'), local('Roboto');
+    size-adjust: 112.16%;
+    ascent-override: 93.62%;
+    descent-override: 31.21%;
+    line-gap-override: 8.92%;
+}
+
 /* Base Styles */
 /* reason: dark ink base — light sections paint over it; prevents the old light
    gradient from fighting the new dark cinematic hero/CTA bookends. */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', 'Poppins Fallback', sans-serif;
     background: #06060c;
     min-height: 100vh;
 }

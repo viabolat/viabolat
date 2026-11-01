@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Poppins", "system-ui", "sans-serif"],
+        sans: ["Poppins", "Poppins Fallback", "system-ui", "sans-serif"],
       },
       colors: {
         // Cinematic dark surface for hero + CTA "bookend" sections.
