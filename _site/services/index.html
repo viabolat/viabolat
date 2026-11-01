@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automation, Data and Integration Services | viabolat</title>
+
+    <!-- SEO Meta -->
+    <meta name="description" content="Fixed-price automation repair, data validation, data pipelines, system integrations, lead scoring and process documentation from one automation engineer.">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#06060c">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://viabolat.com/services/" />
+
+    <!-- SEO Keywords -->
+    <meta name="keywords" content="automation repair, Zapier repair, Make repair, data validation, data pipeline, API integration, lead scoring, process documentation, automation consultant">
+
+    <!-- Open Graph (social sharing) -->
+    <meta property="og:title" content="Automation, Data and Integration Services | viabolat" />
+    <meta property="og:description" content="Fixed-price automation repair, data validation, data pipelines, system integrations, lead scoring and process documentation from one automation engineer." />
+    <meta property="og:image" content="https://viabolat.com/assets/images/debug_logo.png" />
+    <meta property="og:url" content="https://viabolat.com/services/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="viabolat" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Automation, Data and Integration Services | viabolat">
+    <meta name="twitter:description" content="Fixed-price automation repair, data validation, data pipelines, system integrations, lead scoring and process documentation from one automation engineer.">
+    <meta name="twitter:image" content="https://viabolat.com/assets/images/debug_logo.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Optional Favicon -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/assets/images/logo.svg?v=ba064a63" type="image/svg+xml" />
+
+    <link rel="stylesheet" href="/assets/css/styles.css?v=cabe5407" />
+    <script src="/assets/js/script.js?v=c30add05" defer></script>
+
+    <!-- Structured data (schema.org) — real business + founder only; no ratings/reviews -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://viabolat.com/#business",
+          "name": "viabolat",
+          "url": "https://viabolat.com",
+          "image": "https://viabolat.com/assets/images/logo.svg",
+          "logo": "https://viabolat.com/assets/images/logo.svg",
+          "email": "contact@viabolat.com",
+          "description": "Automation creation, repair, and maintenance — building, diagnosing, fixing, and maintaining Zapier, Make, webhook, API, and Python automations, at fixed prices.",
+          "areaServed": "Worldwide",
+          "knowsAbout": ["Zapier", "Make", "Webhooks", "REST APIs", "Python automation", "Data pipelines"],
+          "sameAs": ["https://github.com/viabolat", "https://linkedin.com/in/ahmetbolat"],
+          "founder": { "@id": "https://viabolat.com/#founder" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://viabolat.com/#founder",
+          "name": "Ahmet Bolat",
+          "jobTitle": "Automation Engineer",
+          "url": "https://viabolat.com",
+          "worksFor": { "@id": "https://viabolat.com/#business" },
+          "description": "Automation and data engineer with enterprise experience at Accenture (data engineering, 2023-2025) and production automation at Karma Graphics (2016-2022).",
+          "sameAs": ["https://linkedin.com/in/ahmetbolat", "https://github.com/viabolat"]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://viabolat.com/#website",
+          "url": "https://viabolat.com",
+          "name": "viabolat",
+          "publisher": { "@id": "https://viabolat.com/#business" }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body class="min-h-screen flex flex-col bg-ink-950 text-gray-900">
+    <header class="bg-ink-950/80 backdrop-blur border-b border-white/10 sticky top-0 z-50">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
+        <div class="flex justify-between items-center py-4">
+            <a href="/" title="viabolat Home" class="hover:opacity-90 transition-opacity flex items-center">
+                <div class="mr-1 shrink-0">
+                    <img src="/assets/images/logo.svg?v=ba064a63" alt="viabolat logo" class="w-10 h-10 mr-2">
+                </div>
+                <span class="text-xl font-bold text-white italic">viabolat</span>
+            </a>
+            <!-- reason: 7 links at 15-16px wrapped onto 2-3 lines between 768-1023px
+                 and touched the logo; tighter, no-wrap text keeps one line there -->
+            <div class="hidden md:flex items-center gap-x-3 lg:gap-x-6 text-sm lg:text-base whitespace-nowrap">
+                <a href="/services/" class="text-gray-200 hover:text-primary-300 transition-colors nav-link">Services</a>
+                <a href="/#how" class="text-gray-200 hover:text-primary-300 transition-colors nav-link">How It Works</a>
+                <a href="/#fixes" class="text-gray-200 hover:text-primary-300 transition-colors nav-link">What viabolat Fixes</a>
+                <a href="/#pricing" class="text-gray-200 hover:text-primary-300 transition-colors nav-link">Pricing</a>
+                <a href="/#testimonials" class="text-gray-200 hover:text-primary-300 transition-colors nav-link">Results</a>
+                <a href="/#faq" class="text-gray-200 hover:text-primary-300 transition-colors nav-link">FAQ</a>
+                <a href="/#contact" class="text-gray-200 hover:text-primary-300 transition-colors nav-link">Contact</a>
+            </div>
+            <div class="flex items-center gap-3">
+                <!-- reason: beside the logo the CTA crowded/overlapped the wordmark on
+                     narrow phones (~320pt), so below md it moves to the bar under this row -->
+                <a href="/#contact" class="hidden xl:inline-block whitespace-nowrap bg-primary-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-primary-700 transition-colors">Black Friday check — $500</a>
+                <button class="md:hidden text-white" aria-label="Open navigation menu">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <a href="/#contact" class="md:hidden block bg-primary-600 text-white text-center text-sm font-semibold py-2 px-4 hover:bg-primary-700 transition-colors">Black Friday check — $500 →</a>
+</header>
+
+    <main class="flex-grow">
+        
+<!-- HERO -->
+<section class="section-dark gradient-mesh grid-overlay py-20 md:py-28">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <p class="reveal text-sm font-semibold text-primary-300 uppercase tracking-widest mb-5">Services · Fixed prices · One engineer</p>
+        <h1 class="reveal reveal-delay-1 text-3xl sm:text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            Six ways a small business quietly loses time and money.
+            <span class="shimmer-text">viabolat fixes all six.</span>
+        </h1>
+        <p class="reveal reveal-delay-2 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+            Automations that silently died. Data nobody trusts. Hours lost to copy-paste. Systems that don't talk.
+            Leads going cold. Processes that live in one person's head. Find the one costing you the most and start there.
+        </p>
+    </div>
+</section>
+
+<!-- SERVICE GRID: the pain line is the largest text on each card -->
+<section id="services" class="section-light py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="sr-only">The six services</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <a href="#automation-repair" class="reveal feature-card group flex flex-col bg-white p-7 rounded-xl shadow-sm border border-gray-200 border-t-4 border-t-primary-500 hover:shadow-md transition-shadow">
+                <p class="text-xs font-semibold uppercase tracking-wide text-primary-600 mb-3">
+                    <i class="fas fa-wrench mr-2" aria-hidden="true"></i>Automation Repair
+                </p>
+                <p class="text-2xl font-bold leading-snug text-gray-900 mb-3">It stopped running. Nobody noticed.</p>
+                <p class="text-gray-600 mb-5">Zaps, Make scenarios, webhooks and scripts that broke quietly, traced to the root cause and fixed.</p>
+                <span class="mt-auto text-sm font-semibold text-primary-600">See what's included <span aria-hidden="true">→</span></span>
+            </a>
+            
+            <a href="#data-validation" class="reveal feature-card group flex flex-col bg-white p-7 rounded-xl shadow-sm border border-gray-200 border-t-4 border-t-secondary-500 hover:shadow-md transition-shadow">
+                <p class="text-xs font-semibold uppercase tracking-wide text-secondary-600 mb-3">
+                    <i class="fas fa-check-double mr-2" aria-hidden="true"></i>Data Validation
+                </p>
+                <p class="text-2xl font-bold leading-snug text-gray-900 mb-3">The report looks wrong. It probably is.</p>
+                <p class="text-gray-600 mb-5">Checks that catch duplicates, gaps and bad formats before they reach your numbers.</p>
+                <span class="mt-auto text-sm font-semibold text-secondary-600">See what's included <span aria-hidden="true">→</span></span>
+            </a>
+            
+            <a href="#data-pipelines" class="reveal feature-card group flex flex-col bg-white p-7 rounded-xl shadow-sm border border-gray-200 border-t-4 border-t-emerald-500 hover:shadow-md transition-shadow">
+                <p class="text-xs font-semibold uppercase tracking-wide text-emerald-600 mb-3">
+                    <i class="fas fa-diagram-project mr-2" aria-hidden="true"></i>Data Pipelines
+                </p>
+                <p class="text-2xl font-bold leading-snug text-gray-900 mb-3">Copy-paste is not a job description.</p>
+                <p class="text-gray-600 mb-5">Manual exports, spreadsheet shuffling and PDF re-typing, replaced with a pipeline that runs on its own.</p>
+                <span class="mt-auto text-sm font-semibold text-emerald-600">See what's included <span aria-hidden="true">→</span></span>
+            </a>
+            
+            <a href="#system-integrations" class="reveal feature-card group flex flex-col bg-white p-7 rounded-xl shadow-sm border border-gray-200 border-t-4 border-t-amber-500 hover:shadow-md transition-shadow">
+                <p class="text-xs font-semibold uppercase tracking-wide text-amber-600 mb-3">
+                    <i class="fas fa-plug mr-2" aria-hidden="true"></i>System Integrations
+                </p>
+                <p class="text-2xl font-bold leading-snug text-gray-900 mb-3">Your tools don&#39;t talk. Your people do it for them.</p>
+                <p class="text-gray-600 mb-5">CRM, forms, billing and spreadsheets connected through APIs and webhooks, with no person in the middle.</p>
+                <span class="mt-auto text-sm font-semibold text-amber-600">See what's included <span aria-hidden="true">→</span></span>
+            </a>
+            
+            <a href="#lead-scoring" class="reveal feature-card group flex flex-col bg-white p-7 rounded-xl shadow-sm border border-gray-200 border-t-4 border-t-rose-500 hover:shadow-md transition-shadow">
+                <p class="text-xs font-semibold uppercase tracking-wide text-rose-600 mb-3">
+                    <i class="fas fa-bullseye mr-2" aria-hidden="true"></i>Lead-Scoring Systems
+                </p>
+                <p class="text-2xl font-bold leading-snug text-gray-900 mb-3">Not a lead problem. A prioritization problem.</p>
+                <p class="text-gray-600 mb-5">Rules that rank incoming leads and send the best ones to you first.</p>
+                <span class="mt-auto text-sm font-semibold text-rose-600">See what's included <span aria-hidden="true">→</span></span>
+            </a>
+            
+            <a href="#process-documentation" class="reveal feature-card group flex flex-col bg-white p-7 rounded-xl shadow-sm border border-gray-200 border-t-4 border-t-indigo-500 hover:shadow-md transition-shadow">
+                <p class="text-xs font-semibold uppercase tracking-wide text-indigo-600 mb-3">
+                    <i class="fas fa-book mr-2" aria-hidden="true"></i>Process Documentation
+                </p>
+                <p class="text-2xl font-bold leading-snug text-gray-900 mb-3">If it lives in one person&#39;s head, it&#39;s a risk.</p>
+                <p class="text-gray-600 mb-5">Your workflows and automations written down, so they survive vacations, turnover and growth.</p>
+                <span class="mt-auto text-sm font-semibold text-indigo-600">See what's included <span aria-hidden="true">→</span></span>
+            </a>
+            
+        </div>
+    </div>
+</section>
+
+<!-- DETAIL SECTIONS: one per service, anchor-linked from the grid -->
+
+<section id="automation-repair" class="section-tint py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <p class="text-sm font-semibold uppercase tracking-wide text-primary-600 mb-2">
+            <i class="fas fa-wrench mr-2" aria-hidden="true"></i>Service 1 of 6
+        </p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Automation Repair</h2>
+        <p class="text-xl font-semibold text-gray-800 mb-4">Most automations don&#39;t crash loudly. They fail on one missing field and keep going.</p>
+        <p class="text-gray-600 mb-8">A renamed column, an expired token, a vendor API change. The automation still looks like it&#39;s running while the data downstream goes wrong. viabolat finds the exact cause and fixes it, instead of patching around it.</p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-white rounded-xl border border-gray-200 border-l-4 border-l-primary-500 p-6">
+                <h3 class="font-bold mb-3">What viabolat does</h3>
+                <ul class="space-y-2 text-gray-700">
+                    
+                    <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>Root-cause diagnosis of every failing step</span></li>
+                    
+                    <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>Fix or rebuild, with error handling and alerts so the next failure is loud</span></li>
+                    
+                    <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>Documentation and handoff, so you know what changed</span></li>
+                    
+                </ul>
+            </div>
+            <div class="bg-white rounded-xl border border-gray-200 p-6">
+                <h3 class="font-bold mb-3">Pricing</h3>
+                
+                <ul class="space-y-2 text-gray-700">
+                    
+                    <li class="flex"><i class="fas fa-tag text-gray-400 mr-2 mt-1" aria-hidden="true"></i><span>Fix and Walk Away: $1,500 to $2,500, fixed</span></li>
+                    
+                    <li class="flex"><i class="fas fa-tag text-gray-400 mr-2 mt-1" aria-hidden="true"></i><span>Fix and Maintain: $1,800 to $2,800, plus $300 to $500 a month</span></li>
+                    
+                    <li class="flex"><i class="fas fa-tag text-gray-400 mr-2 mt-1" aria-hidden="true"></i><span>Urgent fixes in 48 to 72 hours, rebuilds in 7 to 10 days</span></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+
+        <a href="https://forms.gle/X1EdRnswwu9zp9MHA" target="_blank" rel="noopener noreferrer"
+            class="inline-block bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors">
+            Get an Automation Repair quote <span aria-hidden="true">→</span>
+        </a>
+        <a href="#services" class="block sm:inline-block mt-4 sm:mt-0 sm:ml-4 text-sm text-gray-500 hover:text-gray-700">Back to all services</a>
+    </div>
+</section>
+
+<section id="data-validation" class="section-light py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <p class="text-sm font-semibold uppercase tracking-wide text-secondary-600 mb-2">
+            <i class="fas fa-check-double mr-2" aria-hidden="true"></i>Service 2 of 6
+        </p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Data Validation</h2>
+        <p class="text-xl font-semibold text-gray-800 mb-4">If your team re-checks every report by hand, nobody trusts the data.</p>
+        <p class="text-gray-600 mb-8">Duplicate rows, blank fields, dates in three formats, totals that don&#39;t match the source. Bad data spreads into every report built on it. viabolat adds checks where the data comes in, so problems get flagged instead of averaged in.</p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-white rounded-xl border border-gray-200 border-l-4 border-l-secondary-500 p-6">
+                <h3 class="font-bold mb-3">What viabolat does</h3>
+                <ul class="space-y-2 text-gray-700">
+                    
+                    <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>Data-quality audit: where records break, duplicate or go missing</span></li>
+                    
+                    <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>Automated validation rules and de-duplication</span></li>
+                    
+                    <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>Alerts, or a review sheet for records that fail a check</span></li>
+                    
+                </ul>
+            </div>
+            <div class="bg-white rounded-xl border border-gray-200 p-6">
+                <h3 class="font-bold mb-3">Pricing</h3>
+                
+                <p class="text-gray-700">Fixed price, agreed before any work starts.</p>
+                <p class="text-gray-500 text-sm mt-2">Scope varies too much to list one range. Describe the problem and you'll get a fixed-price quote within 24 hours.</p>
+                
+            </div>
+        </div>
+
+        <a href="https://forms.gle/X1EdRnswwu9zp9MHA" target="_blank" rel="noopener noreferrer"
+            class="inline-block bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors">
+            Get a Data Validation quote <span aria-hidden="true">→</span>
+        </a>
+        <a href="#services" class="block sm:inline-block mt-4 sm:mt-0 sm:ml-4 text-sm text-gray-500 hover:text-gray-700">Back to all services</a>
+    </div>
+</section>
+
+<section id="data-pipelines" class="section-tint py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <p class="text-sm font-semibold uppercase tracking-wide text-emerald-600 mb-2">
+            <i class="fas fa-diagram-project mr-2" aria-hidden="true"></i>Service 3 of 6
+        </p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Data Pipelines</h2>
+        <p class="text-xl font-semibold text-gray-800 mb-4">If the same export, clean and paste happens every week, it can run on a schedule.</p>
+        <p class="text-gray-600 mb-8">Pulling data out of one tool, cleaning it in a spreadsheet and pasting it into another eats hours nobody tracks, and every manual step is a chance for a typo. viabolat builds scheduled pipelines in Python or the automation tool you already use, with a log of every run.</p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-white rounded-xl border border-gray-200 border-l-4 border-l-emerald-500 p-6">
+                <h3 class="font-bold mb-3">What viabolat does</h3>
+                <ul class="space-y-2 text-gray-700">
+                    
+                    <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>A map of the current manual process and where it goes wrong</span></li>
+                    
+                    <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>Scheduled extraction, cleanup and loading: spreadsheets, databases, APIs, PDFs</span></li>
+                    
+                    <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>Run logs and failure alerts</span></li>
+                    
+                </ul>
+            </div>
+            <div class="bg-white rounded-xl border border-gray-200 p-6">
+                <h3 class="font-bold mb-3">Pricing</h3>
+                
+                <p class="text-gray-700">Fixed price, agreed before any work starts.</p>
+                <p class="text-gray-500 text-sm mt-2">Scope varies too much to list one range. Describe the problem and you'll get a fixed-price quote within 24 hours.</p>
+                
+            </div>
+        </div>
+
+        <a href="https://forms.gle/X1EdRnswwu9zp9MHA" target="_blank" rel="noopener noreferrer"
+            class="inline-block bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors">
+            Get a Data Pipeline quote <span aria-hidden="true">→</span>
+        </a>
+        <a href="#services" class="block sm:inline-block mt-4 sm:mt-0 sm:ml-4 text-sm text-gray-500 hover:text-gray-700">Back to all services</a>
+    </div>
+</section>
+
+<section id="system-integrations" class="section-light py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <p class="text-sm font-semibold uppercase tracking-wide text-amber-600 mb-2">
+            <i class="fas fa-plug mr-2" aria-hidden="true"></i>Service 4 of 6
+        </p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">System Integrations</h2>
+        <p class="text-xl font-semibold text-gray-800 mb-4">Every time someone retypes data from one system into another, you pay for it twice.</p>
+        <p class="text-gray-600 mb-8">When two systems don&#39;t share data, a person becomes the bridge: retyping orders, syncing contacts, reconciling invoices. It&#39;s slow, it&#39;s error-prone, and it stops when that person is out. viabolat connects the systems directly, with error handling for the day one of them changes.</p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-white rounded-xl border border-gray-200 border-l-4 border-l-amber-500 p-6">
+                <h3 class="font-bold mb-3">What viabolat does</h3>
+                <ul class="space-y-2 text-gray-700">
+                    
+                    <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>Integration plan: what syncs, in which direction, how often</span></li>
+                    
+                    <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>API and webhook build with retries, token refresh and error alerts</span></li>
+                    
+                    <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>Documentation of every connection</span></li>
+                    
+                </ul>
+            </div>
+            <div class="bg-white rounded-xl border border-gray-200 p-6">
+                <h3 class="font-bold mb-3">Pricing</h3>
+                
+                <p class="text-gray-700">Fixed price, agreed before any work starts.</p>
+                <p class="text-gray-500 text-sm mt-2">Scope varies too much to list one range. Describe the problem and you'll get a fixed-price quote within 24 hours.</p>
+                
+            </div>
+        </div>
+
+        <a href="https://forms.gle/X1EdRnswwu9zp9MHA" target="_blank" rel="noopener noreferrer"
+            class="inline-block bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors">
+            Get an Integration quote <span aria-hidden="true">→</span>
+        </a>
+        <a href="#services" class="block sm:inline-block mt-4 sm:mt-0 sm:ml-4 text-sm text-gray-500 hover:text-gray-700">Back to all services</a>
+    </div>
+</section>
+
+<section id="lead-scoring" class="section-tint py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <p class="text-sm font-semibold uppercase tracking-wide text-rose-600 mb-2">
+            <i class="fas fa-bullseye mr-2" aria-hidden="true"></i>Service 5 of 6
+        </p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Lead-Scoring Systems</h2>
+        <p class="text-xl font-semibold text-gray-800 mb-4">If every lead lands in the same inbox, the best ones wait as long as the worst.</p>
+        <p class="text-gray-600 mb-8">Leads arrive from forms, ads and email, and they all get the same treatment: whoever gets to them, whenever. viabolat builds simple scoring and routing from signals you already collect, so your best leads get a fast reply. No black box: rules you can read and change.</p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-white rounded-xl border border-gray-200 border-l-4 border-l-rose-500 p-6">
+                <h3 class="font-bold mb-3">What viabolat does</h3>
+                <ul class="space-y-2 text-gray-700">
+                    
+                    <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>Scoring rules built from your own lead data and sales criteria</span></li>
+                    
+                    <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>Automatic routing and instant alerts for high-scoring leads</span></li>
+                    
+                    <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>A plain-language rulebook you can adjust yourself</span></li>
+                    
+                </ul>
+            </div>
+            <div class="bg-white rounded-xl border border-gray-200 p-6">
+                <h3 class="font-bold mb-3">Pricing</h3>
+                
+                <p class="text-gray-700">Fixed price, agreed before any work starts.</p>
+                <p class="text-gray-500 text-sm mt-2">Scope varies too much to list one range. Describe the problem and you'll get a fixed-price quote within 24 hours.</p>
+                
+            </div>
+        </div>
+
+        <a href="https://forms.gle/X1EdRnswwu9zp9MHA" target="_blank" rel="noopener noreferrer"
+            class="inline-block bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors">
+            Get a Lead-Scoring quote <span aria-hidden="true">→</span>
+        </a>
+        <a href="#services" class="block sm:inline-block mt-4 sm:mt-0 sm:ml-4 text-sm text-gray-500 hover:text-gray-700">Back to all services</a>
+    </div>
+</section>
+
+<section id="process-documentation" class="section-light py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <p class="text-sm font-semibold uppercase tracking-wide text-indigo-600 mb-2">
+            <i class="fas fa-book mr-2" aria-hidden="true"></i>Service 6 of 6
+        </p>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Process Documentation</h2>
+        <p class="text-xl font-semibold text-gray-800 mb-4">A process that only works because one person remembers it is not a system.</p>
+        <p class="text-gray-600 mb-8">Most small teams run on knowledge nobody wrote down: which script to rerun, which login the Zap uses, what to do when the import fails. viabolat documents how your processes and automations actually work, step by step, in plain language anyone on the team can follow.</p>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-white rounded-xl border border-gray-200 border-l-4 border-l-indigo-500 p-6">
+                <h3 class="font-bold mb-3">What viabolat does</h3>
+                <ul class="space-y-2 text-gray-700">
+                    
+                    <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>Inventory of what runs, where it runs, and who owns it</span></li>
+                    
+                    <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>Step-by-step runbooks for routine tasks and common failures</span></li>
+                    
+                    <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>A system map of how data moves between your tools</span></li>
+                    
+                </ul>
+            </div>
+            <div class="bg-white rounded-xl border border-gray-200 p-6">
+                <h3 class="font-bold mb-3">Pricing</h3>
+                
+                <p class="text-gray-700">Fixed price, agreed before any work starts.</p>
+                <p class="text-gray-500 text-sm mt-2">Scope varies too much to list one range. Describe the problem and you'll get a fixed-price quote within 24 hours.</p>
+                
+            </div>
+        </div>
+
+        <a href="https://forms.gle/X1EdRnswwu9zp9MHA" target="_blank" rel="noopener noreferrer"
+            class="inline-block bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors">
+            Get a Documentation quote <span aria-hidden="true">→</span>
+        </a>
+        <a href="#services" class="block sm:inline-block mt-4 sm:mt-0 sm:ml-4 text-sm text-gray-500 hover:text-gray-700">Back to all services</a>
+    </div>
+</section>
+
+
+<!-- WHO YOU WORK WITH: solo founder stated plainly -->
+<section class="section-dark py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Who you're working with</h2>
+        <p class="text-lg text-gray-300 mb-4">
+            viabolat is one engineer, Ahmet Bolat. Six years running production automation in-house at Karma Graphics,
+            then data engineering at Accenture. Now independent.
+        </p>
+        <p class="text-gray-400 mb-6">
+            No sales team and no junior hand-offs. You talk to the person who does the work, and you get a fixed price before it starts.
+        </p>
+        <a href="/about" class="text-primary-300 font-semibold hover:text-primary-200">More about Ahmet <span aria-hidden="true">→</span></a>
+    </div>
+</section>
+
+<!-- FAQ (shared across all services) -->
+<section id="faq" class="section-tint py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 reveal">
+            <h2 class="text-4xl font-bold mb-4">Questions about the services</h2>
+        </div>
+        <div class="reveal">
+            
+            <div class="faq-item py-2">
+                <button class="faq-trigger w-full flex items-center justify-between text-left py-4" aria-expanded="false" aria-controls="svc-faq1">
+                    <span class="text-lg font-semibold">Is viabolat an agency?</span>
+                    <i class="faq-icon fas fa-plus text-primary-600 ml-4" aria-hidden="true"></i>
+                </button>
+                <div class="faq-panel" id="svc-faq1">
+                    <div><p class="text-gray-600 pb-4">No. viabolat is one automation engineer, Ahmet Bolat, working directly with each client. The person who quotes your project is the person who builds it, with no account managers and no hand-offs.</p></div>
+                </div>
+            </div>
+            
+            <div class="faq-item py-2">
+                <button class="faq-trigger w-full flex items-center justify-between text-left py-4" aria-expanded="false" aria-controls="svc-faq2">
+                    <span class="text-lg font-semibold">How much do these services cost?</span>
+                    <i class="faq-icon fas fa-plus text-primary-600 ml-4" aria-hidden="true"></i>
+                </button>
+                <div class="faq-panel" id="svc-faq2">
+                    <div><p class="text-gray-600 pb-4">Every project gets a fixed price agreed before work starts. Automation repair runs $1,500 to $2,500 as a one-time fix, or $1,800 to $2,800 plus $300 to $500 a month with maintenance. The other services vary too much in size to list a single range, so you get a fixed-price quote within 24 hours of describing the problem.</p></div>
+                </div>
+            </div>
+            
+            <div class="faq-item py-2">
+                <button class="faq-trigger w-full flex items-center justify-between text-left py-4" aria-expanded="false" aria-controls="svc-faq3">
+                    <span class="text-lg font-semibold">Which tools do you work with?</span>
+                    <i class="faq-icon fas fa-plus text-primary-600 ml-4" aria-hidden="true"></i>
+                </button>
+                <div class="faq-panel" id="svc-faq3">
+                    <div><p class="text-gray-600 pb-4">Zapier, Make, webhooks, REST APIs and custom Python, plus the spreadsheets and databases behind them. The tool matters less than you&#39;d think, because the failure patterns underneath are the same.</p></div>
+                </div>
+            </div>
+            
+            <div class="faq-item py-2">
+                <button class="faq-trigger w-full flex items-center justify-between text-left py-4" aria-expanded="false" aria-controls="svc-faq4">
+                    <span class="text-lg font-semibold">How fast can you start?</span>
+                    <i class="faq-icon fas fa-plus text-primary-600 ml-4" aria-hidden="true"></i>
+                </button>
+                <div class="faq-panel" id="svc-faq4">
+                    <div><p class="text-gray-600 pb-4">You get a fixed-price quote within 24 hours. Urgent fixes ship in 48 to 72 hours once scope is agreed, and larger builds take 7 to 10 days.</p></div>
+                </div>
+            </div>
+            
+            <div class="faq-item py-2">
+                <button class="faq-trigger w-full flex items-center justify-between text-left py-4" aria-expanded="false" aria-controls="svc-faq5">
+                    <span class="text-lg font-semibold">What if the audit doesn&#39;t find anything wrong?</span>
+                    <i class="faq-icon fas fa-plus text-primary-600 ml-4" aria-hidden="true"></i>
+                </button>
+                <div class="faq-panel" id="svc-faq5">
+                    <div><p class="text-gray-600 pb-4">Then you&#39;ll hear that plainly, and you won&#39;t be sold a rebuild you don&#39;t need.</p></div>
+                </div>
+            </div>
+            
+            <div class="faq-item py-2">
+                <button class="faq-trigger w-full flex items-center justify-between text-left py-4" aria-expanded="false" aria-controls="svc-faq6">
+                    <span class="text-lg font-semibold">Why not just hire another automation freelancer?</span>
+                    <i class="faq-icon fas fa-plus text-primary-600 ml-4" aria-hidden="true"></i>
+                </button>
+                <div class="faq-panel" id="svc-faq6">
+                    <div><p class="text-gray-600 pb-4">Many freelancers build it and move on. Every viabolat project includes documentation and an option for ongoing monitoring, so you&#39;re not back to square one in 90 days.</p></div>
+                </div>
+            </div>
+            
+            <div class="faq-item py-2">
+                <button class="faq-trigger w-full flex items-center justify-between text-left py-4" aria-expanded="false" aria-controls="svc-faq7">
+                    <span class="text-lg font-semibold">Which service do I need?</span>
+                    <i class="faq-icon fas fa-plus text-primary-600 ml-4" aria-hidden="true"></i>
+                </button>
+                <div class="faq-panel" id="svc-faq7">
+                    <div><p class="text-gray-600 pb-4">Describe what&#39;s broken or what feels off, and you&#39;ll get a straight answer on which service fits, or whether you need one at all. Most problems start as Automation Repair or Data Validation.</p></div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section id="contact" class="section-dark gradient-mesh py-20 md:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white reveal">Not sure which one you need?</h2>
+        <p class="text-lg text-gray-300 mb-8 reveal">
+            Tell viabolat what's broken, or what feels off. You'll get a straight answer on which service fits, or whether you need one at all.
+        </p>
+        <a href="https://forms.gle/X1EdRnswwu9zp9MHA" target="_blank" rel="noopener noreferrer"
+            class="reveal btn-glow inline-block bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors text-lg">
+            Describe the problem <span aria-hidden="true">→</span>
+        </a>
+        <p class="text-gray-400 mt-6 reveal">
+            Or email <a href="mailto:contact@viabolat.com" class="text-primary-300 font-semibold">contact@viabolat.com</a>
+        </p>
+    </div>
+</section>
+
+<!-- Structured data: one Service per offer + the FAQ. Generated from the
+     front matter above, so it always matches the visible copy. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    
+    {
+      "@type": "Service",
+      "@id": "https://viabolat.com/services/#automation-repair",
+      "name": "Automation Repair",
+      "serviceType": "Automation Repair",
+      "description": "Most automations don't crash loudly. They fail on one missing field and keep going. Zaps, Make scenarios, webhooks and scripts that broke quietly, traced to the root cause and fixed.",
+      "url": "https://viabolat.com/services/#automation-repair",
+      "provider": { "@id": "https://viabolat.com/#business" },
+      "areaServed": "Worldwide",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Fix and Walk Away",
+          "priceSpecification": { "@type": "PriceSpecification", "minPrice": 1500, "maxPrice": 2500, "priceCurrency": "USD" }
+        },
+        {
+          "@type": "Offer",
+          "name": "Fix and Maintain",
+          "priceSpecification": [
+            { "@type": "PriceSpecification", "name": "Setup", "minPrice": 1800, "maxPrice": 2800, "priceCurrency": "USD" },
+            { "@type": "UnitPriceSpecification", "name": "Monthly maintenance", "minPrice": 300, "maxPrice": 500, "priceCurrency": "USD", "unitCode": "MON" }
+          ]
+        }
+      ]
+    },
+    
+    {
+      "@type": "Service",
+      "@id": "https://viabolat.com/services/#data-validation",
+      "name": "Data Validation",
+      "serviceType": "Data Validation",
+      "description": "If your team re-checks every report by hand, nobody trusts the data. Checks that catch duplicates, gaps and bad formats before they reach your numbers.",
+      "url": "https://viabolat.com/services/#data-validation",
+      "provider": { "@id": "https://viabolat.com/#business" },
+      "areaServed": "Worldwide"
+    },
+    
+    {
+      "@type": "Service",
+      "@id": "https://viabolat.com/services/#data-pipelines",
+      "name": "Data Pipelines",
+      "serviceType": "Data Pipelines",
+      "description": "If the same export, clean and paste happens every week, it can run on a schedule. Manual exports, spreadsheet shuffling and PDF re-typing, replaced with a pipeline that runs on its own.",
+      "url": "https://viabolat.com/services/#data-pipelines",
+      "provider": { "@id": "https://viabolat.com/#business" },
+      "areaServed": "Worldwide"
+    },
+    
+    {
+      "@type": "Service",
+      "@id": "https://viabolat.com/services/#system-integrations",
+      "name": "System Integrations",
+      "serviceType": "System Integrations",
+      "description": "Every time someone retypes data from one system into another, you pay for it twice. CRM, forms, billing and spreadsheets connected through APIs and webhooks, with no person in the middle.",
+      "url": "https://viabolat.com/services/#system-integrations",
+      "provider": { "@id": "https://viabolat.com/#business" },
+      "areaServed": "Worldwide"
+    },
+    
+    {
+      "@type": "Service",
+      "@id": "https://viabolat.com/services/#lead-scoring",
+      "name": "Lead-Scoring Systems",
+      "serviceType": "Lead-Scoring Systems",
+      "description": "If every lead lands in the same inbox, the best ones wait as long as the worst. Rules that rank incoming leads and send the best ones to you first.",
+      "url": "https://viabolat.com/services/#lead-scoring",
+      "provider": { "@id": "https://viabolat.com/#business" },
+      "areaServed": "Worldwide"
+    },
+    
+    {
+      "@type": "Service",
+      "@id": "https://viabolat.com/services/#process-documentation",
+      "name": "Process Documentation",
+      "serviceType": "Process Documentation",
+      "description": "A process that only works because one person remembers it is not a system. Your workflows and automations written down, so they survive vacations, turnover and growth.",
+      "url": "https://viabolat.com/services/#process-documentation",
+      "provider": { "@id": "https://viabolat.com/#business" },
+      "areaServed": "Worldwide"
+    },
+    
+    {
+      "@type": "FAQPage",
+      "@id": "https://viabolat.com/services/#faq",
+      "mainEntity": [
+        
+        {
+          "@type": "Question",
+          "name": "Is viabolat an agency?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. viabolat is one automation engineer, Ahmet Bolat, working directly with each client. The person who quotes your project is the person who builds it, with no account managers and no hand-offs." }
+        },
+        
+        {
+          "@type": "Question",
+          "name": "How much do these services cost?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Every project gets a fixed price agreed before work starts. Automation repair runs $1,500 to $2,500 as a one-time fix, or $1,800 to $2,800 plus $300 to $500 a month with maintenance. The other services vary too much in size to list a single range, so you get a fixed-price quote within 24 hours of describing the problem." }
+        },
+        
+        {
+          "@type": "Question",
+          "name": "Which tools do you work with?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Zapier, Make, webhooks, REST APIs and custom Python, plus the spreadsheets and databases behind them. The tool matters less than you'd think, because the failure patterns underneath are the same." }
+        },
+        
+        {
+          "@type": "Question",
+          "name": "How fast can you start?",
+          "acceptedAnswer": { "@type": "Answer", "text": "You get a fixed-price quote within 24 hours. Urgent fixes ship in 48 to 72 hours once scope is agreed, and larger builds take 7 to 10 days." }
+        },
+        
+        {
+          "@type": "Question",
+          "name": "What if the audit doesn't find anything wrong?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Then you'll hear that plainly, and you won't be sold a rebuild you don't need." }
+        },
+        
+        {
+          "@type": "Question",
+          "name": "Why not just hire another automation freelancer?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Many freelancers build it and move on. Every viabolat project includes documentation and an option for ongoing monitoring, so you're not back to square one in 90 days." }
+        },
+        
+        {
+          "@type": "Question",
+          "name": "Which service do I need?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Describe what's broken or what feels off, and you'll get a straight answer on which service fits, or whether you need one at all. Most problems start as Automation Repair or Data Validation." }
+        }
+        
+      ]
+    }
+  ]
+}
+</script>
+
+    </main>
+    <footer class="bg-ink-950 border-t border-white/10 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-3 gap-8">
+            <div>
+                <div class="flex items-center mb-4">
+                    <div class="mr-1">
+                        <img src="/assets/images/logo.svg?v=ba064a63" alt="viabolat logo" class="w-10 h-10 mr-2">
+                    </div>
+                    <span class="text-xl font-bold text-white italic">viabolat</span>
+                </div>
+                <p class="text-gray-400 mb-4">Automation creation, repair, and maintenance for all.</p>
+                <div class="flex space-x-4">
+                    <a href="https://github.com/viabolat" class="text-gray-300 hover:text-primary-300 transition-colors"
+                        aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/ahmetbolat"
+                        class="text-gray-300 hover:text-primary-300 transition-colors" aria-label="LinkedIn"><i
+                            class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Services</h4>
+                <ul class="space-y-2">
+                    <li><a href="/services/" class="text-gray-400 hover:text-white transition-colors">All Services</a>
+                    </li>
+                    <li><a href="/#how" class="text-gray-400 hover:text-white transition-colors">How It Works</a>
+                    </li>
+                    <li><a href="/#fixes" class="text-gray-400 hover:text-white transition-colors">What viabolat Fixes</a>
+                    </li>
+                    <li><a href="/#pricing" class="text-gray-400 hover:text-white transition-colors">Pricing</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-semibold mb-4">Company</h4>
+                <ul class="space-y-2">
+                    <li><a href="/#faq" class="text-gray-400 hover:text-white transition-colors">FAQ</a>
+                    </li>
+                    <li><a href="/about" class="text-gray-400 hover:text-white transition-colors">About</a>
+                    </li>
+                    <li><a href="/privacy" class="text-gray-400 hover:text-white transition-colors">Privacy</a>
+                    </li>
+                    <li><a href="/terms" class="text-gray-400 hover:text-white transition-colors">Terms</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-10 pt-8 border-t border-white/10 text-center text-sm text-gray-500">
+            <p>&copy; 2026 viabolat. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+</body>
+
+</html>

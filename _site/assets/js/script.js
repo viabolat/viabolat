@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <i class="fas fa-times text-2xl"></i>
         </button>
         <div id="mobile-links" class="space-y-7 text-center">
+          <a href="/services/" class="block text-2xl font-medium text-gray-100 hover:text-primary-300">Services</a>
           <a href="/#how" class="block text-2xl font-medium text-gray-100 hover:text-primary-300">How It Works</a>
           <a href="/#fixes" class="block text-2xl font-medium text-gray-100 hover:text-primary-300">What viabolat Fixes</a>
           <a href="/#pricing" class="block text-2xl font-medium text-gray-100 hover:text-primary-300">Pricing</a>

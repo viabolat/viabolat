@@ -1,0 +1,25 @@
+# viabolat
+
+> viabolat is a one-person automation repair and data engineering service run by Ahmet Bolat. It diagnoses, fixes and maintains Zapier, Make, webhook, API and Python automations, at fixed prices agreed before work starts. Quotes within 24 hours; urgent fixes in 48 to 72 hours.
+
+viabolat is a solo practice, not an agency: the person who quotes a project is the person who builds it. Background: production automation in-house at Karma Graphics (2016-2022) and data engineering at Accenture (2023-2025).
+
+## Services
+
+- [Automation Repair](https://viabolat.com/services/#automation-repair): Root-cause fixes for automations that broke quietly. $1,500-$2,500 one-time, or $1,800-$2,800 plus $300-$500/month with maintenance.
+- [Data Validation](https://viabolat.com/services/#data-validation): Checks that catch duplicates, gaps and bad formats before they reach reports. Fixed-price quote.
+- [Data Pipelines](https://viabolat.com/services/#data-pipelines): Replaces manual exports and copy-paste with scheduled, logged pipelines. Fixed-price quote.
+- [System Integrations](https://viabolat.com/services/#system-integrations): Connects CRM, forms, billing and spreadsheets through APIs and webhooks. Fixed-price quote.
+- [Lead-Scoring Systems](https://viabolat.com/services/#lead-scoring): Transparent rules that rank and route incoming leads. Fixed-price quote.
+- [Process Documentation](https://viabolat.com/services/#process-documentation): Runbooks and system maps so processes don't live in one person's head. Fixed-price quote.
+
+## Pages
+
+- [Home](https://viabolat.com/): Overview, pricing and FAQ
+- [Services](https://viabolat.com/services/): All six services in detail, with FAQ
+- [About](https://viabolat.com/about): Background of the founder
+
+## Contact
+
+- Email: contact@viabolat.com
+- Project form: https://forms.gle/X1EdRnswwu9zp9MHA

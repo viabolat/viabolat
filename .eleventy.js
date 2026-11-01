@@ -38,6 +38,7 @@ module.exports = function (eleventyConfig) {
     "src/assets/images/logo.svg": "favicon.ico",
   });
   eleventyConfig.addPassthroughCopy("src/robots.txt");
+  eleventyConfig.addPassthroughCopy("src/llms.txt");
 
   // Return the configuration object
   return {

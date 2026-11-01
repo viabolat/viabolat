@@ -27,3 +27,5 @@ yarn-error.log*
 
 # MISC
 ignore
+# Playwright MCP snapshots/screenshots (local browser checks)
+.playwright-mcp/
