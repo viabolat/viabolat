@@ -110,6 +110,22 @@ document.addEventListener("DOMContentLoaded", function () {
     showReveal
   );
 
+  // --- Lazy video (hero brand animation) ---
+  // reason: autoplay downloaded the whole video during page load and pushed the
+  // homepage past 2s on mobile. Start it only after load, once it's near view.
+  const startVideo = (video) => {
+    video.querySelectorAll("source[data-src]").forEach((s) => {
+      s.src = s.dataset.src;
+    });
+    video.load();
+    video.play().catch(() => {}); // autoplay can be refused (data saver); poster stays
+  };
+  const lazyVideos = document.querySelectorAll("video[data-lazy-video]");
+  const armVideos = () =>
+    observeOnce(lazyVideos, { rootMargin: "200px 0px" }, startVideo);
+  if (document.readyState === "complete") armVideos();
+  else window.addEventListener("load", armVideos, { once: true });
+
   // --- Count-up Stats ---
   // Markup: <span class="stat-num" data-count-to="48" data-suffix="h">0</span>
   // Stats without data-count-to (e.g. ranges) render as static text.
