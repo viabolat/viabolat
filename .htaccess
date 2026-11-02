@@ -30,6 +30,12 @@
   <FilesMatch "\.(css|js|png|jpg|jpeg|gif|svg|ico|webp|mp4)$">
     Header set Cache-Control "public, max-age=2592000"
   </FilesMatch>
+  # reason: Cloudflare Polish served a recompressed og-image.png for full
+  # requests but original bytes for Range requests, so LinkedIn's ranged
+  # fetch got a corrupt image. no-transform tells Cloudflare not to modify it.
+  <FilesMatch "^og-image\.png$">
+    Header set Cache-Control "public, max-age=2592000, no-transform"
+  </FilesMatch>
 </IfModule>
 
 # 5. Custom 404 fallback
