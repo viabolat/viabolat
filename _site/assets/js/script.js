@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
           <a href="/#how" class="block text-2xl font-medium text-gray-100 hover:text-primary-300">How It Works</a>
           <a href="/#fixes" class="block text-2xl font-medium text-gray-100 hover:text-primary-300">What viabolat Fixes</a>
           <a href="/#pricing" class="block text-2xl font-medium text-gray-100 hover:text-primary-300">Pricing</a>
-          <a href="/#testimonials" class="block text-2xl font-medium text-gray-100 hover:text-primary-300">Results</a>
           <a href="/#faq" class="block text-2xl font-medium text-gray-100 hover:text-primary-300">FAQ</a>
           <a href="/#contact" class="block text-2xl font-medium text-gray-100 hover:text-primary-300">Contact</a>
         </div>
