@@ -39,6 +39,7 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.addPassthroughCopy("src/robots.txt");
   eleventyConfig.addPassthroughCopy("src/llms.txt");
+  eleventyConfig.addPassthroughCopy("src/og-image.png");
 
   // Return the configuration object
   return {
