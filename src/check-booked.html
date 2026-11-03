@@ -1,0 +1,49 @@
+---
+layout: "base.html"
+title: "Check Booked | viabolat"
+description: "Your Automation Check is booked. Here's what happens next."
+keywords: "viabolat, automation check, booked"
+image: "/assets/images/logo.svg"
+permalink: /check-booked.html
+noindex: true
+---
+
+<!-- Post-payment landing. The client's details arrive with the payment through
+     Stripe custom fields, so this page only confirms; the client has nothing to do.
+     Stripe Payment Link > After payment > redirect to https://viabolat.com/check-booked -->
+<section class="section-dark gradient-mesh grid-overlay py-20 md:py-28">
+    <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <div class="text-5xl mb-6 text-green-400"><i class="fas fa-circle-check"></i></div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">You're booked.</h1>
+            <p class="text-xl text-gray-200 mb-2">There's nothing else you need to do right now.</p>
+            <p class="text-gray-400">Stripe has emailed you a receipt, and I have the details you gave at checkout.</p>
+        </div>
+
+        <ol class="space-y-6">
+            <li class="bg-white/5 border border-white/10 rounded-xl p-6">
+                <p class="text-sm font-semibold text-primary-300 uppercase tracking-widest mb-2">Within 1 business day</p>
+                <h2 class="text-xl font-bold text-white mb-2">I email you to set up access</h2>
+                <p class="text-gray-300">I'll write to the email you used at checkout. Access is usually an invite to your Zapier, Make or CRM account as a team member, so you never share a password and can remove me at any time.</p>
+            </li>
+
+            <li class="bg-white/5 border border-white/10 rounded-xl p-6">
+                <p class="text-sm font-semibold text-primary-300 uppercase tracking-widest mb-2">Within 5 business days of access</p>
+                <h2 class="text-xl font-bold text-white mb-2">You get your report</h2>
+                <p class="text-gray-300">A written report on where data can drop and how close you are to plan limits, alerts on failing steps, a one-page runbook, and a freeze-or-leave-running call for each workflow.</p>
+            </li>
+
+            <li class="bg-white/5 border border-white/10 rounded-xl p-6">
+                <p class="text-sm font-semibold text-primary-300 uppercase tracking-widest mb-2">Then, your call</p>
+                <h2 class="text-xl font-bold text-white mb-2">Fix it yourself, or have me fix it</h2>
+                <p class="text-gray-300">If anything needs fixing, I'll quote a fixed price, and the $299 is credited toward it. No obligation.</p>
+            </li>
+        </ol>
+
+        <div class="text-center text-gray-400 mt-10 space-y-3">
+            <p>Want to add a screenshot or more detail before I start? Reply to my email, or write to <a href="mailto:contact@viabolat.com?subject=Automation%20Check%3A%20extra%20details" class="text-primary-300 font-semibold">contact@viabolat.com</a>.</p>
+            <p>Haven't heard from me within 1 business day? Check your spam folder, then email me.
+            Changed your mind before I start? You get a full refund, per the <a href="/terms/" class="underline hover:text-gray-200">terms</a>.</p>
+        </div>
+    </div>
+</section>
