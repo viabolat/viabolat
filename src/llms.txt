@@ -13,11 +13,17 @@ viabolat is a solo practice, not an agency: the person who quotes a project is t
 - [Lead-Scoring Systems](https://viabolat.com/services/#lead-scoring): Transparent rules that rank and route incoming leads. Fixed-price quote.
 - [Process Documentation](https://viabolat.com/services/#process-documentation): Runbooks and system maps so processes don't live in one person's head. Fixed-price quote.
 
+## Automation Check
+
+- Black Friday Automation Check: $299 (normally $599) for bookings paid by November 30, 2026, capped at 20 bookings. Review of up to 3 workflows on one platform, up to 5 hours, written report within 5 business days of access. Full refund if cancelled before work starts; non-refundable once the report is delivered. Fee credited toward any fix. Book: https://buy.stripe.com/aFa7sF9NjcpbfY26xa7wA03
+
 ## Pages
 
 - [Home](https://viabolat.com/): Overview, pricing and FAQ
 - [Services](https://viabolat.com/services/): All six services in detail, with FAQ
 - [About](https://viabolat.com/about): Background of the founder
+- [Terms](https://viabolat.com/terms): Refunds, liability and scope
+- [Privacy](https://viabolat.com/privacy): How client data is handled
 
 ## Contact
 

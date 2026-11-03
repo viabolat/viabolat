@@ -162,6 +162,25 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // --- Lost-revenue calculator (homepage #cost) ---
+  // The markup ships with outputs matching the default inputs, so it reads
+  // correctly without JS.
+  document.querySelectorAll("[data-loss-calc]").forEach((root) => {
+    const num = (key) => {
+      const v = parseFloat(root.querySelector(`[data-calc="${key}"]`).value);
+      return Number.isFinite(v) && v > 0 ? v : 0;
+    };
+    const fmt = (n) => "$" + Math.round(n).toLocaleString("en-US");
+    const update = () => {
+      const pct = Math.min(num("pct"), 100);
+      const month = num("leads") * (pct / 100) * num("value");
+      root.querySelector('[data-calc-out="month"]').textContent = fmt(month);
+      root.querySelector('[data-calc-out="year"]').textContent = fmt(month * 12);
+    };
+    root.querySelectorAll("[data-calc]").forEach((input) => input.addEventListener("input", update));
+    update();
+  });
+
   // --- Client Reviews Carousel (progressive enhancement) ---
   // The track is a native scroll-snap container, so swipe / trackpad / arrow
   // keys already scroll it with this block absent. Everything here only adds
