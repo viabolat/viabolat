@@ -38,7 +38,7 @@
   # reason: Cloudflare Polish served a recompressed og-image.png for full
   # requests but original bytes for Range requests, so LinkedIn's ranged
   # fetch got a corrupt image. no-transform tells Cloudflare not to modify it.
-  <FilesMatch "^og-image\.png$">
+  <FilesMatch "^og-.*\.png$">
     Header set Cache-Control "public, max-age=2592000, no-transform"
   </FilesMatch>
 </IfModule>
