@@ -21,9 +21,12 @@ viabolat is a solo practice, not an agency: the person who quotes a project is t
 
 - [Home](https://viabolat.com/): Overview, pricing and FAQ
 - [Services](https://viabolat.com/services/): All six services in detail, with FAQ
-- [About](https://viabolat.com/about): Background of the founder
-- [Terms](https://viabolat.com/terms): Refunds, liability and scope
-- [Privacy](https://viabolat.com/privacy): How client data is handled
+- [Automation consultant](https://viabolat.com/automation-consultant/): Workflow mapping, automation builds and ongoing upkeep
+- [Zapier and Make.com consultant](https://viabolat.com/zapier-make-consultant/): Fixing broken Zaps and failing Make scenarios, plus new builds
+- [CRM integration](https://viabolat.com/crm-integration/): Connecting CRMs, forms and spreadsheets so records stop going missing
+- [About](https://viabolat.com/about/): Background of the founder
+- [Terms](https://viabolat.com/terms/): Refunds, liability and scope
+- [Privacy](https://viabolat.com/privacy/): How client data is handled
 
 ## Contact
 
