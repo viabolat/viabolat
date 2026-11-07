@@ -1,0 +1,206 @@
+---
+layout: "base.html"
+title: "CRM Integration Services for Small Teams | viabolat"
+description: "CRM integration that stops leads, invoices and customer records from going missing between your CRM, forms and spreadsheets. Fixed price, one engineer."
+keywords: "CRM integration services, CRM integration, CRM data cleanup, data validation service, CRM automation, connect CRM to forms, HubSpot integration, Salesforce integration, Zapier CRM"
+image: "/assets/images/debug_logo.png"
+formUrl: "https://forms.gle/X1EdRnswwu9zp9MHA"
+# reason: no ampersands in these strings. Nunjucks autoescape would turn a
+# literal "&amp;" into "&amp;amp;". Write "and" instead.
+# Answer-first FAQ: the first sentence of each answer stands on its own, which is
+# what search snippets and AI answer engines quote.
+# No client numbers or industry stats here: there's no client data to cite yet.
+problems:
+  - title: "Leads that never reach the CRM"
+    text: "A form submission fails on one missing field and nobody is told. The lead is gone, and you only find out when a prospect asks why no one replied."
+  - title: "The same customer in three places"
+    text: "Contacts are retyped between the CRM, billing and a spreadsheet. Names drift, duplicates pile up, and no one knows which record is right."
+  - title: "Invoices and deals that don't match"
+    text: "A deal closes in the CRM but the invoice is created by hand. Amounts differ, and month-end turns into a reconciliation project."
+steps:
+  - title: "Map"
+    text: "I trace how a lead or customer record actually moves today, including the manual steps, and find where it breaks or gets retyped."
+  - title: "Connect"
+    text: "I build the sync with your CRM's API, webhooks or your existing Zapier or Make setup, with retries and error alerts."
+  - title: "Validate"
+    text: "Checks catch duplicates, blank fields and bad formats before they enter the CRM, and flag records that fail."
+  - title: "Document"
+    text: "You get a plain-language map of every connection, so the setup survives vacations and staff changes."
+faqs:
+  - q: "What is CRM integration?"
+    a: "CRM integration connects your CRM to the other tools you use, such as web forms, billing, email and spreadsheets, so data moves between them automatically instead of being retyped. Done well, a lead submitted on your site appears in the CRM within seconds, and a closed deal can trigger the invoice."
+  - q: "Which CRMs do you work with?"
+    a: "Any CRM with an API or webhook support, including HubSpot, Salesforce, Pipedrive and Zoho, as well as spreadsheet-based setups. The tool matters less than you'd think, because the failure patterns underneath are the same."
+  - q: "Can you fix an integration that already exists?"
+    a: "Yes. If a Zap, Make scenario or script already connects your CRM and has started dropping records, I trace the root cause, fix it, and add alerts so the next failure is loud instead of silent."
+  - q: "What about the data that is already messy?"
+    a: "I can audit the existing records for duplicates, gaps and inconsistent formats, then clean them up or set rules so new data stays clean. You decide what gets merged or deleted."
+  - q: "How much does CRM integration cost?"
+    a: "Every project gets a fixed price agreed before work starts. Scope varies too much to list one range, so describe the problem and you'll get a fixed-price quote within 24 hours."
+  - q: "How fast can you start?"
+    a: "You get a quote within 24 hours. Urgent fixes ship in 48 to 72 hours once scope is agreed, and larger builds take 7 to 10 days."
+---
+
+<!-- HERO -->
+<section class="section-dark gradient-mesh grid-overlay py-20 md:py-28">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <p class="reveal text-sm font-semibold text-primary-300 uppercase tracking-widest mb-5">CRM integration · Fixed price · One engineer</p>
+        <h1 class="reveal reveal-delay-1 text-3xl sm:text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            CRM integration that keeps your leads and customer data
+            <span class="shimmer-text">from going missing.</span>
+        </h1>
+        <p class="reveal reveal-delay-2 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+            Your CRM, forms, billing and spreadsheets should agree with each other. I connect them directly, add checks for bad data,
+            and set up alerts so a failure never goes unnoticed.
+        </p>
+        <a href="{{ formUrl }}" target="_blank" rel="noopener noreferrer"
+            class="reveal reveal-delay-2 btn-glow inline-block bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors text-lg">
+            Describe your CRM problem <span aria-hidden="true">→</span>
+        </a>
+    </div>
+</section>
+
+<!-- PROBLEMS -->
+<section class="section-light py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 reveal">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Where CRM data usually goes wrong</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Most CRM problems are not the CRM. They happen in the gaps between it and everything else.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            {% for p in problems %}
+            <div class="reveal bg-white p-7 rounded-xl shadow-sm border border-gray-200 border-t-4 border-t-primary-500">
+                <h3 class="text-xl font-bold mb-3 text-gray-900">{{ p.title }}</h3>
+                <p class="text-gray-600">{{ p.text }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section-tint py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 reveal">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">How a CRM integration project works</h2>
+        </div>
+        <ol class="space-y-5">
+            {% for s in steps %}
+            <li class="reveal flex bg-white rounded-xl border border-gray-200 border-l-4 border-l-secondary-500 p-6">
+                <span class="text-2xl font-bold text-secondary-600 mr-5" aria-hidden="true">{{ loop.index }}</span>
+                <div>
+                    <h3 class="font-bold text-lg mb-1">{{ s.title }}</h3>
+                    <p class="text-gray-600">{{ s.text }}</p>
+                </div>
+            </li>
+            {% endfor %}
+        </ol>
+    </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="section-light py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">What you get</h2>
+        <ul class="space-y-3 text-gray-700 mb-8">
+            <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>Form, billing and spreadsheet data syncing to your CRM with no one in the middle</span></li>
+            <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>Retries, token refresh and error alerts, so a broken connection is reported the same day</span></li>
+            <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>Validation rules and de-duplication for new and existing records</span></li>
+            <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>Documentation of every connection, in plain language</span></li>
+        </ul>
+        <p class="text-gray-600 mb-6">
+            Fixed price, agreed before any work starts. Looking at the wider picture? See all
+            <a href="/services/" class="text-primary-600 font-semibold hover:text-primary-700">automation, data and integration services</a>,
+            including <a href="/services/#automation-repair" class="text-primary-600 font-semibold hover:text-primary-700">repair for automations that already broke</a>.
+        </p>
+        <a href="{{ formUrl }}" target="_blank" rel="noopener noreferrer"
+            class="inline-block bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors">
+            Get a CRM Integration quote <span aria-hidden="true">→</span>
+        </a>
+    </div>
+</section>
+
+<!-- WHO YOU WORK WITH -->
+<section class="section-dark py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Who you're working with</h2>
+        <p class="text-lg text-gray-300 mb-4">
+            viabolat is just me, Ahmet Bolat. I spent six years running production automation in-house at Karma Graphics,
+            then did data engineering at Accenture. Now I'm independent.
+        </p>
+        <p class="text-gray-400 mb-6">
+            No sales team and no junior hand-offs. You talk to the person who does the work.
+        </p>
+        <a href="/about/" class="text-primary-300 font-semibold hover:text-primary-200">More about Ahmet <span aria-hidden="true">→</span></a>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section-tint py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 reveal">
+            <h2 class="text-4xl font-bold mb-4">CRM integration questions</h2>
+        </div>
+        <div class="reveal">
+            {% for f in faqs %}
+            <div class="faq-item py-2">
+                <button class="faq-trigger w-full flex items-center justify-between text-left py-4" aria-expanded="false" aria-controls="crm-faq{{ loop.index }}">
+                    <span class="text-lg font-semibold">{{ f.q }}</span>
+                    <i class="faq-icon fas fa-plus text-primary-600 ml-4" aria-hidden="true"></i>
+                </button>
+                <div class="faq-panel" id="crm-faq{{ loop.index }}">
+                    <div><p class="text-gray-600 pb-4">{{ f.a }}</p></div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section id="contact" class="section-dark gradient-mesh py-20 md:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white reveal">Losing leads between your tools?</h2>
+        <p class="text-lg text-gray-300 mb-8 reveal">
+            Tell me what's going missing and where. You'll get a fixed-price quote within 24 hours.
+        </p>
+        <a href="{{ formUrl }}" target="_blank" rel="noopener noreferrer"
+            class="reveal btn-glow inline-block bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors text-lg">
+            Describe the problem <span aria-hidden="true">→</span>
+        </a>
+        <p class="text-gray-400 mt-6 reveal">
+            Or email <a href="mailto:contact@viabolat.com" class="text-primary-300 font-semibold">contact@viabolat.com</a>
+        </p>
+    </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://viabolat.com/crm-integration/#service",
+      "name": "CRM Integration",
+      "serviceType": "CRM integration",
+      "description": "Connects your CRM to forms, billing and spreadsheets, with validation and error alerts, so leads and customer records stop going missing.",
+      "url": "https://viabolat.com/crm-integration/",
+      "provider": { "@id": "https://viabolat.com/#business" },
+      "areaServed": "Worldwide"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://viabolat.com/crm-integration/#faq",
+      "mainEntity": [
+        {% for f in faqs %}
+        {
+          "@type": "Question",
+          "name": {{ f.q | dump | safe }},
+          "acceptedAnswer": { "@type": "Answer", "text": {{ f.a | dump | safe }} }
+        }{{ "," if not loop.last }}
+        {% endfor %}
+      ]
+    }
+  ]
+}
+</script>
