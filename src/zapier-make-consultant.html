@@ -1,0 +1,208 @@
+---
+layout: "base.html"
+title: "Zapier Consultant and Make.com Expert | viabolat"
+description: "Zapier and Make.com expert for broken Zaps, failing scenarios and new builds. Root-cause fixes, error alerts and documentation. Fixed price, one engineer."
+keywords: "Zapier consultant, Zapier expert, hire Zapier expert, Make.com consultant, Make.com expert, Zapier not working, Zapier troubleshooting, fix Zapier, Make scenario repair, automation maintenance"
+image: "/assets/images/debug_logo.png"
+formUrl: "https://forms.gle/X1EdRnswwu9zp9MHA"
+# reason: no ampersands in these strings. Nunjucks autoescape would turn a
+# literal "&amp;" into "&amp;amp;". Write "and" instead.
+# Answer-first FAQ: the first sentence of each answer stands on its own, which is
+# what search snippets and AI answer engines quote.
+# Prices below match the Automation Repair entry in services.html. Keep them in sync.
+problems:
+  - title: "Zaps that stopped without telling anyone"
+    text: "A connection expired or a field was renamed. Zapier turned the Zap off or skipped the step, and records stopped arriving days before anyone noticed."
+  - title: "Make scenarios that fail on some runs"
+    text: "One bad record stops the run, or an error handler swallows it. The scenario shows as active while part of your data never gets through."
+  - title: "Task bills and plan limits creeping up"
+    text: "Loops, polling triggers and duplicate Zaps use up tasks or operations. You hit the plan limit mid-month and automations pause until it resets."
+steps:
+  - title: "Audit"
+    text: "I go through your Zaps or scenarios, the run history and the error logs to see what actually fails, how often, and why."
+  - title: "Fix the cause"
+    text: "I repair the root cause, such as the expired connection, the changed field or the missing filter, instead of adding another workaround step."
+  - title: "Make failures loud"
+    text: "Each workflow gets error handling and alerts, so the next failure is reported the same day instead of discovered weeks later."
+  - title: "Build and document"
+    text: "New workflows are built the same way, and every Zap and scenario is written down in plain language so your team can follow it."
+faqs:
+  - q: "Why did my Zap stop working?"
+    a: "Most Zaps stop because of an expired app connection, a renamed or deleted field, a plan or task limit, or a change on the connected app's side. Zapier may turn the Zap off or skip steps without an obvious warning, so the run history is the first place to look."
+  - q: "Why does my Make scenario keep failing?"
+    a: "Make scenarios usually fail on one bad record, an expired connection, a rate limit from the connected app, or a module whose data structure changed. After repeated errors Make can deactivate the scenario, so incomplete executions and the scenario history show where it broke."
+  - q: "Should I use Zapier or Make?"
+    a: "Zapier is simpler to set up and has the most app integrations. Make handles complex branching, data transformation and high volumes for less money per operation. I work in both, and often recommend keeping the one you already use unless it clearly holds you back."
+  - q: "Can you fix automations someone else built?"
+    a: "Yes. Most of my repair work is on Zaps and scenarios built by a former employee, a freelancer or the business owner. I trace how they work, fix what is broken, and document them so the next person isn't starting blind."
+  - q: "How much does it cost to hire a Zapier or Make expert?"
+    a: "Repairs are a fixed price of $1,500 to $2,500 as a one-time fix, or $1,800 to $2,800 plus $300 to $500 a month with ongoing maintenance. New builds vary in size, so you get a fixed-price quote within 24 hours of describing what you need."
+  - q: "How fast can you fix a broken automation?"
+    a: "Urgent fixes ship in 48 to 72 hours once scope is agreed, and larger rebuilds take 7 to 10 days. You get a fixed-price quote within 24 hours."
+---
+
+<!-- HERO -->
+<section class="section-dark gradient-mesh grid-overlay py-20 md:py-28">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <p class="reveal text-sm font-semibold text-primary-300 uppercase tracking-widest mb-5">Zapier · Make.com · Fixed price</p>
+        <h1 class="reveal reveal-delay-1 text-3xl sm:text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            A Zapier and Make expert for automations that
+            <span class="shimmer-text">have to keep working.</span>
+        </h1>
+        <p class="reveal reveal-delay-2 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+            I fix Zaps and Make scenarios that broke quietly, build new ones properly, and add alerts
+            so you hear about a failure the day it happens.
+        </p>
+        <a href="{{ formUrl }}" target="_blank" rel="noopener noreferrer"
+            class="reveal reveal-delay-2 btn-glow inline-block bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors text-lg">
+            Describe what's broken <span aria-hidden="true">→</span>
+        </a>
+    </div>
+</section>
+
+<!-- PROBLEMS -->
+<section class="section-light py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 reveal">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">How Zapier and Make automations usually break</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">They rarely crash loudly. They fail on one field or one connection and keep looking healthy.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            {% for p in problems %}
+            <div class="reveal bg-white p-7 rounded-xl shadow-sm border border-gray-200 border-t-4 border-t-primary-500">
+                <h3 class="text-xl font-bold mb-3 text-gray-900">{{ p.title }}</h3>
+                <p class="text-gray-600">{{ p.text }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section-tint py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 reveal">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">How I work on Zapier and Make</h2>
+        </div>
+        <ol class="space-y-5">
+            {% for s in steps %}
+            <li class="reveal flex bg-white rounded-xl border border-gray-200 border-l-4 border-l-secondary-500 p-6">
+                <span class="text-2xl font-bold text-secondary-600 mr-5" aria-hidden="true">{{ loop.index }}</span>
+                <div>
+                    <h3 class="font-bold text-lg mb-1">{{ s.title }}</h3>
+                    <p class="text-gray-600">{{ s.text }}</p>
+                </div>
+            </li>
+            {% endfor %}
+        </ol>
+    </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="section-light py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">What you get</h2>
+        <ul class="space-y-3 text-gray-700 mb-8">
+            <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>Root-cause fixes for failing Zaps and Make scenarios, not workaround steps</span></li>
+            <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>Error handling and alerts, so failures are reported the same day</span></li>
+            <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>Cleanup of duplicate steps and polling that waste tasks and operations</span></li>
+            <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>Plain-language documentation of every Zap and scenario</span></li>
+        </ul>
+        <p class="text-gray-600 mb-6">
+            Fixed price, agreed before any work starts. Full pricing is on the
+            <a href="/services/#automation-repair" class="text-primary-600 font-semibold hover:text-primary-700">automation repair</a> service.
+            Planning something bigger than one tool? See
+            <a href="/automation-consultant/" class="text-primary-600 font-semibold hover:text-primary-700">automation consulting</a>
+            or <a href="/crm-integration/" class="text-primary-600 font-semibold hover:text-primary-700">CRM integration</a>.
+        </p>
+        <a href="{{ formUrl }}" target="_blank" rel="noopener noreferrer"
+            class="inline-block bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors">
+            Get a Zapier or Make quote <span aria-hidden="true">→</span>
+        </a>
+    </div>
+</section>
+
+<!-- WHO YOU WORK WITH -->
+<section class="section-dark py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Who you're working with</h2>
+        <p class="text-lg text-gray-300 mb-4">
+            viabolat is just me, Ahmet Bolat. I spent six years running production automation in-house at Karma Graphics,
+            then did data engineering at Accenture. Now I'm independent.
+        </p>
+        <p class="text-gray-400 mb-6">
+            No sales team and no junior hand-offs. You talk to the person who opens your Zaps and fixes them.
+        </p>
+        <a href="/about/" class="text-primary-300 font-semibold hover:text-primary-200">More about Ahmet <span aria-hidden="true">→</span></a>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section-tint py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 reveal">
+            <h2 class="text-4xl font-bold mb-4">Zapier and Make questions</h2>
+        </div>
+        <div class="reveal">
+            {% for f in faqs %}
+            <div class="faq-item py-2">
+                <button class="faq-trigger w-full flex items-center justify-between text-left py-4" aria-expanded="false" aria-controls="zm-faq{{ loop.index }}">
+                    <span class="text-lg font-semibold">{{ f.q }}</span>
+                    <i class="faq-icon fas fa-plus text-primary-600 ml-4" aria-hidden="true"></i>
+                </button>
+                <div class="faq-panel" id="zm-faq{{ loop.index }}">
+                    <div><p class="text-gray-600 pb-4">{{ f.a }}</p></div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section id="contact" class="section-dark gradient-mesh py-20 md:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white reveal">Zap or scenario acting up?</h2>
+        <p class="text-lg text-gray-300 mb-8 reveal">
+            Tell me what stopped working and when you noticed. You'll get a fixed-price quote within 24 hours.
+        </p>
+        <a href="{{ formUrl }}" target="_blank" rel="noopener noreferrer"
+            class="reveal btn-glow inline-block bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors text-lg">
+            Describe what's broken <span aria-hidden="true">→</span>
+        </a>
+        <p class="text-gray-400 mt-6 reveal">
+            Or email <a href="mailto:contact@viabolat.com" class="text-primary-300 font-semibold">contact@viabolat.com</a>
+        </p>
+    </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://viabolat.com/zapier-make-consultant/#service",
+      "name": "Zapier and Make.com Consulting and Repair",
+      "serviceType": "Zapier and Make.com automation consulting",
+      "description": "Fixes broken Zaps and Make scenarios at the root cause, builds new workflows, and adds error alerts and documentation.",
+      "url": "https://viabolat.com/zapier-make-consultant/",
+      "provider": { "@id": "https://viabolat.com/#business" },
+      "areaServed": "Worldwide"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://viabolat.com/zapier-make-consultant/#faq",
+      "mainEntity": [
+        {% for f in faqs %}
+        {
+          "@type": "Question",
+          "name": {{ f.q | dump | safe }},
+          "acceptedAnswer": { "@type": "Answer", "text": {{ f.a | dump | safe }} }
+        }{{ "," if not loop.last }}
+        {% endfor %}
+      ]
+    }
+  ]
+}
+</script>

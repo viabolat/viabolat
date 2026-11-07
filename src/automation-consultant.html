@@ -1,0 +1,208 @@
+---
+layout: "base.html"
+title: "Business Process Automation Consultant | viabolat"
+description: "An automation consultant who maps your workflows, picks what is worth automating, builds it and keeps it running. Fixed price, one engineer, no hand-offs."
+keywords: "automation consultant, business process automation consultant, workflow automation consultant, process automation, workflow automation, Zapier consultant, Make consultant, automation engineer"
+image: "/assets/images/debug_logo.png"
+formUrl: "https://forms.gle/X1EdRnswwu9zp9MHA"
+# reason: no ampersands in these strings. Nunjucks autoescape would turn a
+# literal "&amp;" into "&amp;amp;". Write "and" instead.
+# Answer-first FAQ: the first sentence of each answer stands on its own, which is
+# what search snippets and AI answer engines quote.
+# No client numbers or industry stats here: there's no client data to cite yet.
+problems:
+  - title: "Hours lost to copy and paste"
+    text: "Someone moves orders, leads or timesheets from one tool to another by hand every week. It is slow, and every retyped field is a chance for a mistake."
+  - title: "Automations nobody understands"
+    text: "A former employee or freelancer built a tangle of Zaps and scripts. They mostly work, but no one knows what breaks if one is changed or switched off."
+  - title: "Not sure what to automate first"
+    text: "You know some work could run on its own, but not which tasks pay off, which tools to use, or whether it will cost more to maintain than it saves."
+steps:
+  - title: "Map"
+    text: "I walk through how the work happens today, step by step and tool by tool, including the manual parts no one wrote down."
+  - title: "Prioritize"
+    text: "You get a short list of what to automate, ranked by time saved and risk, plus what to leave alone because it is not worth automating."
+  - title: "Build"
+    text: "I build the agreed workflows in the tools you already pay for where possible, such as Zapier, Make, your CRM or direct API connections."
+  - title: "Hand over"
+    text: "Every workflow gets error alerts and plain-language documentation, so your team knows what runs, where, and what to do when something fails."
+faqs:
+  - q: "What does an automation consultant do?"
+    a: "An automation consultant looks at how work moves through your business, finds the repetitive steps that software can do reliably, and designs and builds those automations. A good one also tells you what not to automate, and makes sure the result can be maintained after the project ends."
+  - q: "What is business process automation?"
+    a: "Business process automation means using software to run routine, rule-based work, such as routing leads, creating invoices, updating records or sending follow-ups, without someone doing each step by hand. It works best on tasks that happen often and follow the same rules every time."
+  - q: "Do I need a consultant, or can I build automations myself?"
+    a: "You can build simple automations yourself with tools like Zapier or Make. A consultant is worth it when workflows span several systems, when failures cost you leads or money, or when existing automations have grown hard to understand and fix."
+  - q: "Which tools do you work with?"
+    a: "Zapier, Make, CRMs such as HubSpot, Salesforce, Pipedrive and Zoho, spreadsheets, and any system with an API or webhooks. I prefer the tools you already pay for, and only suggest a new one when it clearly saves effort."
+  - q: "How much does an automation consultant cost?"
+    a: "Every project gets a fixed price agreed before work starts. Scope varies too much to list one range, so describe the process you want to automate and you'll get a fixed-price quote within 24 hours."
+  - q: "What happens if an automation breaks later?"
+    a: "Each workflow is built with error alerts, so a failure is reported instead of silently dropping data. Repair is a core part of what I do, and ongoing maintenance is available if you want someone watching it."
+---
+
+<!-- HERO -->
+<section class="section-dark gradient-mesh grid-overlay py-20 md:py-28">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <p class="reveal text-sm font-semibold text-primary-300 uppercase tracking-widest mb-5">Automation consultant · Fixed price · One engineer</p>
+        <h1 class="reveal reveal-delay-1 text-3xl sm:text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            An automation consultant who builds it
+            <span class="shimmer-text">and keeps it running.</span>
+        </h1>
+        <p class="reveal reveal-delay-2 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+            I map how work moves through your business, tell you what is worth automating and what isn't,
+            then build the workflows with alerts and documentation so they don't fail silently.
+        </p>
+        <a href="{{ formUrl }}" target="_blank" rel="noopener noreferrer"
+            class="reveal reveal-delay-2 btn-glow inline-block bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors text-lg">
+            Describe the process <span aria-hidden="true">→</span>
+        </a>
+    </div>
+</section>
+
+<!-- PROBLEMS -->
+<section class="section-light py-16 md:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 reveal">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">When it's time to bring in an automation consultant</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">Most teams don't lack tools. They lack time to connect them properly and keep them working.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            {% for p in problems %}
+            <div class="reveal bg-white p-7 rounded-xl shadow-sm border border-gray-200 border-t-4 border-t-primary-500">
+                <h3 class="text-xl font-bold mb-3 text-gray-900">{{ p.title }}</h3>
+                <p class="text-gray-600">{{ p.text }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section-tint py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 reveal">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">How a workflow automation project works</h2>
+        </div>
+        <ol class="space-y-5">
+            {% for s in steps %}
+            <li class="reveal flex bg-white rounded-xl border border-gray-200 border-l-4 border-l-secondary-500 p-6">
+                <span class="text-2xl font-bold text-secondary-600 mr-5" aria-hidden="true">{{ loop.index }}</span>
+                <div>
+                    <h3 class="font-bold text-lg mb-1">{{ s.title }}</h3>
+                    <p class="text-gray-600">{{ s.text }}</p>
+                </div>
+            </li>
+            {% endfor %}
+        </ol>
+    </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="section-light py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">What you get</h2>
+        <ul class="space-y-3 text-gray-700 mb-8">
+            <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>A map of your current process and a ranked list of what to automate</span></li>
+            <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>Working automations built in the tools you already use where possible</span></li>
+            <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>Error alerts on every workflow, so failures are reported the same day</span></li>
+            <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>Plain-language documentation your team can follow without me</span></li>
+        </ul>
+        <p class="text-gray-600 mb-6">
+            Fixed price, agreed before any work starts. If the problem is data going missing between your CRM and other tools, see
+            <a href="/crm-integration/" class="text-primary-600 font-semibold hover:text-primary-700">CRM integration</a>.
+            Already have Zaps or Make scenarios that broke? See
+            <a href="/zapier-make-consultant/" class="text-primary-600 font-semibold hover:text-primary-700">Zapier and Make help</a>,
+            or browse <a href="/services/" class="text-primary-600 font-semibold hover:text-primary-700">all services</a>.
+        </p>
+        <a href="{{ formUrl }}" target="_blank" rel="noopener noreferrer"
+            class="inline-block bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors">
+            Get an automation quote <span aria-hidden="true">→</span>
+        </a>
+    </div>
+</section>
+
+<!-- WHO YOU WORK WITH -->
+<section class="section-dark py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Who you're working with</h2>
+        <p class="text-lg text-gray-300 mb-4">
+            viabolat is just me, Ahmet Bolat. I spent six years running production automation in-house at Karma Graphics,
+            then did data engineering at Accenture. Now I'm independent.
+        </p>
+        <p class="text-gray-400 mb-6">
+            No sales team and no junior hand-offs. The person who maps your process is the person who builds it.
+        </p>
+        <a href="/about/" class="text-primary-300 font-semibold hover:text-primary-200">More about Ahmet <span aria-hidden="true">→</span></a>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section-tint py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 reveal">
+            <h2 class="text-4xl font-bold mb-4">Automation consulting questions</h2>
+        </div>
+        <div class="reveal">
+            {% for f in faqs %}
+            <div class="faq-item py-2">
+                <button class="faq-trigger w-full flex items-center justify-between text-left py-4" aria-expanded="false" aria-controls="ac-faq{{ loop.index }}">
+                    <span class="text-lg font-semibold">{{ f.q }}</span>
+                    <i class="faq-icon fas fa-plus text-primary-600 ml-4" aria-hidden="true"></i>
+                </button>
+                <div class="faq-panel" id="ac-faq{{ loop.index }}">
+                    <div><p class="text-gray-600 pb-4">{{ f.a }}</p></div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section id="contact" class="section-dark gradient-mesh py-20 md:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white reveal">Have a process that should run itself?</h2>
+        <p class="text-lg text-gray-300 mb-8 reveal">
+            Describe what your team does by hand today. You'll get a fixed-price quote within 24 hours.
+        </p>
+        <a href="{{ formUrl }}" target="_blank" rel="noopener noreferrer"
+            class="reveal btn-glow inline-block bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors text-lg">
+            Describe the process <span aria-hidden="true">→</span>
+        </a>
+        <p class="text-gray-400 mt-6 reveal">
+            Or email <a href="mailto:contact@viabolat.com" class="text-primary-300 font-semibold">contact@viabolat.com</a>
+        </p>
+    </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://viabolat.com/automation-consultant/#service",
+      "name": "Business Process Automation Consulting",
+      "serviceType": "Automation consulting",
+      "description": "Maps business workflows, recommends what to automate, then builds and documents the automations with error alerts.",
+      "url": "https://viabolat.com/automation-consultant/",
+      "provider": { "@id": "https://viabolat.com/#business" },
+      "areaServed": "Worldwide"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://viabolat.com/automation-consultant/#faq",
+      "mainEntity": [
+        {% for f in faqs %}
+        {
+          "@type": "Question",
+          "name": {{ f.q | dump | safe }},
+          "acceptedAnswer": { "@type": "Answer", "text": {{ f.a | dump | safe }} }
+        }{{ "," if not loop.last }}
+        {% endfor %}
+      ]
+    }
+  ]
+}
+</script>
