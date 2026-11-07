@@ -19,7 +19,8 @@
     <meta name="theme-color" content="#06060c">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://viabolat.com{{ page.url | replace(".html", "") }}" />
+    {# reason: noindex pages (404, thank-you) must not declare a canonical URL #}
+    {% if not noindex %}<link rel="canonical" href="https://viabolat.com{{ page.url | replace(".html", "") }}" />{% endif %}
 
     <!-- SEO Keywords -->
     <meta name="keywords" content="{{ keywords }}">
