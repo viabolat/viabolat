@@ -3,77 +3,92 @@ layout: "base.html"
 title: "Stop Losing Leads and Customer Data | viabolat"
 description: "Leads, invoices, and customer records go missing between your CRM, forms, and spreadsheets. viabolat finds where your data is being lost and stops it."
 keywords: "data loss, lost leads, missing CRM records, data leaks, broken automation, fix Zapier, fix Make, automation maintenance, Python automation, Ahmet Bolat"
-image: "/og-image.png?v=2"
+image: "/og-image.png?v=3"
 ---
 
 <!-- HERO -->
-<section class="section-dark gradient-mesh grid-overlay py-24 md:py-32">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <p class="text-sm font-semibold text-primary-300 uppercase tracking-widest mb-5">Fixed Pricing · Find the Leak · Stop the Loss</p>
-        <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Your automations are quietly losing leads.<br />
-            <span class="shimmer-text">I find the leak and stop it.</span>
-        </h1>
-
-        <p class="text-xl text-gray-300 mb-4 max-w-3xl mx-auto">
-            For agencies, e-commerce stores, clinics, real estate teams, accountants, coaches and any service business
-            whose leads, orders or invoices move between tools.
-        </p>
-        <p class="text-lg text-gray-400 mb-10 max-w-3xl mx-auto">
-            When a Zap or Make scenario fails, it rarely tells anyone. It just stops passing your data along.
-        </p>
-
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="https://forms.gle/X1EdRnswwu9zp9MHA" target="_blank" rel="noopener noreferrer"
-                class="btn-glow btn-magnetic bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors text-lg">
-                Get a fixed-price quote
-            </a>
-            <a href="/#pricing"
-                class="btn-glow bg-white/10 text-white border border-white/20 px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-colors text-lg">
-                Black Friday Check → $299 (50% off)
-            </a>
+<section class="section-dark py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div class="lg:col-span-6">
+            <p class="trace-ledger text-sm text-primary-300 mb-6">Fixed price · Find the leak · Stop the loss</p>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight leading-[1.08] mb-6 text-white">
+                Your automations are quietly losing leads.
+                <span class="block text-primary-300">I find the leak and stop it.</span>
+            </h1>
+            <p class="text-lg text-gray-300 mb-4 max-w-xl">
+                When a Zap or Make scenario fails, it rarely tells anyone. It just stops passing your data along.
+            </p>
+            <p class="text-base text-gray-400 mb-10 max-w-xl">
+                For agencies, e-commerce stores, clinics, real estate teams, accountants, coaches and any service business
+                whose leads, orders or invoices move between tools.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a href="https://forms.gle/X1EdRnswwu9zp9MHA" target="_blank" rel="noopener noreferrer" class="btn btn-solid">Get a fixed-price quote</a>
+                <a href="/#pricing" class="btn btn-ghost">Black Friday Check, $299</a>
+            </div>
+            <p class="trace-ledger text-sm text-gray-400 mt-6">Free quote in 24h · Fixed scope · Most leaks stopped in 48–72h</p>
         </div>
 
-        <p class="text-sm text-gray-400 mt-6">
-            Free quote in 24h · Fixed scope · No long-term contracts · Most leaks stopped in 48–72h
-        </p>
-        <p class="text-sm font-semibold text-primary-300 mt-2">Black Friday Check: $299 until Nov 30, for up to 20 businesses</p>
-
-        <div class="reveal reveal-delay-4 mt-14 max-w-3xl mx-auto">
-            <div class="rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-black/40">
-                <video class="w-full aspect-video block" muted loop playsinline data-lazy-video
-                    preload="none" poster="{{ '/assets/images/viabolat_index_vid_logo.jpg' | bust }}"
-                    aria-label="viabolat brand animation">
-                    <source data-src="{{ '/assets/images/viabolat_index_vid_logo.mp4' | bust }}" type="video/mp4" />
-                    <img src="{{ '/assets/images/viabolat_index_vid_logo.jpg' | bust }}" alt="viabolat"
-                        class="w-full aspect-video object-cover" />
-                </video>
+        <!-- Signature moment: one lead, traced from form to sheet, with the break marked. Illustrative example. -->
+        <div class="lg:col-span-6 reveal" role="img" aria-label="Example trace of one lead: received by the form, dropped at the Zapier step, never reaching the CRM or the spreadsheet">
+            <div class="rounded-2xl border border-white/10 bg-[#161614] overflow-hidden">
+                <div class="flex items-center justify-between px-5 h-12 border-b border-white/10">
+                    <span class="trace-ledger text-sm text-gray-400">Lead trace · example</span>
+                    <span class="trace-ledger text-sm text-gray-500">Tue 09:41</span>
+                </div>
+                <ol class="trace-ledger text-sm">
+                    <li class="flex items-center gap-4 px-5 h-16 border-b border-white/10">
+                        <span class="trace-dot" style="background:#7a766b"></span>
+                        <span class="text-gray-200 flex-1">Website form</span>
+                        <span class="text-gray-400">Received</span>
+                        <span class="text-gray-500 w-20 text-right">09:41:02</span>
+                    </li>
+                    <li class="flex items-center gap-4 px-5 h-16 border-b border-white/10 bg-white/[0.03]">
+                        <span class="trace-dot is-break"></span>
+                        <span class="text-white flex-1">Zapier · New lead</span>
+                        <span class="text-primary-300">Token expired</span>
+                        <span class="text-gray-500 w-20 text-right">09:41:05</span>
+                    </li>
+                    <li class="flex items-center gap-4 px-5 h-16 border-b border-white/10 opacity-50">
+                        <span class="trace-dot" style="background:transparent;border:1px solid #7a766b"></span>
+                        <span class="text-gray-200 flex-1">HubSpot contact</span>
+                        <span class="text-gray-400">Never created</span>
+                        <span class="text-gray-500 w-20 text-right">none</span>
+                    </li>
+                    <li class="flex items-center gap-4 px-5 h-16 opacity-50">
+                        <span class="trace-dot" style="background:transparent;border:1px solid #7a766b"></span>
+                        <span class="text-gray-200 flex-1">Google Sheet row</span>
+                        <span class="text-gray-400">Never created</span>
+                        <span class="text-gray-500 w-20 text-right">none</span>
+                    </li>
+                </ol>
+                <div class="px-5 py-4 border-t border-white/10 text-sm text-gray-400">
+                    <span class="text-primary-300">Nobody was told.</span> The lead exists in one place and the other two never heard of it.
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- STATS BAND (count-up) -->
-<section class="section-dark border-t border-white/10 py-14">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-2 gap-6 text-center max-w-xl mx-auto">
+<!-- PROOF BAND -->
+<section class="section-dark border-t border-white/10 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-10 items-center">
+        <dl class="lg:col-span-4 grid grid-cols-2 gap-8">
             <div class="reveal">
-                <p class="text-4xl font-bold text-primary-300">48–72h</p>
-                <p class="text-sm text-gray-400 mt-1">To stop most leaks, once scope is agreed</p>
+                <dt class="sr-only">Time to stop most leaks</dt>
+                <dd class="text-4xl font-medium text-white num">48–72h</dd>
+                <p class="text-sm text-gray-400 mt-2">To stop most leaks, once scope is agreed</p>
             </div>
             <div class="reveal reveal-delay-1">
-                <p class="text-4xl font-bold text-primary-300"><span class="stat-num" data-count-to="9" data-suffix="+ yrs">0</span></p>
-                <p class="text-sm text-gray-400 mt-1">Automation & data engineering</p>
+                <dt class="sr-only">Experience</dt>
+                <dd class="text-4xl font-medium text-white num"><span class="stat-num" data-count-to="9" data-suffix="+ yrs">0</span></dd>
+                <p class="text-sm text-gray-400 mt-2">Automation and data engineering</p>
             </div>
+        </dl>
+        <div class="lg:col-span-8">
+            <p class="text-sm text-gray-400 mb-4">Works with the tools you already use</p>
+            <ul class="trace-ledger text-sm text-gray-300 flex flex-wrap gap-x-5 gap-y-2"><li>Zapier</li><li>Make</li><li>HubSpot</li><li>Salesforce</li><li>Pipedrive</li><li>Shopify</li><li>WooCommerce</li><li>Stripe</li><li>QuickBooks</li><li>Xero</li><li>Calendly</li><li>Typeform</li><li>Google Sheets</li><li>Airtable</li><li>Notion</li><li>Slack</li><li>Mailchimp</li><li>Webhooks &amp; APIs</li><li>Python</li></ul>
         </div>
-    </div>
-</section>
-
-<!-- TOOLS STRIP -->
-<section class="section-dark border-t border-white/10 py-10">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-5">Works with the tools you already use</p>
-        <div class="flex flex-wrap justify-center gap-2 text-sm text-gray-300"><span class="px-3 py-1 rounded-full bg-white/5 border border-white/10">Zapier</span><span class="px-3 py-1 rounded-full bg-white/5 border border-white/10">Make</span><span class="px-3 py-1 rounded-full bg-white/5 border border-white/10">HubSpot</span><span class="px-3 py-1 rounded-full bg-white/5 border border-white/10">Salesforce</span><span class="px-3 py-1 rounded-full bg-white/5 border border-white/10">Pipedrive</span><span class="px-3 py-1 rounded-full bg-white/5 border border-white/10">Shopify</span><span class="px-3 py-1 rounded-full bg-white/5 border border-white/10">WooCommerce</span><span class="px-3 py-1 rounded-full bg-white/5 border border-white/10">Stripe</span><span class="px-3 py-1 rounded-full bg-white/5 border border-white/10">QuickBooks</span><span class="px-3 py-1 rounded-full bg-white/5 border border-white/10">Xero</span><span class="px-3 py-1 rounded-full bg-white/5 border border-white/10">Calendly</span><span class="px-3 py-1 rounded-full bg-white/5 border border-white/10">Typeform</span><span class="px-3 py-1 rounded-full bg-white/5 border border-white/10">Google Sheets</span><span class="px-3 py-1 rounded-full bg-white/5 border border-white/10">Airtable</span><span class="px-3 py-1 rounded-full bg-white/5 border border-white/10">Notion</span><span class="px-3 py-1 rounded-full bg-white/5 border border-white/10">Slack</span><span class="px-3 py-1 rounded-full bg-white/5 border border-white/10">Mailchimp</span><span class="px-3 py-1 rounded-full bg-white/5 border border-white/10">Webhooks &amp; APIs</span><span class="px-3 py-1 rounded-full bg-white/5 border border-white/10">Python</span></div>
     </div>
 </section>
 
@@ -81,32 +96,32 @@ image: "/og-image.png?v=2"
 <section class="section-light py-20">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-14 reveal">
-            <h2 class="text-4xl font-bold mb-4">Sound familiar?</h2>
+            <h2 class="text-4xl font-semibold mb-4">Sound familiar?</h2>
             <p class="text-xl text-gray-600">These are the ways businesses lose data every week, usually without knowing it.</p>
         </div>
 
         <div class="grid md:grid-cols-2 gap-8">
-            <div class="reveal feature-card bg-white p-8 rounded-xl shadow-sm border border-gray-200">
-                <div class="text-4xl mb-4">📉</div>
-                <h3 class="text-xl font-bold mb-3">Leads are vanishing before anyone sees them</h3>
+            <div class="reveal feature-card bg-white p-8 rounded-xl  border border-gray-200">
+                <i class="fas fa-arrow-trend-down text-xl text-gray-500 mb-5 block"></i>
+                <h3 class="text-xl font-semibold mb-3">Leads are vanishing before anyone sees them</h3>
                 <p class="text-gray-600">Inquiries come in through your site, ads, or booking tool, but some never reach your CRM or inbox. You suspect you're losing leads, but you can't see where they go.</p>
             </div>
 
-            <div class="reveal reveal-delay-1 feature-card bg-white p-8 rounded-xl shadow-sm border border-gray-200">
-                <div class="text-4xl mb-4">🔄</div>
-                <h3 class="text-xl font-bold mb-3">Records are being overwritten, duplicated, or dropped</h3>
+            <div class="reveal reveal-delay-1 feature-card bg-white p-8 rounded-xl  border border-gray-200">
+                <i class="fas fa-clone text-xl text-gray-500 mb-5 block"></i>
+                <h3 class="text-xl font-semibold mb-3">Records are being overwritten, duplicated, or dropped</h3>
                 <p class="text-gray-600">Your systems look like they're working, but fields go blank, statuses are wrong, and contacts get merged or duplicated. Every bad sync quietly destroys information your team relied on.</p>
             </div>
 
-            <div class="reveal reveal-delay-2 feature-card bg-white p-8 rounded-xl shadow-sm border border-gray-200">
-                <div class="text-4xl mb-4">⏰</div>
-                <h3 class="text-xl font-bold mb-3">Data gets lost in the copy-and-paste</h3>
+            <div class="reveal reveal-delay-2 feature-card bg-white p-8 rounded-xl  border border-gray-200">
+                <i class="fas fa-clock text-xl text-gray-500 mb-5 block"></i>
+                <h3 class="text-xl font-semibold mb-3">Data gets lost in the copy-and-paste</h3>
                 <p class="text-gray-600">Someone moves data between your forms, CRM, invoicing tool, and spreadsheets by hand. Details get skipped, typos stick, and records fall out of sync.</p>
             </div>
 
-            <div class="reveal reveal-delay-3 feature-card bg-white p-8 rounded-xl shadow-sm border border-gray-200">
-                <div class="text-4xl mb-4">💥</div>
-                <h3 class="text-xl font-bold mb-3">Your automation died and nobody noticed</h3>
+            <div class="reveal reveal-delay-3 feature-card bg-white p-8 rounded-xl  border border-gray-200">
+                <i class="fas fa-link-slash text-xl text-gray-500 mb-5 block"></i>
+                <h3 class="text-xl font-semibold mb-3">Your automation died and nobody noticed</h3>
                 <p class="text-gray-600">You paid someone to build a Zapier or Make workflow. It worked for a month, then it stopped. Every record it should have passed along since then is missing, and the builder isn't answering.</p>
             </div>
 
@@ -118,50 +133,50 @@ image: "/og-image.png?v=2"
 <section id="fixes" class="section-tint py-20">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-14 reveal">
-            <h2 class="text-4xl font-bold mb-4">Where your data goes missing</h2>
+            <h2 class="text-4xl font-semibold mb-4">Where your data goes missing</h2>
             <p class="text-xl text-gray-600">The concrete places records get lost between the tools you already use.</p>
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="reveal feature-card bg-white p-7 rounded-xl shadow-sm border border-gray-200">
+            <div class="reveal feature-card bg-white p-7 rounded-xl  border border-gray-200">
                 <i class="fas fa-user-slash text-2xl text-primary-600 mb-4"></i>
-                <h3 class="text-lg font-bold mb-2">Lost leads</h3>
+                <h3 class="text-lg font-semibold mb-2">Lost leads</h3>
                 <p class="text-gray-600">Form, booking, ad, and email leads that never reach your CRM, plus alerts and reminders so no lead goes cold unseen.</p>
             </div>
 
-            <div class="reveal reveal-delay-1 feature-card bg-white p-7 rounded-xl shadow-sm border border-gray-200">
+            <div class="reveal reveal-delay-1 feature-card bg-white p-7 rounded-xl  border border-gray-200">
                 <i class="fas fa-bolt text-2xl text-primary-600 mb-4"></i>
-                <h3 class="text-lg font-bold mb-2">Silent Zapier &amp; Make failures</h3>
+                <h3 class="text-lg font-semibold mb-2">Silent Zapier &amp; Make failures</h3>
                 <p class="text-gray-600">Zaps and scenarios that stopped firing or skip steps, quietly dropping every record that should have passed through.</p>
             </div>
 
-            <div class="reveal reveal-delay-2 feature-card bg-white p-7 rounded-xl shadow-sm border border-gray-200">
+            <div class="reveal reveal-delay-2 feature-card bg-white p-7 rounded-xl  border border-gray-200">
                 <i class="fas fa-plug text-2xl text-primary-600 mb-4"></i>
-                <h3 class="text-lg font-bold mb-2">Dropped webhooks &amp; APIs</h3>
+                <h3 class="text-lg font-semibold mb-2">Dropped webhooks &amp; APIs</h3>
                 <p class="text-gray-600">Webhooks that no longer deliver and expired tokens that turn away incoming data without telling anyone.</p>
             </div>
 
-            <div class="reveal feature-card bg-white p-7 rounded-xl shadow-sm border border-gray-200">
+            <div class="reveal feature-card bg-white p-7 rounded-xl  border border-gray-200">
                 <i class="fas fa-code-branch text-2xl text-primary-600 mb-4"></i>
-                <h3 class="text-lg font-bold mb-2">Wrong data from API drift</h3>
+                <h3 class="text-lg font-semibold mb-2">Wrong data from API drift</h3>
                 <p class="text-gray-600">A vendor changed a field or endpoint and your records have been filling up with the wrong values ever since.</p>
             </div>
 
-            <div class="reveal reveal-delay-1 feature-card bg-white p-7 rounded-xl shadow-sm border border-gray-200">
+            <div class="reveal reveal-delay-1 feature-card bg-white p-7 rounded-xl  border border-gray-200">
                 <i class="fas fa-clone text-2xl text-primary-600 mb-4"></i>
-                <h3 class="text-lg font-bold mb-2">Duplicate &amp; overwritten records</h3>
+                <h3 class="text-lg font-semibold mb-2">Duplicate &amp; overwritten records</h3>
                 <p class="text-gray-600">Duplicates hiding the real record, blank or overwritten fields, and rows dropped during imports or migrations.</p>
             </div>
 
-            <div class="reveal reveal-delay-2 feature-card bg-white p-7 rounded-xl shadow-sm border border-gray-200">
+            <div class="reveal reveal-delay-2 feature-card bg-white p-7 rounded-xl  border border-gray-200">
                 <i class="fas fa-file-invoice-dollar text-2xl text-primary-600 mb-4"></i>
-                <h3 class="text-lg font-bold mb-2">Missing invoices &amp; payments</h3>
+                <h3 class="text-lg font-semibold mb-2">Missing invoices &amp; payments</h3>
                 <p class="text-gray-600">Invoices, payments, and job statuses that exist in one system but never made it to the next, or are trapped in PDFs.</p>
             </div>
 
         </div>
         <p class="text-center mt-10">
-            <a href="/services/" class="text-primary-600 font-semibold hover:text-primary-700">See all six services and what each includes <span aria-hidden="true">→</span></a>
+            <a href="/services/" class="text-primary-600 font-semibold hover:text-primary-700">See all six services and what each includes </a>
         </p>
         <p class="text-center mt-3 text-gray-600">
             Leads or customer records going missing between tools? <a href="/crm-integration/" class="text-primary-600 font-semibold hover:text-primary-700">See CRM integration</a>
@@ -179,28 +194,28 @@ image: "/og-image.png?v=2"
 <section id="how" class="section-light py-20">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-14 reveal">
-            <h2 class="text-4xl font-bold mb-4">How it works</h2>
+            <h2 class="text-4xl font-semibold mb-4">How it works</h2>
             <p class="text-xl text-gray-600">Simple. No jargon. No surprises.</p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
-            <div class="text-center reveal">
-                <div class="w-14 h-14 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
-                <h3 class="text-xl font-bold mb-2">Tell me what's going missing</h3>
+            <div class="reveal">
+                <div class="flex items-center gap-3 mb-6"><span class="trace-ledger text-sm text-primary-600">01</span><span class="h-px flex-1 bg-gray-300"></span><span class="trace-dot" style="background:#8a5a00"></span></div>
+                <h3 class="text-xl font-semibold mb-2">Tell me what's going missing</h3>
                 <p class="text-gray-600">Fill out the form or send an email. Tell me what data you think is being lost, where it should end up, and how urgent it is.</p>
                 <p class="text-sm text-gray-500 mt-3">No technical write-up required — a screenshot and a sentence is enough to start.</p>
             </div>
 
-            <div class="text-center reveal reveal-delay-1">
-                <div class="w-14 h-14 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
-                <h3 class="text-xl font-bold mb-2">I trace the leak</h3>
+            <div class="reveal reveal-delay-1">
+                <div class="flex items-center gap-3 mb-6"><span class="trace-ledger text-sm text-primary-600">02</span><span class="h-px flex-1 bg-gray-300"></span><span class="trace-dot" style="background:#8a5a00"></span></div>
+                <h3 class="text-xl font-semibold mb-2">I trace the leak</h3>
                 <p class="text-gray-600">I follow your data through each tool and connection, pinpoint where it's dropped or damaged, and send a fixed-price quote within 24 hours.</p>
                 <p class="text-sm text-gray-500 mt-3">You see exactly where data is lost, and the price, before any work begins.</p>
             </div>
 
-            <div class="text-center reveal reveal-delay-2">
-                <div class="w-14 h-14 bg-primary-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
-                <h3 class="text-xl font-bold mb-2">Leak stopped. Watched from then on.</h3>
+            <div class="reveal reveal-delay-2">
+                <div class="flex items-center gap-3 mb-6"><span class="trace-ledger text-sm text-primary-600">03</span><span class="h-px flex-1 bg-gray-300"></span><span class="trace-dot" style="background:#8a5a00"></span></div>
+                <h3 class="text-xl font-semibold mb-2">Leak stopped. Watched from then on.</h3>
                 <p class="text-gray-600">Your data flows reliably again, alerts catch any future drops, and an optional monthly plan watches it so records stop going missing.</p>
                 <p class="text-sm text-gray-500 mt-3">Every fix ships with full documentation and a plain-English handoff.</p>
             </div>
@@ -208,60 +223,83 @@ image: "/og-image.png?v=2"
     </div>
 </section>
 
-<!-- CASE STUDIES (anonymized, from Ahmet's own projects) -->
-<section id="results" class="section-tint py-20">
+<!-- RECENT WORK -->
+<section id="results" class="section-dark py-24">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-14 reveal">
-            <h2 class="text-4xl font-bold mb-4">Recent work</h2>
-            <p class="text-xl text-gray-600">Real projects. Client names kept private.</p>
+        <h2 class="text-4xl font-semibold text-white text-center mb-14 reveal">Recent work</h2>
+
+        <article class="reveal grid lg:grid-cols-12 gap-8 lg:gap-16 py-14 border-t border-white/10">
+            <div class="lg:col-span-5">
+                <p class="trace-ledger text-sm text-gray-400 mb-6">Print shop · ~25 employees</p>
+                <p class="trace-ledger text-5xl sm:text-7xl font-medium text-white leading-none whitespace-nowrap">~15<span class="text-primary-300 mx-3">&rarr;</span>0</p>
+                <p class="text-gray-400 mt-5">missed orders a week</p>
+                <p class="trace-ledger text-sm text-primary-300 mt-1">Fixed in 3 days</p>
+            </div>
+            <div class="lg:col-span-7">
+                <h3 class="text-2xl font-medium text-white mb-6">15 orders a week were going missing. Fixed in 3 days.</h3>
+                <h4 class="text-sm font-medium text-gray-400 mb-2">The leak</h4>
+                <p class="text-gray-300 mb-6">Orders submitted through the website form weren't reaching the production sheet. Nothing showed an error. The orders never arrived, and the team only found out when customers followed up.</p>
+                <h4 class="text-sm font-medium text-gray-400 mb-3">The fix</h4>
+                <ul class="space-y-2 text-gray-300"><li class="flex gap-3"><i class="fas fa-check text-primary-300 mt-1.5 text-sm"></i><span>Traced where the form-to-sheet sync was failing</span></li><li class="flex gap-3"><i class="fas fa-check text-primary-300 mt-1.5 text-sm"></i><span>Rebuilt the sync so every order lands reliably</span></li><li class="flex gap-3"><i class="fas fa-check text-primary-300 mt-1.5 text-sm"></i><span>Added error alerts, so a future failure is caught right away instead of by a customer</span></li></ul>
+            </div>
+        </article>
+
+        <article class="reveal grid lg:grid-cols-12 gap-8 lg:gap-16 py-14 border-t border-white/10">
+            <div class="lg:col-span-5">
+                <p class="trace-ledger text-sm text-gray-400 mb-6">Commercial graphics &amp; production</p>
+                <p class="trace-ledger text-5xl sm:text-7xl font-medium text-white leading-none whitespace-nowrap">20%<span class="text-primary-300 mx-3">&rarr;</span>43%</p>
+                <p class="text-gray-400 mt-5">of production automated</p>
+                <p class="trace-ledger text-sm text-primary-300 mt-1">The team grew without hiring at the same rate</p>
+            </div>
+            <div class="lg:col-span-7">
+                <h3 class="text-2xl font-medium text-white mb-6">Raised the automated share of production work from 20% to 43%.</h3>
+                <h4 class="text-sm font-medium text-gray-400 mb-2">The problem</h4>
+                <p class="text-gray-300 mb-6">Job tracking, file checks, handoffs and reporting were all done by hand. Bad files and incomplete job data got into production, causing rework and delays. Most of the process lived in people's heads.</p>
+                <h4 class="text-sm font-medium text-gray-400 mb-3">The fix</h4>
+                <ul class="space-y-2 text-gray-300"><li class="flex gap-3"><i class="fas fa-check text-primary-300 mt-1.5 text-sm"></i><span>Rebuilt the workflow end to end: order intake → scheduling → file prep → delivery</span></li><li class="flex gap-3"><i class="fas fa-check text-primary-300 mt-1.5 text-sm"></i><span>Replaced manual handoffs with Python automation and structured data</span></li><li class="flex gap-3"><i class="fas fa-check text-primary-300 mt-1.5 text-sm"></i><span>Added checks that stopped bad files and missing job data before production</span></li><li class="flex gap-3"><i class="fas fa-check text-primary-300 mt-1.5 text-sm"></i><span>Turned tribal knowledge into documented, repeatable procedures</span></li></ul>
+            </div>
+        </article>
+
+        <div class="border-t border-white/10 pt-16 grid lg:grid-cols-2 gap-14 lg:gap-16">
+            <figure class="reveal flex flex-col">
+                <blockquote class="text-2xl sm:text-3xl font-medium text-white leading-snug tracking-tight">&ldquo;Now real event inquiries come in through the forms and land straight in our inbox, where we can pick them up the same day.&rdquo;</blockquote>
+                <figcaption class="mt-6 text-sm text-gray-400"><span class="text-white font-medium">Steve</span> · Lead funnel and campaigns</figcaption>
+                <details class="mt-4 group">
+                    <summary class="cursor-pointer text-sm text-primary-300 hover:text-white transition-colors list-none">Read the full review</summary>
+                    <div class="mt-4 text-gray-300 leading-relaxed space-y-4 text-base"><p>Before you set it up, our site brought in a trickle of inquiries and a lot of them were junk. Now real event inquiries come in through the forms and land straight in our inbox, where we can pick them up the same day.</p>
+                        <p>The email campaigns you ran on top of it put us in front of planners we wouldn't have reached on our own, and several turned into real conversations about 2027 events. You took the time to understand how we sell, and the system reflects that.</p></div>
+                </details>
+            </figure>
+            <figure class="reveal flex flex-col">
+                <blockquote class="text-2xl sm:text-3xl font-medium text-white leading-snug tracking-tight">&ldquo;The site finally feels like it represents the company we are.&rdquo;</blockquote>
+                <figcaption class="mt-6 text-sm text-gray-400"><span class="text-white font-medium">Rick</span> · Website redesign</figcaption>
+                <details class="mt-4 group">
+                    <summary class="cursor-pointer text-sm text-primary-300 hover:text-white transition-colors list-none">Read the full review</summary>
+                    <div class="mt-4 text-gray-300 leading-relaxed space-y-4 text-base"><p>Thank you for the work on our website. The revisions made a real difference in how the site looks and how it flows. It now tells visitors who we are and what we do right away, and it walks them to getting in touch instead of leaving them to hunt for it.</p>
+                        <p>You were easy to work with, quick to turn around changes, and you clearly cared about getting it right for our business, not just finishing a project. The site finally feels like it represents the company we are.</p></div>
+                </details>
+            </figure>
         </div>
+        <p class="trace-ledger text-sm text-gray-500 mt-16">Case-study client names kept private.</p>
+    </div>
+</section>
 
-        <div class="grid md:grid-cols-2 gap-8">
-            <article class="reveal feature-card bg-white p-8 rounded-xl shadow-sm border border-gray-200 flex flex-col">
-                <p class="text-sm font-semibold text-primary-600 uppercase tracking-widest mb-3">Print shop · ~25 employees</p>
-                <h3 class="text-2xl font-bold mb-6">15 orders a week were going missing. Fixed in 3 days.</h3>
-                <h4 class="font-bold mb-2">The leak</h4>
-                <p class="text-gray-600 mb-5">Orders submitted through the website form weren't reaching the production sheet. Nothing showed an error. The orders never arrived, and the team only found out when customers followed up.</p>
-                <h4 class="font-bold mb-2">The fix</h4>
-                <ul class="space-y-2 text-gray-600 mb-5">
-                    <li><i class="fas fa-check text-green-500 mr-2"></i>Traced where the form-to-sheet sync was failing</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i>Rebuilt the sync so every order lands reliably</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i>Added error alerts, so a future failure is caught right away instead of by a customer</li>
-                </ul>
-                <div class="mt-auto pt-5 border-t border-gray-200 grid grid-cols-2 gap-4 text-center">
-                    <div><p class="text-2xl font-bold text-primary-600">~15 → 0</p><p class="text-sm text-gray-500">missed orders a week</p></div>
-                    <div><p class="text-2xl font-bold text-primary-600">3 days</p><p class="text-sm text-gray-500">to deliver</p></div>
-                </div>
-            </article>
-
-            <article class="reveal reveal-delay-1 feature-card bg-white p-8 rounded-xl shadow-sm border border-gray-200 flex flex-col">
-                <p class="text-sm font-semibold text-primary-600 uppercase tracking-widest mb-3">Commercial graphics &amp; production</p>
-                <h3 class="text-2xl font-bold mb-6">Raised the automated share of production work from 20% to 43%.</h3>
-                <h4 class="font-bold mb-2">The problem</h4>
-                <p class="text-gray-600 mb-5">Job tracking, file checks, handoffs and reporting were all done by hand. Bad files and incomplete job data got into production, causing rework and delays. Most of the process lived in people's heads.</p>
-                <h4 class="font-bold mb-2">The fix</h4>
-                <ul class="space-y-2 text-gray-600 mb-5">
-                    <li><i class="fas fa-check text-green-500 mr-2"></i>Rebuilt the workflow end to end: order intake → scheduling → file prep → delivery</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i>Replaced manual handoffs with Python automation and structured data</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i>Added checks that stopped bad files and missing job data before production</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i>Turned tribal knowledge into documented, repeatable procedures</li>
-                </ul>
-                <div class="mt-auto pt-5 border-t border-gray-200 grid grid-cols-2 gap-4 text-center">
-                    <div><p class="text-2xl font-bold text-primary-600">20% → 43%</p><p class="text-sm text-gray-500">of production automated</p></div>
-                    <div><p class="text-2xl font-bold text-primary-600">Grew</p><p class="text-sm text-gray-500">without hiring at the same rate</p></div>
-                </div>
-            </article>
+<!-- WHAT I BRING -->
+<section class="section-light py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 reveal">
+            <h2 class="text-4xl font-semibold mb-4">What I bring to every Check</h2>
+            <p class="text-xl text-gray-600">The two jobs that shaped how I review your setup.</p>
         </div>
-
-        <h3 class="text-center text-xl font-bold mt-16 mb-2 reveal">What I bring to every Check</h3>
-        <p class="text-center text-gray-600 mb-6 reveal">The two jobs that shaped how I review your setup.</p>
-        <div class="grid md:grid-cols-2 gap-6">
-            <div class="reveal bg-white p-6 rounded-xl border border-gray-200">
-                <h4 class="font-bold text-gray-900 mb-2">A checklist of how data actually breaks</h4>
+        <div class="grid md:grid-cols-2 gap-x-12 gap-y-10">
+            <div class="reveal border-t border-gray-300 pt-6">
+                <span class="trace-ledger text-sm text-primary-600">01</span>
+                <h3 class="text-xl font-semibold mt-3 mb-3">A checklist of how data actually breaks</h3>
                 <p class="text-gray-600">I built automated checks on AWS for enterprise data pipelines. They caught blank values, duplicate records, unannounced changes to data structure, missing time periods, and totals that didn't match the source. Your Check runs your workflows against that same list.</p>
             </div>
-            <div class="reveal reveal-delay-1 bg-white p-6 rounded-xl border border-gray-200">
-                <h4 class="font-bold text-gray-900 mb-2">Starting from what should happen, not from the tool</h4>
+            <div class="reveal border-t border-gray-300 pt-6">
+                <span class="trace-ledger text-sm text-primary-600">02</span>
+                <h3 class="text-xl font-semibold mt-3 mb-3">Starting from what should happen, not from the tool</h3>
                 <p class="text-gray-600">I turned what clients asked for in business terms into requirements a delivery team could build and test. That's why your Check starts with a plain question: what should happen to a lead, order or invoice from start to finish? Then I look for where it doesn't.</p>
             </div>
         </div>
@@ -269,13 +307,13 @@ image: "/og-image.png?v=2"
 </section>
 
 <!-- COST OF DOING NOTHING (calculator; logic in script.js) -->
-<section id="cost" class="section-light py-20">
+<section id="cost" class="section-tint py-20">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12 reveal">
-            <h2 class="text-4xl font-bold mb-4">What is the leak costing you?</h2>
+            <h2 class="text-4xl font-semibold mb-4">What is the leak costing you?</h2>
             <p class="text-xl text-gray-600">Plug in rough numbers. Most people underestimate this.</p>
         </div>
-        <div class="reveal bg-white p-8 rounded-xl shadow-sm border border-gray-200" data-loss-calc>
+        <div class="reveal bg-white p-8 rounded-xl  border border-gray-200" data-loss-calc>
             <div class="grid sm:grid-cols-3 gap-6">
                 <label class="block">
                     <span class="block text-sm font-semibold text-gray-700 mb-2">Leads per month</span>
@@ -295,7 +333,7 @@ image: "/og-image.png?v=2"
             </div>
             <div class="mt-8 pt-8 border-t border-gray-200 text-center">
                 <p class="text-gray-600">Estimated revenue lost</p>
-                <p class="text-4xl sm:text-5xl font-bold text-primary-600 mt-2"><span data-calc-out="month">$2,000</span><span class="text-xl text-gray-500 font-normal"> / month</span></p>
+                <p class="text-4xl sm:text-5xl font-semibold text-primary-600 mt-2"><span data-calc-out="month">$2,000</span><span class="text-xl text-gray-500 font-normal"> / month</span></p>
                 <p class="text-gray-500 mt-2"><span data-calc-out="year">$24,000</span> a year</p>
                 <p class="text-sm text-gray-400 mt-4">Value of a lead = average deal value × the share of leads you usually close.</p>
             </div>
@@ -304,89 +342,85 @@ image: "/og-image.png?v=2"
 </section>
 
 <!-- PRICING -->
-<section id="pricing" class="section-tint py-20">
+<section id="pricing" class="section-light py-20">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-8 reveal">
-            <h2 class="text-4xl font-bold mb-4">Pricing</h2>
+            <h2 class="text-4xl font-semibold mb-4">Pricing</h2>
             <p class="text-xl text-gray-600">Pick the level of protection that fits your situation.</p>
         </div>
 
         <div class="reveal grid sm:grid-cols-2 gap-4 max-w-4xl mx-auto mb-4">
             <a href="https://forms.gle/X1EdRnswwu9zp9MHA" target="_blank" rel="noopener noreferrer"
                 class="block bg-white border border-gray-200 hover:border-primary-400 rounded-xl p-5 transition-colors">
-                <p class="font-bold text-gray-900"><i class="fas fa-triangle-exclamation text-primary-600 mr-2"></i>Something broken right now?</p>
+                <p class="font-semibold text-gray-900"><i class="fas fa-triangle-exclamation text-primary-600 mr-2"></i>Something broken right now?</p>
                 <p class="text-gray-600 mt-1">Get a free quote within 24h. Most leaks are fixed in 48–72h. <span class="text-primary-600 font-semibold">Get a free quote →</span></p>
             </a>
             <a href="#check"
                 class="block bg-white border border-gray-200 hover:border-primary-400 rounded-xl p-5 transition-colors">
-                <p class="font-bold text-gray-900"><i class="fas fa-stethoscope text-primary-600 mr-2"></i>Want to catch problems before they cost you?</p>
+                <p class="font-semibold text-gray-900"><i class="fas fa-stethoscope text-primary-600 mr-2"></i>Want to catch problems before they cost you?</p>
                 <p class="text-gray-600 mt-1">Book the $299 Check: a full review and written report. <span class="text-primary-600 font-semibold">See the Check →</span></p>
             </a>
         </div>
         <p class="text-center text-gray-500 mb-14 reveal">Not sure which? Questions are free. <a href="mailto:contact@viabolat.com?subject=Question%20before%20booking" class="text-primary-600 font-semibold underline">Email me first</a>.</p>
         <div class="grid md:grid-cols-3 gap-8">
             <!-- Tier 1 -->
-            <div class="reveal pricing-card bg-white p-8 rounded-xl shadow-sm border-2 border-gray-200">
-                <h3 class="text-xl font-bold mb-1">Fix &amp; Walk Away</h3>
+            <div class="reveal pricing-card bg-white p-8 rounded-xl  border-2 border-gray-200">
+                <h3 class="text-xl font-semibold mb-1">Fix and walk away</h3>
                 <p class="text-gray-500 text-sm mb-4">One-time project</p>
-                <div class="text-4xl font-bold mb-2">$1,500<span class="text-xl text-gray-500 font-normal">–$2,500</span></div>
+                <div class="text-4xl font-semibold mb-2">$1,500<span class="text-xl text-gray-500 font-normal">–$2,500</span></div>
                 <p class="text-gray-500 text-sm mb-6">Rebuilds 7–10 days · urgent fixes 48–72h</p>
                 <ul class="space-y-3 mb-8">
-                    <li><i class="fas fa-check text-green-500 mr-2"></i>Trace where data is lost</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i>Repair or rebuild the leaking connections</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i>Documentation &amp; handoff</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i>Clear fixed scope &amp; price</li>
+                    <li><i class="fas fa-check text-gray-500 mr-2"></i>Trace where data is lost</li>
+                    <li><i class="fas fa-check text-gray-500 mr-2"></i>Repair or rebuild the leaking connections</li>
+                    <li><i class="fas fa-check text-gray-500 mr-2"></i>Documentation &amp; handoff</li>
+                    <li><i class="fas fa-check text-gray-500 mr-2"></i>Clear fixed scope &amp; price</li>
                     <li class="text-gray-400"><i class="fas fa-times text-gray-300 mr-2"></i>No ongoing support</li>
                 </ul>
                 <a href="https://forms.gle/X1EdRnswwu9zp9MHA" target="_blank" rel="noopener noreferrer"
-                    class="block w-full border-2 border-primary-600 text-primary-600 hover:bg-primary-50 text-center py-3 rounded-lg font-semibold transition-colors">
-                    Get a Quote
-                </a>
+                    class="block w-full border-2 border-primary-600 text-primary-600 hover:bg-primary-50 text-center py-3 rounded-[10px] font-medium transition-colors">Get a quote</a>
             </div>
 
             <!-- Tier 2 - Recommended -->
-            <div class="reveal reveal-delay-1 pricing-card btn-glow bg-white p-8 rounded-xl shadow-xl border-4 border-primary-600 relative">
-                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary-600 text-white text-sm font-semibold px-4 py-1 rounded-full">Most Popular</div>
-                <h3 class="text-xl font-bold mb-1 text-primary-600">Fix &amp; Maintain</h3>
+            <div class="reveal reveal-delay-1 pricing-card bg-white p-8 rounded-xl border-2 border-primary-600 relative">
+                <div class="absolute -top-3 left-8 bg-primary-600 text-white text-sm font-medium px-3 h-6 inline-flex items-center rounded-md">Most popular</div>
+                <h3 class="text-xl font-semibold mb-1 text-primary-600">Fix and maintain</h3>
                 <p class="text-gray-500 text-sm mb-4">Build + monthly retainer</p>
-                <div class="text-4xl font-bold mb-1">$1,800<span class="text-xl text-gray-500 font-normal">–$2,800</span></div>
+                <div class="text-4xl font-semibold mb-1">$1,800<span class="text-xl text-gray-500 font-normal">–$2,800</span></div>
                 <p class="text-gray-500 text-sm mb-1">+ $300–$500/month</p>
                 <p class="text-gray-400 text-xs mb-6">Setup + ongoing protection</p>
                 <ul class="space-y-3 mb-8">
-                    <li><i class="fas fa-check text-green-500 mr-2"></i>Everything in Fix &amp; Walk Away</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i>Monthly data-integrity checks</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i>Up to 2 hrs support/month</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i>API/integration updates</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i>Priority 24-hr response</li>
+                    <li><i class="fas fa-check text-gray-500 mr-2"></i>Everything in Fix and walk away</li>
+                    <li><i class="fas fa-check text-gray-500 mr-2"></i>Monthly data-integrity checks</li>
+                    <li><i class="fas fa-check text-gray-500 mr-2"></i>Up to 2 hrs support/month</li>
+                    <li><i class="fas fa-check text-gray-500 mr-2"></i>API/integration updates</li>
+                    <li><i class="fas fa-check text-gray-500 mr-2"></i>Priority 24-hr response</li>
                 </ul>
                 <a href="https://forms.gle/X1EdRnswwu9zp9MHA" target="_blank" rel="noopener noreferrer"
-                    class="block w-full bg-primary-600 hover:bg-primary-700 text-white text-center py-3 rounded-lg font-semibold transition-colors">
-                    Get a Quote
-                </a>
+                    class="block w-full bg-primary-600 hover:bg-primary-700 text-white text-center py-3 rounded-[10px] font-medium transition-colors">Get a quote</a>
             </div>
 
             <!-- Tier 3: Black Friday check, $299 until Nov 30 2026, capped at 20 bookings (matches terms §5 and the Stripe payment limit). -->
-            <div id="check" class="scroll-mt-24 reveal reveal-delay-2 pricing-card bg-white p-8 rounded-xl shadow-sm border-2 border-gray-200">
-                <h3 class="text-xl font-bold mb-1">Black Friday Automation Check</h3>
+            <div id="check" class="scroll-mt-24 reveal reveal-delay-2 pricing-card bg-white p-8 rounded-xl  border-2 border-gray-200">
+                <h3 class="text-xl font-semibold mb-1">Black Friday Automation Check</h3>
                 <p class="text-gray-500 text-sm mb-4">Fixed scope · paid upfront</p>
                 <div class="flex items-baseline gap-3 mb-2">
-                    <span class="text-4xl font-bold">$299</span>
+                    <span class="text-4xl font-semibold">$299</span>
                     <span class="text-xl text-gray-400 line-through" aria-label="Regular price $599">$599</span>
-                    <span class="whitespace-nowrap text-xs font-semibold bg-primary-100 text-primary-700 px-2 py-1 rounded-full">50% off</span>
+                    <span class="whitespace-nowrap trace-ledger text-sm text-primary-700">50% off</span>
                 </div>
                 <p class="text-gray-500 text-sm mb-1">Black Friday price, until Nov 30</p>
                 <p class="text-gray-400 text-xs mb-1">Report within 5 business days of receiving access</p>
                 <p class="text-sm font-semibold text-primary-700 mb-6">Up to 20 bookings, so each gets the full 5 hours</p>
                 <ul class="space-y-3 mb-8">
-                    <li><i class="fas fa-check text-green-500 mr-2"></i>Up to 3 critical workflows, one platform, up to 5 hrs</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i>Written report: where data can drop &amp; plan-limit headroom</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i>Alerts on failing steps</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i>One-page runbook</li>
-                    <li><i class="fas fa-check text-green-500 mr-2"></i>Freeze-or-leave-running call per workflow</li>
+                    <li><i class="fas fa-check text-gray-500 mr-2"></i>Up to 3 critical workflows, one platform, up to 5 hrs</li>
+                    <li><i class="fas fa-check text-gray-500 mr-2"></i>Written report: where data can drop &amp; plan-limit headroom</li>
+                    <li><i class="fas fa-check text-gray-500 mr-2"></i>Alerts on failing steps</li>
+                    <li><i class="fas fa-check text-gray-500 mr-2"></i>One-page runbook</li>
+                    <li><i class="fas fa-check text-gray-500 mr-2"></i>Freeze-or-leave-running call per workflow</li>
                     <li class="text-gray-400 text-sm"><i class="fas fa-info-circle text-gray-300 mr-2"></i>$299 credited toward any fix you hire for</li>
                 </ul>
                 <a href="https://buy.stripe.com/aFa7sF9NjcpbfY26xa7wA03" target="_blank" rel="noopener noreferrer"
-                    class="block w-full border-2 border-primary-600 text-primary-600 hover:bg-primary-50 text-center py-3 rounded-lg font-semibold transition-colors">
+                    class="block w-full border-2 border-primary-600 text-primary-600 hover:bg-primary-50 text-center py-3 rounded-[10px] font-medium transition-colors">
                     Book the Check · $299
                 </a>
                 <p class="text-xs text-gray-400 mt-2 text-center"><i class="fas fa-lock mr-1"></i>Secure checkout via Stripe · 3 quick questions, then you're done</p>
@@ -406,7 +440,7 @@ image: "/og-image.png?v=2"
 <section id="faq" class="section-tint py-20">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12 reveal">
-            <h2 class="text-4xl font-bold mb-4">Frequently asked questions</h2>
+            <h2 class="text-4xl font-semibold mb-4">Frequently asked questions</h2>
             <p class="text-xl text-gray-600">The things people ask before they get in touch.</p>
         </div>
 
@@ -447,7 +481,7 @@ image: "/og-image.png?v=2"
                     <i class="faq-icon fas fa-plus text-primary-600 ml-4"></i>
                 </button>
                 <div class="faq-panel" id="faq3">
-                    <div><p class="text-gray-600 pb-4">Every fix is fully documented, so anything that regresses is quick to trace. For ongoing peace of mind, the Fix &amp; Maintain plan adds monthly health checks and priority response so problems get caught before they cost you.</p></div>
+                    <div><p class="text-gray-600 pb-4">Every fix is fully documented, so anything that regresses is quick to trace. For ongoing peace of mind, the Fix and maintain plan adds monthly health checks and priority response so problems get caught before they cost you.</p></div>
                 </div>
             </div>
 
@@ -504,20 +538,20 @@ image: "/og-image.png?v=2"
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="section-dark gradient-mesh py-24">
+<section id="contact" class="section-dark py-24">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <h2 class="text-4xl font-bold mb-4 text-white reveal">How much data have you already lost?</h2>
+        <h2 class="text-4xl font-semibold mb-4 text-white reveal">How much data have you already lost?</h2>
         <p class="text-xl text-gray-300 mb-10 reveal reveal-delay-1">
             Tell me where leads, records, or payments are going missing. Asking is free: you'll get a straight answer and a fixed price to stop it. No pitch. No fluff.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8 reveal reveal-delay-2">
             <a href="https://forms.gle/X1EdRnswwu9zp9MHA" target="_blank" rel="noopener noreferrer"
-                class="btn-glow btn-magnetic bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors text-lg">
+                class="btn btn-solid">
                 Get a fixed-price quote
             </a>
             <a href="https://buy.stripe.com/aFa7sF9NjcpbfY26xa7wA03" target="_blank" rel="noopener noreferrer"
-                class="btn-glow bg-white/10 text-white border border-white/20 px-8 py-4 rounded-lg font-semibold hover:bg-white/20 transition-colors text-lg">
+                class="btn btn-ghost">
                 Book the $299 Black Friday Check
             </a>
         </div>

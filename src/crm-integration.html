@@ -43,12 +43,12 @@ faqs:
 ---
 
 <!-- HERO -->
-<section class="section-dark gradient-mesh grid-overlay py-20 md:py-28">
+<section class="section-dark py-20 md:py-28">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <p class="reveal text-sm font-semibold text-primary-300 uppercase tracking-widest mb-5">CRM integration · Fixed price · One engineer</p>
-        <h1 class="reveal reveal-delay-1 text-3xl sm:text-4xl md:text-6xl font-bold mb-6 leading-tight">
+        <p class="reveal text-sm font-semibold text-primary-300  mb-5">CRM integration · Fixed price · One engineer</p>
+        <h1 class="reveal reveal-delay-1 text-3xl sm:text-4xl md:text-6xl font-semibold mb-6 leading-tight">
             CRM integration that keeps your leads and customer data
-            <span class="shimmer-text">from going missing.</span>
+            <span class="text-primary-300">from going missing.</span>
         </h1>
         <p class="reveal reveal-delay-2 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
             Your CRM, forms, billing and spreadsheets should agree with each other. I connect them directly, add checks for bad data,
@@ -56,7 +56,7 @@ faqs:
         </p>
         <a href="{{ formUrl }}" target="_blank" rel="noopener noreferrer"
             class="reveal reveal-delay-2 btn-glow inline-block bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors text-lg">
-            Describe your CRM problem <span aria-hidden="true">→</span>
+            Describe your CRM problem 
         </a>
     </div>
 </section>
@@ -65,13 +65,13 @@ faqs:
 <section class="section-light py-16 md:py-20">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12 reveal">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Where CRM data usually goes wrong</h2>
+            <h2 class="text-3xl md:text-4xl font-semibold mb-4">Where CRM data usually goes wrong</h2>
             <p class="text-lg text-gray-600 max-w-2xl mx-auto">Most CRM problems are not the CRM. They happen in the gaps between it and everything else.</p>
         </div>
         <div class="grid md:grid-cols-3 gap-6">
             {% for p in problems %}
-            <div class="reveal bg-white p-7 rounded-xl shadow-sm border border-gray-200 border-t-4 border-t-primary-500">
-                <h3 class="text-xl font-bold mb-3 text-gray-900">{{ p.title }}</h3>
+            <div class="reveal bg-white p-7 rounded-xl  border border-gray-200 border-t-4 border-t-primary-500">
+                <h3 class="text-xl font-semibold mb-3 text-gray-900">{{ p.title }}</h3>
                 <p class="text-gray-600">{{ p.text }}</p>
             </div>
             {% endfor %}
@@ -83,14 +83,14 @@ faqs:
 <section class="section-tint py-16 md:py-20">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12 reveal">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">How a CRM integration project works</h2>
+            <h2 class="text-3xl md:text-4xl font-semibold mb-4">How a CRM integration project works</h2>
         </div>
         <ol class="space-y-5">
             {% for s in steps %}
-            <li class="reveal flex bg-white rounded-xl border border-gray-200 border-l-4 border-l-secondary-500 p-6">
-                <span class="text-2xl font-bold text-secondary-600 mr-5" aria-hidden="true">{{ loop.index }}</span>
+            <li class="reveal flex bg-white rounded-xl border border-gray-200 border-l-4 border-l-gray-300 p-6">
+                <span class="text-2xl font-semibold text-gray-500 mr-5" aria-hidden="true">{{ loop.index }}</span>
                 <div>
-                    <h3 class="font-bold text-lg mb-1">{{ s.title }}</h3>
+                    <h3 class="font-semibold text-lg mb-1">{{ s.title }}</h3>
                     <p class="text-gray-600">{{ s.text }}</p>
                 </div>
             </li>
@@ -102,12 +102,12 @@ faqs:
 <!-- WHAT YOU GET -->
 <section class="section-light py-16 md:py-20">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">What you get</h2>
+        <h2 class="text-3xl md:text-4xl font-semibold mb-6">What you get</h2>
         <ul class="space-y-3 text-gray-700 mb-8">
-            <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>Form, billing and spreadsheet data syncing to your CRM with no one in the middle</span></li>
-            <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>Retries, token refresh and error alerts, so a broken connection is reported the same day</span></li>
-            <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>Validation rules and de-duplication for new and existing records</span></li>
-            <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>Documentation of every connection, in plain language</span></li>
+            <li class="flex"><i class="fas fa-check text-gray-500 mr-2 mt-1" aria-hidden="true"></i><span>Form, billing and spreadsheet data syncing to your CRM with no one in the middle</span></li>
+            <li class="flex"><i class="fas fa-check text-gray-500 mr-2 mt-1" aria-hidden="true"></i><span>Retries, token refresh and error alerts, so a broken connection is reported the same day</span></li>
+            <li class="flex"><i class="fas fa-check text-gray-500 mr-2 mt-1" aria-hidden="true"></i><span>Validation rules and de-duplication for new and existing records</span></li>
+            <li class="flex"><i class="fas fa-check text-gray-500 mr-2 mt-1" aria-hidden="true"></i><span>Documentation of every connection, in plain language</span></li>
         </ul>
         <p class="text-gray-600 mb-6">
             Fixed price, agreed before any work starts. Looking at the wider picture? See all
@@ -117,7 +117,7 @@ faqs:
         </p>
         <a href="{{ formUrl }}" target="_blank" rel="noopener noreferrer"
             class="inline-block bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors">
-            Get a CRM Integration quote <span aria-hidden="true">→</span>
+            Get a CRM Integration quote 
         </a>
     </div>
 </section>
@@ -125,7 +125,7 @@ faqs:
 <!-- WHO YOU WORK WITH -->
 <section class="section-dark py-16 md:py-20">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Who you're working with</h2>
+        <h2 class="text-3xl md:text-4xl font-semibold text-white mb-4">Who you're working with</h2>
         <p class="text-lg text-gray-300 mb-4">
             viabolat is just me, Ahmet Bolat. I spent six years running production automation in-house at Karma Graphics,
             then did data engineering at Accenture. Now I'm independent.
@@ -133,7 +133,7 @@ faqs:
         <p class="text-gray-400 mb-6">
             No sales team and no junior hand-offs. You talk to the person who does the work.
         </p>
-        <a href="/about/" class="text-primary-300 font-semibold hover:text-primary-200">More about Ahmet <span aria-hidden="true">→</span></a>
+        <a href="/about/" class="text-primary-300 font-semibold hover:text-primary-200">More about Ahmet </a>
     </div>
 </section>
 
@@ -141,7 +141,7 @@ faqs:
 <section id="faq" class="section-tint py-20">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12 reveal">
-            <h2 class="text-4xl font-bold mb-4">CRM integration questions</h2>
+            <h2 class="text-4xl font-semibold mb-4">CRM integration questions</h2>
         </div>
         <div class="reveal">
             {% for f in faqs %}
@@ -160,15 +160,15 @@ faqs:
 </section>
 
 <!-- BOTTOM CTA -->
-<section id="contact" class="section-dark gradient-mesh py-20 md:py-24">
+<section id="contact" class="section-dark py-20 md:py-24">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white reveal">Losing leads between your tools?</h2>
+        <h2 class="text-3xl md:text-4xl font-semibold mb-4 text-white reveal">Losing leads between your tools?</h2>
         <p class="text-lg text-gray-300 mb-8 reveal">
             Tell me what's going missing and where. You'll get a fixed-price quote within 24 hours.
         </p>
         <a href="{{ formUrl }}" target="_blank" rel="noopener noreferrer"
             class="reveal btn-glow inline-block bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors text-lg">
-            Describe the problem <span aria-hidden="true">→</span>
+            Describe the problem 
         </a>
         <p class="text-gray-400 mt-6 reveal">
             Or email <a href="mailto:contact@viabolat.com" class="text-primary-300 font-semibold">contact@viabolat.com</a>

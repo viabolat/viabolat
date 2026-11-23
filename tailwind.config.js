@@ -4,36 +4,42 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Poppins", "Poppins Fallback", "system-ui", "sans-serif"],
+        sans: ["Geist", "Geist Fallback", "system-ui", "sans-serif"],
+        mono: ["Geist Mono", "ui-monospace", "SFMono-Regular", "monospace"],
       },
       colors: {
-        // Cinematic dark surface for hero + CTA "bookend" sections.
-        ink: {
-          950: "#06060c",
+        // Warm ink for the dark bookends (hero, contact).
+        ink: { 950: "#0d0d0c" },
+        // Warm neutral ramp: every text-gray-* / border-gray-* tints toward paper and ink.
+        gray: {
+          50: "#faf9f6",
+          100: "#f1efe9",
+          200: "#d9d5ca",
+          300: "#c2bdb0",
+          400: "#a29e92",
+          500: "#7a766b",
+          600: "#57534a",
+          700: "#3f3c35",
+          800: "#2a2823",
+          900: "#1a1916",
         },
+        // The one accent: amber. 300-400 sit on dark, 600-800 carry text on light (>= 4.5:1).
         primary: {
-          50: "#f5f3ff",
-          100: "#ede9fe",
-          200: "#ddd6fe",
-          300: "#c4b5fd",
-          400: "#a78bfa",
-          500: "#8b5cf6",
-          600: "#7c3aed",
-          700: "#6d28d9",
-          800: "#5b21b6",
-          900: "#4c1d95",
+          50: "#fbf6e9",
+          100: "#f5eac9",
+          200: "#ecd597",
+          300: "#e0b45a",
+          400: "#c9a24d",
+          500: "#a8741a",
+          600: "#8a5a00",
+          700: "#6f4800",
+          800: "#573800",
+          900: "#3d2800",
         },
+        // Retired hue: kept only as neutrals so any leftover class stays in palette.
         secondary: {
-          50: "#f0f9ff",
-          100: "#e0f2fe",
-          200: "#bae6fd",
-          300: "#7dd3fc",
-          400: "#38bdf8",
-          500: "#0ea5e9",
-          600: "#0284c7",
-          700: "#0369a1",
-          800: "#075985",
-          900: "#0c4a6e",
+          50: "#faf9f6", 100: "#f1efe9", 200: "#e3e0d8", 300: "#cdc9be", 400: "#a29e92",
+          500: "#7a766b", 600: "#57534a", 700: "#3f3c35", 800: "#2a2823", 900: "#1a1916",
         },
       },
     },
