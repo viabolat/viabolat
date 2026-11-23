@@ -1,31 +1,31 @@
-<header class="bg-ink-950/80 backdrop-blur border-b border-white/10 sticky top-0 z-50">
+<header class="bg-ink-950 border-b border-white/10 sticky top-0 z-50">
     <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
         <div class="flex justify-between items-center py-4">
             <a href="/" title="viabolat Home" class="hover:opacity-90 transition-opacity flex items-center">
                 <div class="mr-1 shrink-0">
                     <img src="{{ '/assets/images/logo.svg' | bust }}" alt="viabolat logo" class="w-10 h-10 mr-2">
                 </div>
-                <span class="text-xl font-bold text-white italic">viabolat</span>
+                <span class="text-xl font-semibold text-white tracking-tight">viabolat</span>
             </a>
             <!-- reason: 7 links at 15-16px wrapped onto 2-3 lines between 768-1023px
                  and touched the logo; tighter, no-wrap text keeps one line there -->
             <div class="hidden md:flex items-center gap-x-3 lg:gap-x-6 text-sm lg:text-base whitespace-nowrap">
-                <a href="/services/" class="text-gray-200 hover:text-primary-300 transition-colors nav-link">Services</a>
-                <a href="/#how" class="text-gray-200 hover:text-primary-300 transition-colors nav-link">How It Works</a>
-                <a href="/#fixes" class="text-gray-200 hover:text-primary-300 transition-colors nav-link">What viabolat Fixes</a>
-                <a href="/#pricing" class="text-gray-200 hover:text-primary-300 transition-colors nav-link">Pricing</a>
-                <a href="/#faq" class="text-gray-200 hover:text-primary-300 transition-colors nav-link">FAQ</a>
-                <a href="/#contact" class="text-gray-200 hover:text-primary-300 transition-colors nav-link">Contact</a>
+                <a href="/services/" class="text-gray-300 hover:text-white nav-link">Services</a>
+                <a href="/#how" class="text-gray-300 hover:text-white nav-link">How it works</a>
+                <a href="/#fixes" class="text-gray-300 hover:text-white nav-link">What viabolat fixes</a>
+                <a href="/#pricing" class="text-gray-300 hover:text-white nav-link">Pricing</a>
+                <a href="/#faq" class="text-gray-300 hover:text-white nav-link">FAQ</a>
+                <a href="/#contact" class="text-gray-300 hover:text-white nav-link">Contact</a>
             </div>
             <div class="flex items-center gap-3">
                 <!-- reason: beside the logo the CTA crowded/overlapped the wordmark on
                      narrow phones (~320pt), so below md it moves to the bar under this row -->
-                <a href="/#pricing" class="hidden xl:inline-block whitespace-nowrap bg-primary-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-primary-700 transition-colors">Black Friday check — $299</a>
+                <a href="https://buy.stripe.com/aFa7sF9NjcpbfY26xa7wA03" target="_blank" rel="noopener noreferrer" class="hidden xl:inline-flex btn btn-solid whitespace-nowrap !h-10 !px-4 text-sm">Black Friday Check, $299</a>
                 <button class="md:hidden text-white" aria-label="Open navigation menu">
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
         </div>
     </nav>
-    <a href="/#pricing" class="md:hidden block bg-primary-600 text-white text-center text-sm font-semibold py-2 px-4 hover:bg-primary-700 transition-colors">Black Friday check — $299 →</a>
+    <a href="https://buy.stripe.com/aFa7sF9NjcpbfY26xa7wA03" target="_blank" rel="noopener noreferrer" class="md:hidden block bg-gray-900 border-t border-white/10 text-primary-300 text-center text-sm font-medium py-2 px-4">Black Friday Check, $299</a>
 </header>

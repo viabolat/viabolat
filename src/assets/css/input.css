@@ -2,390 +2,121 @@
 @tailwind components;
 @tailwind utilities;
 
-/* reason: Poppins now loads without blocking first paint, so text first renders
-   in a fallback font. This face is sized to Poppins' metrics so the swap doesn't
-   shift the layout (CLS). Arial/Liberation Sans on desktop, Roboto on Android. */
+/* reason: Geist loads without blocking first paint; this face is sized close to
+   Geist's metrics so the swap from the fallback doesn't shift layout. */
 @font-face {
-    font-family: 'Poppins Fallback';
+    font-family: 'Geist Fallback';
     src: local('Arial'), local('Liberation Sans'), local('Roboto');
-    size-adjust: 112.16%;
-    ascent-override: 93.62%;
-    descent-override: 31.21%;
-    line-gap-override: 8.92%;
+    size-adjust: 104%;
+    ascent-override: 92%;
+    descent-override: 24%;
+    line-gap-override: 0%;
 }
 
-/* Base Styles */
-/* reason: dark ink base — light sections paint over it; prevents the old light
-   gradient from fighting the new dark cinematic hero/CTA bookends. */
+:root {
+    /* warm ink ramp (dark sections) and paper ramp (light sections) */
+    --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+    --t-fast: 150ms;
+    --t-enter: 400ms;
+}
+
 body {
-    font-family: 'Poppins', 'Poppins Fallback', sans-serif;
-    background: #06060c;
+    font-family: 'Geist', 'Geist Fallback', system-ui, sans-serif;
+    background: #0d0d0c;
     min-height: 100vh;
+    font-feature-settings: "tnum" 0;
 }
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
-/* Logo Styles */
-.logo-circle {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #8b5cf6 0%, #0ea5e9 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    box-shadow: 0 4px 6px rgba(139, 92, 246, 0.2);
-    border: 2px solid #8b5cf6;
-}
+.font-mono, .num { font-variant-numeric: tabular-nums; }
 
-/* Text Styles */
-.gradient-text {
-    background: linear-gradient(135deg, #8b5cf6 0%, #0ea5e9 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 700;
-}
-
-/* Card Styles */
-.card {
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    border-radius: 16px;
-    overflow: hidden;
-    border: none;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-.error-card {
-    animation: fade-in 0.4s ease-out;
-    animation-fill-mode: backwards;
-}
-
-.error-card:nth-child(1) {
-    animation-delay: 0.1s;
-}
-
-.error-card:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.error-card:nth-child(3) {
-    animation-delay: 0.3s;
-}
-
-.error-card:nth-child(4) {
-    animation-delay: 0.4s;
-}
-
-.summary-card {
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(14, 165, 233, 0.1) 100%);
-    border-left: 4px solid #8b5cf6;
-}
-
-.testimonial-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 245, 245, 0.95) 100%);
-    backdrop-filter: blur(5px);
-}
-
-.pricing-card {
-    transition: all 0.3s ease;
-    border: 1px solid rgba(102, 126, 234, 0.2);
-}
-
-.pricing-card:hover {
-    border-color: #667eea;
-    transform: translateY(-5px);
-}
-
-.feature-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-
-/* Button Styles */
-.btn-primary {
-    background: linear-gradient(135deg, #8b5cf6 0%, #0ea5e9 100%);
-    border: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(139, 92, 246, 0.2);
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 7px 14px rgba(139, 92, 246, 0.3);
-}
-
-.btn-secondary {
-    background: linear-gradient(135deg, #0ea5e9 0%, #8b5cf6 100%);
-    border: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(14, 165, 233, 0.2);
-}
-
-.btn-secondary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 7px 14px rgba(14, 165, 233, 0.3);
-}
-
-/* Upload Area Styles */
-.upload-area {
-    border: 2px dashed #c4b5fd;
-    border-radius: 12px;
-    transition: all 0.3s ease;
-    background-color: rgba(237, 233, 254, 0.3);
-}
-
-.upload-area:hover {
-    background-color: rgba(237, 233, 254, 0.5);
-    border-color: #8b5cf6;
-}
-
-/* Animation Styles */
-.floating {
-    animation: float 6s ease-in-out infinite;
-}
-
-.pulse-icon {
-    animation: pulse-slow 2.5s infinite;
-}
-
-/* Navigation Link Styles */
-.nav-link {
-    position: relative;
-}
-
-.nav-link:after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -2px;
-    left: 0;
-    background-color: #E0B8FF;
-    /* Changed to match primary-200 hover color */
-    transition: width 0.3s ease;
-}
-
-.nav-link:hover:after {
-    width: 100%;
-}
-
-/* Hover Effects */
-.hover-lift {
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-
-.hover-lift:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-}
-
-/* Accessibility Styles */
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
-
-[aria-busy="true"] {
-    cursor: progress;
-}
-
-/* ============================================================
-   CINEMATIC THEME + MOTION SYSTEM
-   Pure CSS/GPU effects (transform/opacity/filter only).
-   Hybrid rhythm: dark hero/CTA bookends, light readable body.
-   ============================================================ */
-
-/* ---- Hybrid surface primitives ---- */
+/* ---- Surfaces ---- */
 .section-dark {
-    background-color: #06060c;
-    /* ink-950 */
-    color: #e7e7f0;
+    background-color: #0d0d0c;
+    color: #e9e7e1;
     position: relative;
     overflow: hidden;
-    /* clip the blurred mesh so it can't cause horizontal scroll */
     isolation: isolate;
 }
-
-/* reason: no blanket `.section-dark p` color — its (0,1,1) specificity would
-   override intentional Tailwind text utilities (text-primary-300, text-white).
-   Every dark-section paragraph sets its own text color in the markup. */
-
-/* reason: light/tint sections stack directly; a hairline top border + a tint
-   that is clearly distinct from pure white keeps adjacent bands from visually
-   merging into one slab. Alternate .section-light / .section-tint down the page. */
 .section-light {
-    background-color: #ffffff;
-    color: #111827;
-    border-top: 1px solid #e6e8f2;
+    background-color: #faf9f6;
+    color: #1a1916;
+    border-top: 1px solid rgba(26, 25, 22, 0.14);
 }
-
 .section-tint {
-    background-color: #eef1f8;
-    color: #111827;
-    border-top: 1px solid #e6e8f2;
+    background-color: #ebe8df;
+    color: #1a1916;
+    border-top: 1px solid rgba(26, 25, 22, 0.14);
 }
 
-/* ---- Animated gradient-mesh backdrop (GPU compositor only) ---- */
-.gradient-mesh::before {
-    content: "";
-    position: absolute;
-    inset: -30%;
-    z-index: -1;
-    background:
-        radial-gradient(40% 40% at 20% 20%, rgba(139, 92, 246, 0.35), transparent 70%),
-        radial-gradient(40% 40% at 80% 30%, rgba(14, 165, 233, 0.30), transparent 70%),
-        radial-gradient(45% 45% at 50% 80%, rgba(124, 58, 237, 0.25), transparent 70%);
-    filter: blur(40px);
-    will-change: transform, opacity;
-    animation: meshDrift 18s ease-in-out infinite alternate;
+@layer components {
+/* ---- Buttons ---- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: 48px;
+    padding: 0 24px;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background-color var(--t-fast) var(--ease), border-color var(--t-fast) var(--ease), color var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
+}
+.btn:active { transform: scale(0.98); }
+.btn-solid { background: #f4f2ec; color: #14130f; }
+.btn-solid:hover { background: #ffffff; }
+.btn-ghost { color: #e9e7e1; border: 1px solid rgba(233, 231, 225, 0.2); }
+.btn-ghost:hover { border-color: rgba(233, 231, 225, 0.5); }
+.btn-accent { background: #8a5a00; color: #fff; }
+.btn-accent:hover { background: #6f4800; }
+
 }
 
-@keyframes meshDrift {
-    0% {
-        transform: translate3d(0, 0, 0) scale(1);
-        opacity: 0.9;
-    }
-
-    50% {
-        transform: translate3d(2%, -2%, 0) scale(1.08);
-        opacity: 1;
-    }
-
-    100% {
-        transform: translate3d(-2%, 2%, 0) scale(1.04);
-        opacity: 0.85;
-    }
+/* ---- Cards ---- */
+.feature-card {
+    transition: border-color var(--t-fast) var(--ease), background-color var(--t-fast) var(--ease);
 }
+.feature-card:hover { border-color: rgba(26, 25, 22, 0.28); }
 
-/* Static masked grid overlay for depth on dark sections */
-.grid-overlay::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-    background-image:
-        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-    background-size: 48px 48px;
-    -webkit-mask-image: radial-gradient(60% 60% at 50% 40%, #000, transparent 80%);
-    mask-image: radial-gradient(60% 60% at 50% 40%, #000, transparent 80%);
+/* ---- Nav ---- */
+.nav-link { transition: color var(--t-fast) var(--ease); }
+
+/* ---- Signature: the trace ----
+   A thin line with a dot where a record dropped. Used in the hero, the
+   how-it-works steps and nowhere else. */
+.trace-dot {
+    width: 8px; height: 8px; border-radius: 9999px; background: #e0b45a; flex: none;
 }
+.trace-dot.is-break { background: #e0b45a; box-shadow: 0 0 0 4px rgba(224, 180, 90, 0.2); }
+.trace-line { height: 1px; background: rgba(233, 231, 225, 0.18); flex: 1; }
+.trace-line.is-cut { background: repeating-linear-gradient(90deg, rgba(224,180,90,.7) 0 4px, transparent 4px 8px); }
+.trace-ledger { font-family: 'Geist Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; }
 
-/* ---- Animated gradient-text shimmer (hero/heading brand lines) ---- */
-.shimmer-text {
-    background: linear-gradient(110deg, #a78bfa 0%, #38bdf8 30%, #ffffff 50%, #a78bfa 70%, #38bdf8 100%);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-    animation: shimmer 6s linear infinite;
-}
-
-@keyframes shimmer {
-    to {
-        background-position: 200% center;
-    }
-}
-
-/* ---- Scroll-reveal with stagger (driven by IntersectionObserver) ---- */
-/* reason: no will-change here — there can be ~100 .reveal nodes per page and the
-   reveal is a one-shot transition; a permanent compositor hint on each would keep
-   that many GPU layers alive for the page's lifetime with no benefit. */
+/* ---- Scroll-reveal: one short fade and rise ---- */
 .reveal {
     opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: translateY(12px);
+    transition: opacity var(--t-enter) var(--ease), transform var(--t-enter) var(--ease);
 }
+.reveal.is-visible { opacity: 1; transform: none; }
+.reveal-delay-1.is-visible { transition-delay: 0.05s; }
+.reveal-delay-2.is-visible { transition-delay: 0.1s; }
+.reveal-delay-3.is-visible { transition-delay: 0.15s; }
+.reveal-delay-4.is-visible { transition-delay: 0.2s; }
 
-.reveal.is-visible {
-    opacity: 1;
-    transform: none;
-}
-
-.reveal-delay-1.is-visible {
-    transition-delay: 0.08s;
-}
-
-.reveal-delay-2.is-visible {
-    transition-delay: 0.16s;
-}
-
-.reveal-delay-3.is-visible {
-    transition-delay: 0.24s;
-}
-
-.reveal-delay-4.is-visible {
-    transition-delay: 0.32s;
-}
-
-/* ---- Glass card (for dark sections) ---- */
-.glass-card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.10);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 16px;
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.glass-card:hover {
-    transform: translateY(-4px);
-    border-color: rgba(167, 139, 250, 0.5);
-    box-shadow: 0 20px 40px -20px rgba(124, 58, 237, 0.5);
-}
-
-/* ---- Glow / magnetic buttons ---- */
-.btn-glow {
-    position: relative;
-    transition: transform 0.15s ease, box-shadow 0.3s ease;
-    will-change: transform;
-}
-
-.btn-glow:hover {
-    box-shadow: 0 0 0 1px rgba(167, 139, 250, 0.6), 0 8px 30px -6px rgba(124, 58, 237, 0.6);
-}
-
-.btn-magnetic {
-    transition: transform 0.12s ease-out;
-}
-
-/* ---- Count-up stat numbers (no width jitter while counting) ---- */
-.stat-num {
-    font-variant-numeric: tabular-nums;
-}
+.stat-num { font-variant-numeric: tabular-nums; }
 
 /* ---- FAQ accordion (grid-rows transition, no max-height hack) ---- */
 .faq-item {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(26, 25, 22, 0.1);
 }
 
 .faq-panel {
     display: grid;
     grid-template-rows: 0fr;
-    transition: grid-template-rows 0.35s ease;
+    transition: grid-template-rows 250ms var(--ease);
 }
 
 .faq-panel.is-open {
@@ -397,7 +128,7 @@ html {
 }
 
 .faq-icon {
-    transition: transform 0.3s ease;
+    transition: transform 250ms var(--ease);
 }
 
 .faq-item.is-open .faq-icon {
@@ -489,16 +220,15 @@ html {
     align-items: center;
     justify-content: center;
     border-radius: 9999px;
-    color: #4b5563;
+    color: #57534a;
     background: #ffffff;
-    border: 1px solid #e5e7eb;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-    transition: color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+    border: 1px solid rgba(26, 25, 22, 0.14);
+        transition: color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
 }
 
 .reviews-arrow:hover:not(:disabled) {
-    color: #7c3aed;
-    border-color: #c4b5fd;
+    color: #8a5a00;
+    border-color: #c9a24d;
 }
 
 .reviews-arrow:disabled {
@@ -531,67 +261,47 @@ html {
     width: 0.5rem;
     height: 0.5rem;
     border-radius: 9999px;
-    background: #cbd5e1;
+    background: rgba(26, 25, 22, 0.2);
     transition: background-color 0.2s ease, width 0.2s ease;
 }
 
 /* .is-active marks every slide currently in view (3 dots light up at lg);
    aria-current marks the leading one, which also widens into a pill. */
 .reviews-dot.is-active::before {
-    background: #a78bfa;
+    background: #c9a24d;
 }
 
 .reviews-dot[aria-current="true"]::before {
-    background: #7c3aed;
+    background: #8a5a00;
     width: 1.25rem;
 }
 
-/* ---- Keyboard focus visibility on dark surfaces ---- */
+/* ---- Keyboard focus ---- */
 .section-dark a:focus-visible,
 .section-dark button:focus-visible,
-.btn-glow:focus-visible,
+.btn:focus-visible,
 .faq-trigger:focus-visible {
-    outline: 2px solid #a78bfa;
+    outline: 2px solid #e0b45a;
     outline-offset: 2px;
-    border-radius: 4px;
+    border-radius: 6px;
 }
-
-/* Carousel lives on a light section, so it needs the darker primary for contrast. */
 .reviews-track:focus-visible,
 .reviews-arrow:focus-visible,
-.reviews-dot:focus-visible {
-    outline: 2px solid #7c3aed;
+.reviews-dot:focus-visible,
+a:focus-visible, button:focus-visible, input:focus-visible {
+    outline: 2px solid #8a5a00;
     outline-offset: 2px;
-    border-radius: 12px;
+    border-radius: 8px;
 }
+.section-dark a:focus-visible, .section-dark button:focus-visible { outline-color: #e0b45a; }
 
-/* ============================================================
-   REDUCED-MOTION MASTER SWITCH
-   Honors prefers-reduced-motion: forces final/static state.
-   ============================================================ */
 @media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
+    *, *::before, *::after {
         animation-duration: 0.001ms !important;
-        animation-iteration-count: 1 !important;
         transition-duration: 0.001ms !important;
         scroll-behavior: auto !important;
     }
-
-    .gradient-mesh::before {
-        animation: none !important;
-    }
-
-    .shimmer-text {
-        background-position: 0 0 !important;
-    }
-
-    .reveal {
-        opacity: 1 !important;
-        transform: none !important;
-    }
+    .reveal { opacity: 1 !important; transform: none !important; }
 }
 /* reason: the header is sticky, so in-page anchor jumps (/#pricing etc.) must
    stop below it. Mobile adds the CTA bar under the nav row (~108px total). */
@@ -604,3 +314,6 @@ html {
         scroll-padding-top: 4.5rem;
     }
 }
+
+/* Large display text only: tight tracking. Small text keeps default spacing. */
+h1, h2 { letter-spacing: -0.02em; }

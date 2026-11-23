@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const mobileMenu = document.createElement("div");
     mobileMenu.id = "mobile-menu";
     mobileMenu.className =
-      "hidden fixed inset-0 bg-ink-950/95 backdrop-blur z-50 flex flex-col items-center justify-center";
+      "hidden fixed inset-0 bg-ink-950 z-50 flex flex-col items-center justify-center";
     // reason: link list mirrors the header nav anchors exactly so mobile nav
     // never points at dead anchors (was previously stale Features/Testimonials).
     mobileMenu.innerHTML = `
@@ -20,12 +20,12 @@ document.addEventListener("DOMContentLoaded", function () {
           <i class="fas fa-times text-2xl"></i>
         </button>
         <div id="mobile-links" class="space-y-7 text-center">
-          <a href="/services/" class="block text-2xl font-medium text-gray-100 hover:text-primary-300">Services</a>
-          <a href="/#how" class="block text-2xl font-medium text-gray-100 hover:text-primary-300">How It Works</a>
-          <a href="/#fixes" class="block text-2xl font-medium text-gray-100 hover:text-primary-300">What viabolat Fixes</a>
-          <a href="/#pricing" class="block text-2xl font-medium text-gray-100 hover:text-primary-300">Pricing</a>
-          <a href="/#faq" class="block text-2xl font-medium text-gray-100 hover:text-primary-300">FAQ</a>
-          <a href="/#contact" class="block text-2xl font-medium text-gray-100 hover:text-primary-300">Contact</a>
+          <a href="/services/" class="block text-2xl font-medium text-gray-100 hover:text-white">Services</a>
+          <a href="/#how" class="block text-2xl font-medium text-gray-100 hover:text-white">How it works</a>
+          <a href="/#fixes" class="block text-2xl font-medium text-gray-100 hover:text-white">What viabolat fixes</a>
+          <a href="/#pricing" class="block text-2xl font-medium text-gray-100 hover:text-white">Pricing</a>
+          <a href="/#faq" class="block text-2xl font-medium text-gray-100 hover:text-white">FAQ</a>
+          <a href="/#contact" class="block text-2xl font-medium text-gray-100 hover:text-white">Contact</a>
         </div>
       `;
     document.body.appendChild(mobileMenu);
@@ -301,27 +301,4 @@ document.addEventListener("DOMContentLoaded", function () {
       window.addEventListener("resize", syncOverflow);
     }
   });
-
-  // --- Magnetic Buttons (fine pointers only, skip reduced motion) ---
-  if (!REDUCED && window.matchMedia("(pointer: fine)").matches) {
-    document.querySelectorAll(".btn-magnetic").forEach((btn) => {
-      // Cache the resting rect on enter: mousemove then avoids forcing a layout
-      // read every event, and the offset is measured from the untranslated
-      // position rather than the live (already-translated) one.
-      let rect = null;
-      btn.addEventListener("mouseenter", () => {
-        rect = btn.getBoundingClientRect();
-      });
-      btn.addEventListener("mousemove", (e) => {
-        if (!rect) return;
-        const x = (e.clientX - rect.left - rect.width / 2) / rect.width;
-        const y = (e.clientY - rect.top - rect.height / 2) / rect.height;
-        btn.style.transform = `translate(${x * 8}px, ${y * 8}px)`;
-      });
-      btn.addEventListener("mouseleave", () => {
-        rect = null;
-        btn.style.transform = "";
-      });
-    });
-  }
 });

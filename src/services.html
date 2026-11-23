@@ -18,9 +18,9 @@ services:
   - id: "automation-repair"
     name: "Automation Repair"
     icon: "fa-wrench"
-    accentTop: "border-t-primary-500"
-    accentLeft: "border-l-primary-500"
-    accentText: "text-primary-600"
+    accentTop: "border-t-gray-300"
+    accentLeft: "border-l-gray-300"
+    accentText: "text-gray-600"
     headline: "It stopped running. Nobody noticed."
     oneliner: "Zaps, Make scenarios, webhooks and scripts that broke quietly, traced to the root cause and fixed."
     lead: "Most automations don't crash loudly. They fail on one missing field and keep going."
@@ -39,9 +39,9 @@ services:
   - id: "data-validation"
     name: "Data Validation"
     icon: "fa-check-double"
-    accentTop: "border-t-secondary-500"
-    accentLeft: "border-l-secondary-500"
-    accentText: "text-secondary-600"
+    accentTop: "border-t-gray-300"
+    accentLeft: "border-l-gray-300"
+    accentText: "text-gray-600"
     headline: "The report looks wrong. It probably is."
     oneliner: "Checks that catch duplicates, gaps and bad formats before they reach your numbers."
     lead: "If your team re-checks every report by hand, nobody trusts the data."
@@ -54,9 +54,9 @@ services:
   - id: "data-pipelines"
     name: "Data Pipelines"
     icon: "fa-diagram-project"
-    accentTop: "border-t-emerald-500"
-    accentLeft: "border-l-emerald-500"
-    accentText: "text-emerald-600"
+    accentTop: "border-t-gray-300"
+    accentLeft: "border-l-gray-300"
+    accentText: "text-gray-600"
     headline: "Copy-paste is not a job description."
     oneliner: "Manual exports, spreadsheet shuffling and PDF re-typing, replaced with a pipeline that runs on its own."
     lead: "If the same export, clean and paste happens every week, it can run on a schedule."
@@ -69,9 +69,9 @@ services:
   - id: "system-integrations"
     name: "System Integrations"
     icon: "fa-plug"
-    accentTop: "border-t-amber-500"
-    accentLeft: "border-l-amber-500"
-    accentText: "text-amber-600"
+    accentTop: "border-t-gray-300"
+    accentLeft: "border-l-gray-300"
+    accentText: "text-gray-600"
     headline: "Your tools don't talk. Your people do it for them."
     oneliner: "CRM, forms, billing and spreadsheets connected through APIs and webhooks, with no person in the middle."
     lead: "Every time someone retypes data from one system into another, you pay for it twice."
@@ -86,9 +86,9 @@ services:
   - id: "lead-scoring"
     name: "Lead-Scoring Systems"
     icon: "fa-bullseye"
-    accentTop: "border-t-rose-500"
-    accentLeft: "border-l-rose-500"
-    accentText: "text-rose-600"
+    accentTop: "border-t-gray-300"
+    accentLeft: "border-l-gray-300"
+    accentText: "text-gray-600"
     headline: "Not a lead problem. A prioritization problem."
     oneliner: "Rules that rank incoming leads and send the best ones to you first."
     lead: "If every lead lands in the same inbox, the best ones wait as long as the worst."
@@ -101,9 +101,9 @@ services:
   - id: "process-documentation"
     name: "Process Documentation"
     icon: "fa-book"
-    accentTop: "border-t-indigo-500"
-    accentLeft: "border-l-indigo-500"
-    accentText: "text-indigo-600"
+    accentTop: "border-t-gray-300"
+    accentLeft: "border-l-gray-300"
+    accentText: "text-gray-600"
     headline: "If it lives in one person's head, it's a risk."
     oneliner: "Your workflows and automations written down, so they survive vacations, turnover and growth."
     lead: "A process that only works because one person remembers it is not a system."
@@ -135,12 +135,12 @@ faqs:
 ---
 
 <!-- HERO -->
-<section class="section-dark gradient-mesh grid-overlay py-20 md:py-28">
+<section class="section-dark py-20 md:py-28">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <p class="reveal text-sm font-semibold text-primary-300 uppercase tracking-widest mb-5">Services · Fixed prices · One engineer</p>
-        <h1 class="reveal reveal-delay-1 text-3xl sm:text-4xl md:text-6xl font-bold mb-6 leading-tight">
+        <p class="reveal text-sm font-semibold text-primary-300  mb-5">Services · Fixed prices · One engineer</p>
+        <h1 class="reveal reveal-delay-1 text-3xl sm:text-4xl md:text-6xl font-semibold mb-6 leading-tight">
             Six ways a small business quietly loses time and money.
-            <span class="shimmer-text">I fix all six.</span>
+            <span class="text-primary-300">I fix all six.</span>
         </h1>
         <p class="reveal reveal-delay-2 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
             Automations that silently died. Data nobody trusts. Hours lost to copy-paste. Systems that don't talk.
@@ -155,13 +155,13 @@ faqs:
         <h2 class="sr-only">The six services</h2>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {% for s in services %}
-            <a href="#{{ s.id }}" class="reveal feature-card group flex flex-col bg-white p-7 rounded-xl shadow-sm border border-gray-200 border-t-4 {{ s.accentTop }} hover:shadow-md transition-shadow">
-                <p class="text-xs font-semibold uppercase tracking-wide {{ s.accentText }} mb-3">
+            <a href="#{{ s.id }}" class="reveal feature-card group flex flex-col bg-white p-7 rounded-xl  border border-gray-200 border-t-4 {{ s.accentTop }} hover:shadow-md transition-shadow">
+                <p class="text-xs font-semibold {{ s.accentText }} mb-3">
                     <i class="fas {{ s.icon }} mr-2" aria-hidden="true"></i>{{ s.name }}
                 </p>
-                <p class="text-2xl font-bold leading-snug text-gray-900 mb-3">{{ s.headline }}</p>
+                <p class="text-2xl font-semibold leading-snug text-gray-900 mb-3">{{ s.headline }}</p>
                 <p class="text-gray-600 mb-5">{{ s.oneliner }}</p>
-                <span class="mt-auto text-sm font-semibold {{ s.accentText }}">See what's included <span aria-hidden="true">→</span></span>
+                <span class="mt-auto text-sm font-semibold {{ s.accentText }}">See what's included </span>
             </a>
             {% endfor %}
         </div>
@@ -172,24 +172,24 @@ faqs:
 {% for s in services %}
 <section id="{{ s.id }}" class="{{ 'section-tint' if loop.index0 % 2 == 0 else 'section-light' }} py-16 md:py-20">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
-        <p class="text-sm font-semibold uppercase tracking-wide {{ s.accentText }} mb-2">
+        <p class="text-sm font-semibold {{ s.accentText }} mb-2">
             <i class="fas {{ s.icon }} mr-2" aria-hidden="true"></i>Service {{ loop.index }} of {{ services | length }}
         </p>
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">{{ s.name }}</h2>
+        <h2 class="text-3xl md:text-4xl font-semibold mb-4">{{ s.name }}</h2>
         <p class="text-xl font-semibold text-gray-800 mb-4">{{ s.lead }}</p>
         <p class="text-gray-600 mb-8">{{ s.pain }}</p>
 
         <div class="grid md:grid-cols-2 gap-6 mb-8">
             <div class="bg-white rounded-xl border border-gray-200 border-l-4 {{ s.accentLeft }} p-6">
-                <h3 class="font-bold mb-3">What I do</h3>
+                <h3 class="font-semibold mb-3">What I do</h3>
                 <ul class="space-y-2 text-gray-700">
                     {% for d in s.does %}
-                    <li class="flex"><i class="fas fa-check text-green-500 mr-2 mt-1" aria-hidden="true"></i><span>{{ d }}</span></li>
+                    <li class="flex"><i class="fas fa-check text-gray-500 mr-2 mt-1" aria-hidden="true"></i><span>{{ d }}</span></li>
                     {% endfor %}
                 </ul>
             </div>
             <div class="bg-white rounded-xl border border-gray-200 p-6">
-                <h3 class="font-bold mb-3">Pricing</h3>
+                <h3 class="font-semibold mb-3">Pricing</h3>
                 {% if s.pricing %}
                 <ul class="space-y-2 text-gray-700">
                     {% for p in s.pricing %}
@@ -205,10 +205,10 @@ faqs:
 
         <a href="{{ formUrl }}" target="_blank" rel="noopener noreferrer"
             class="inline-block bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors">
-            {{ s.cta }} <span aria-hidden="true">→</span>
+            {{ s.cta }} 
         </a>
         {% if s.learnMoreUrl %}
-        <p class="mt-5"><a href="{{ s.learnMoreUrl }}" class="text-primary-600 font-semibold hover:text-primary-700">{{ s.learnMoreText }} <span aria-hidden="true">→</span></a></p>
+        <p class="mt-5"><a href="{{ s.learnMoreUrl }}" class="text-primary-600 font-semibold hover:text-primary-700">{{ s.learnMoreText }} </a></p>
         {% endif %}
         <a href="#services" class="block sm:inline-block mt-4 sm:mt-0 sm:ml-4 text-sm text-gray-500 hover:text-gray-700">Back to all services</a>
     </div>
@@ -218,7 +218,7 @@ faqs:
 <!-- WHO YOU WORK WITH: solo founder stated plainly -->
 <section class="section-dark py-16 md:py-20">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Who you're working with</h2>
+        <h2 class="text-3xl md:text-4xl font-semibold text-white mb-4">Who you're working with</h2>
         <p class="text-lg text-gray-300 mb-4">
             viabolat is just me, Ahmet Bolat. I spent six years running production automation in-house at Karma Graphics,
             then did data engineering at Accenture. Now I'm independent.
@@ -226,7 +226,7 @@ faqs:
         <p class="text-gray-400 mb-6">
             No sales team and no junior hand-offs. You talk to the person who does the work, and you get a fixed price before it starts.
         </p>
-        <a href="/about/" class="text-primary-300 font-semibold hover:text-primary-200">More about Ahmet <span aria-hidden="true">→</span></a>
+        <a href="/about/" class="text-primary-300 font-semibold hover:text-primary-200">More about Ahmet </a>
     </div>
 </section>
 
@@ -234,7 +234,7 @@ faqs:
 <section id="faq" class="section-tint py-20">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12 reveal">
-            <h2 class="text-4xl font-bold mb-4">Questions about the services</h2>
+            <h2 class="text-4xl font-semibold mb-4">Questions about the services</h2>
         </div>
         <div class="reveal">
             {% for f in faqs %}
@@ -253,15 +253,15 @@ faqs:
 </section>
 
 <!-- BOTTOM CTA -->
-<section id="contact" class="section-dark gradient-mesh py-20 md:py-24">
+<section id="contact" class="section-dark py-20 md:py-24">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white reveal">Not sure which one you need?</h2>
+        <h2 class="text-3xl md:text-4xl font-semibold mb-4 text-white reveal">Not sure which one you need?</h2>
         <p class="text-lg text-gray-300 mb-8 reveal">
             Tell me what's broken, or what feels off. You'll get a straight answer on which service fits, or whether you need one at all.
         </p>
         <a href="{{ formUrl }}" target="_blank" rel="noopener noreferrer"
             class="reveal btn-glow inline-block bg-primary-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-700 transition-colors text-lg">
-            Describe the problem <span aria-hidden="true">→</span>
+            Describe the problem 
         </a>
         <p class="text-gray-400 mt-6 reveal">
             Or email <a href="mailto:contact@viabolat.com" class="text-primary-300 font-semibold">contact@viabolat.com</a>
